@@ -2,7 +2,7 @@
 header("Content-Type: application/json");
 
 $response = [
-    "message" => "ecommerce api working!",
+    "message" => "ecommerce api workinggg!",
     "status" => 200
 ];
 
