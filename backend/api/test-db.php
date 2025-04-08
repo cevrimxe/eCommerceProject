@@ -14,7 +14,7 @@ if ($conn) {
     // Veri çekmek için sorgu yazalım
     try {
         // SQL sorgusunu yaz
-        $sql = "SELECT id, name, email FROM users";
+        $sql = "SELECT user_id, username, email FROM user_tbl"; // Yeni DB'deki kullanıcıları çekiyoruz
         
         // Sorguyu çalıştır
         $stmt = $conn->prepare($sql);
