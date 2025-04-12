@@ -1,12 +1,108 @@
-/* Basic reset */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+#content {
+    flex: 1;
+    /* This pushes the footer to the bottom */
+    background-color: rgb(235, 255, 214);
+}
+
+.footer {
+    background-color: #333;
+    color: white;
     text-align: center;
-    padding-top: 2rem;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    background: #333;
+    color: white;
+}
+
+.search-bar {
+    width: 450px;
+    border-radius: 11px;
+    text-indent: 5%;
+}
+
+.button-yellowred {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    padding: 0.5em 1em;
+    transition: color 0.3s ease;
+    text-align: center;
+    z-index: 0;
+}
+
+.button-yellowred:hover {
+    color: rgb(240, 255, 173);
+}
+
+.button-yellowred:active {
+    color: rgb(255, 173, 173);
+}
+
+/* top navigation bar over */
+#content {
+    display: flex;
+}
+
+#sidebar {
+    flex: 0 0 20%;
+    background-color: #c4c4c4;
+    padding: 20px;
+}
+
+#product-section {
+    flex: 1;
+    /* without flex: 1, product-section only takes as much space as necessary, which is small,
+    so product list grows vertically because there is no horizontal space for it to grow in */
+    padding: 20px;
+}
+
+#add-product-button {
+    background: rgb(255, 255, 210);
+    border-radius: 5px;
+    color: #000000;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+}
+
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.product {
+    background-color: rgb(221, 255, 185);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
