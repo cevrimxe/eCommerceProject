@@ -7,47 +7,91 @@
 
     <title>eCommerce</title>
 
+    <link rel="stylesheet" href="frontend/assets/sidebar.css">
     <link rel="stylesheet" href="frontend/assets/style.css">
     <script src="frontend/assets/script.js" defer></script>
+    <script src="frontend/assets/url.js" defer></script>
+
 </head>
 
 <body>
-    <div class="page">
+<div class="page">
 
-        <div class="top-nav">
-
-            <div class="top-nav-left">
-                <a href="./index.html" class="link">Yıldızlar</a>
-            </div>
-            
-            <div class="center">
-                <input class="search-bar" type="text" placeholder="Search" />
-            </div>
-
-            <div class="top-nav-right">
-                <a href="./index.html" class="link">Sepet</a>
-                <a href="./index.html" class="link">Siparişler</a>
-                <a href="./index.html" class="link">Hesap</a>
-
-            </div>
+    <div class="top">
+        <div>
+            <a href="./index.html" class="link">Yıldızlar</a>
         </div>
 
-        <div id="content">
+        <div class="center">
+            <input class="search-bar" type="text" placeholder="Search" />
+        </div>
 
-            <div id="sidebar">
-                <div class="title" style="padding: 1rem 1rem; text-align: center;">FILTERS:</div>
+        <div>
+            <a href="./index.html" class="link">Sepet</a>
+            <a href="./index.html" class="link">Siparişler</a>
+            <a href="./index.html" class="link">Hesap</a>
+        </div>
+    </div>
 
-                <div id="filter-list">
-                    <div class="filter">filter</div>
-                    <div class="filter">filter</div>
-                    <div class="filter">filter</div>
-                    <div class="filter">filter</div>
+    <div class="middle">
+        <div id="product-sidebar">
+            <div id="selection-list">
+
+                <div class="selection">
+                    <div class="category">
+                        RAM (Sistem Belleği)
+                    </div>
+                    <div class="option-list">
+                        <label class="option">
+                            <input type="checkbox" value="ram-4gb">
+                            <span class="checkmark"></span>
+                            4 GB
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" value="ram-8gb">
+                            <span class="checkmark"></span>
+                            8 GB
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" value="ram-16gb">
+                            <span class="checkmark"></span>
+                            16 GB
+                        </label>
+                    </div>
                 </div>
+
+                <div class="selection">
+                    <div class="category">
+                        Disk Kapasitesi
+                    </div>
+                    <div class="option-list">
+                        <label class="option">
+                            <input type="checkbox" value="hdd-256GB">
+                            <span class="checkmark"></span>
+                            256 GB
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" value="hdd-512GB">
+                            <span class="checkmark"></span>
+                            512 GB
+                        </label>
+                        <label class="option">
+                            <input type="checkbox" value="hdd-1TB">
+                            <span class="checkmark"></span>
+                            1 TB
+                        </label>
+                    </div>
+                </div>
+
             </div>
 
-            <div id="product-section">
+            <div id="sidebar-align-product"></div>
 
-                <button id="add-product-button" onclick="add_product()">add_product</button>
+            <div id="product">
+
+                <button id="add-product-button" onclick="add_product()">add fake product</button>
+                <button id="add-product-button" onclick="refresh_categories()">refresh categories</button>
+                <button id="add-product-button" onclick="refresh_products()">refresh products</button>
 
                 <div id="product-list">
                     <div class="product">product</div>
@@ -55,17 +99,18 @@
                     <div class="product">product</div>
                     <div class="product">product</div>
                 </div>
-
             </div>
-
         </div>
+    </div>
 
+    <div class="bottom">
         <footer class="footer">
-            <a href="frontend/pages/about.html" class="link">About</a>
+            <a href="frontend/pages/about.html" class="link">Hakkımızda</a>
             <a href="https://github.com/cevrimxe/eCommerceProject" class="link">Github</a>
         </footer>
-
     </div>
+
+</div>
 </body>
 
 </html>

@@ -2,42 +2,24 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-html, body {
-    height: 100%;
+    font-family: Arial, sans-serif;
 }
 
 .page {
     display: flex;
     flex-direction: column;
     min-height: 100dvh;
+    background-color: rgb(241, 254, 227);
 }
 
-/* top navigation bar start */
-.top-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    padding-right: 3rem;
-    padding-left: 3rem;
-    background: #333;
-    color: white;
+.middle {
+    flex: 51234; /* to move footer to bottom of page by enlarging middle */
 }
 
 .center {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-}
-
-.search-bar {
-    width: 30rem;
-    height: 2rem;
-    border-radius: 0.75rem;
-    text-indent: 4%;
 }
 
 .link {
@@ -55,25 +37,32 @@ html, body {
     color: rgb(255, 173, 173);
 }
 
-/* top navigation bar over */
-#content {
-    flex: 1;
-    /* This pushes the footer to the bottom */
-    background-color: rgb(235, 255, 214);
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    background: #333;
+    color: white;
+}
+
+.search-bar {
+    width: 30rem;
+    height: 2rem;
+    margin: 1rem;
+    border-radius: 0.75rem;
+    text-indent: 4%;
+}
+
+#product-sidebar {
+    background-color: #fce5e5;
     display: flex;
 }
 
-#sidebar {
-    flex: 0 0 20%;
-    background-color: #c4c4c4;
-    padding: 20px;
-}
-
-#product-section {
-    flex: 1;
-    /* without flex: 1, product-section only takes as much space as necessary, which is small,
-    so product list grows vertically because there is no horizontal space for it to grow in */
-    padding: 20px;
+#sidebar-align-product {
+    flex: 2;
 }
 
 #add-product-button {
@@ -81,14 +70,28 @@ html, body {
     border-radius: 5px;
     color: #000000;
     cursor: pointer;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem;
+    transition: color 0.5s ease;
+}
+
+#add-product-button:hover {
+    background: rgb(240, 255, 173);
+}
+
+#add-product-button:active {
+    background: rgb(255, 173, 173);
+}
+
+#product {
+    flex: 78;
+    padding: 20px;
 }
 
 #product-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 15px;
-    padding: 10px;
+    margin-top: 1rem;
 }
 
 .product {
@@ -105,6 +108,4 @@ html, body {
     padding: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
 }
