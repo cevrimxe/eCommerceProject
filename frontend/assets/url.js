@@ -1,6 +1,6 @@
 // Function to update the URL with checked checkbox values
 function updateURLState() {
-    const checkboxes = document.querySelectorAll('#selection-list input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('.sidebar input[type="checkbox"]');
     const checkedValues = [];
     
     // Loop through all checkboxes to collect checked values
@@ -21,17 +21,17 @@ function updateURLState() {
 }
 
 // Event listener for checkbox changes
-document.querySelector('#selection-list').addEventListener('change', function() {
+document.querySelector('.sidebar').addEventListener('change', function() {
     updateURLState();
 });
 
-// Function to read state from the URL and check corresponding checkboxes
+/* // Function to read state from the URL and check corresponding checkboxes
 function readStateFromURL() {
     const params = new URLSearchParams(window.location.search);
     const selectedValues = params.getAll('selected'); // Get all values of 'selected'
 
     // Loop through checkboxes and check those that match the URL parameters
-    const checkboxes = document.querySelectorAll('#selection-list input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('.sidebar input[type="checkbox"]');
     checkboxes.forEach(checkbox => {
         if (selectedValues.includes(checkbox.value)) {
             checkbox.checked = true;
@@ -44,4 +44,4 @@ function readStateFromURL() {
 }
 
 // Call the function to read state from URL when the page loads
-window.onload = readStateFromURL;
+window.onload = readStateFromURL; */
