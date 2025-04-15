@@ -1,72 +1,21 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
+html,
+body {
     padding: 0;
-    font-family: Arial, sans-serif;
+    margin: 0;
 }
 
-.page {
-    display: flex;
-    flex-direction: column;
-    min-height: 100dvh;
-    background-color: rgb(241, 254, 227);
-}
-
-.middle {
-    flex: 51234; /* to move footer to bottom of page by enlarging middle */
-}
-
-.center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
+/* ############################################################ */
 .link {
-    padding: 0.5rem 1.5rem;
-    color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.link:hover {
-    color: rgb(240, 255, 173);
-}
-
-.link:active {
-    color: rgb(255, 173, 173);
-}
-
-.top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    padding-right: 3rem;
-    padding-left: 3rem;
-    background: #333;
     color: white;
 }
 
-.search-bar {
-    width: 30rem;
-    height: 2rem;
-    margin: 1rem;
-    border-radius: 0.75rem;
-    text-indent: 4%;
+.option {
+    cursor: pointer;
 }
 
-#product-sidebar {
-    background-color: #fce5e5;
-    display: flex;
-}
-
-#sidebar-align-product {
-    flex: 2;
-}
-
-#add-product-button {
-    background: rgb(255, 255, 210);
+.product-button {
+    background: #ffcfcf;
     border-radius: 5px;
     color: #000000;
     cursor: pointer;
@@ -74,38 +23,169 @@
     transition: color 0.5s ease;
 }
 
-#add-product-button:hover {
-    background: rgb(240, 255, 173);
+.product-button:hover {
+    background: #ffabab;
 }
 
-#add-product-button:active {
-    background: rgb(255, 173, 173);
+.product-button:active {
+    background: #ff9090;
 }
 
-#product {
-    flex: 78;
-    padding: 20px;
+.search-bar {
+    height: 100%;
+    width: 20rem;
+    border-radius: 0.75rem;
+    text-indent: 4%;
 }
 
-#product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px;
-    margin-top: 1rem;
-}
+/* ############################################################ */
 
 .product {
-    background-color: rgb(221, 255, 185);
+    background-color: rgb(201, 249, 239);
     padding: 20px;
     text-align: center;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 
+/* ############################################################ */
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+.content {
+    flex: 1;
+    /* to move footer to bottom of page by filling middle */
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* ############################################################ */
+.sidebar-and-products {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    flex: 20;
+}
+
+.products {
+    flex: 80;
+}
+
+/* ############################################################ */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-and-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ############################################################ */
+.products {
+    display: flex;
+    flex-direction: column;
+}
+
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+/* ############################################################ */
+.header {
+    background-color: #333;
+}
+
 .footer {
     background-color: #333;
-    color: white;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+}
+
+.content {
+    background-color: rgb(241, 254, 227);
+}
+
+.products {
+    background-color: #fce5e5;
+}
+
+.sidebar {
+    background-color: #c4c4c4;
+}
+
+/* ############################################################ */
+
+.header {
+    block-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.footer {
+    block-size: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.header .link,
+.footer .link {
+    margin: 0.5rem;
+    padding: 1rem;
+}
+
+/* ############################################################ */
+.sidebar {
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.category-and-options {
+    border: 2px solid #555;
+    padding: 1rem;
+    gap: 0.5rem;
+}
+
+.category-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* ############################################################ */
+
+.products {
+    padding: 2rem;
+    gap: 2rem;
+}
+
+#product-list {
+    gap: 2rem;
 }
