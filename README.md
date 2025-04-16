@@ -15,6 +15,7 @@ git restore .
 ### git aliases via powershell:
 
 * local script yürütmeye izin vermek için powershell terminali açıp komutu yürüt `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
+* `$PROFILE` dosyası, her powershell terminali açıldığında otomatik yürütülür, fonksiyonların her terminalde kullanılabilmesini sağlar 
 *  `notepad $PROFILE` ile editle, `. $PROFILE` ile refresh'le
     * `$PROFILE` yoksa `New-Item -ItemType File -Path $PROFILE -Force` yürüt
 * aşağıdaki içeriği `$PROFILE`'a kopyala ve kaydet:
@@ -62,14 +63,17 @@ echo ""
 
 * `git-help` ile komut listesini ve komutların hangi git komutlarını yürüttüğünü gör
 
-* bu aliasları kullanarak normal geliştirme döngüsü:
+* bu aliasları kullanarak normal geliştirme döngüsü (TAB basarak auto-complete mümkün):
 ```h
 // powershell terminali aç (VSCode'da default olarak powershell terminali açılıyor, CTRL+SHIFT+P -> "Terminal: Create New Terminal)
-git branch   // branch listesini göster, kendi branch'inde olduğundan emin ol, değilsen `git checkout <branch_name"> ile branch'ine geç
+
+git branch   // branch listesini göster, kendi branch'inde olduğundan emin ol, değilsen `git checkout <branch_name>` ile branch'ine geç
 git-copy-main  // güncel main branchini dosyaya kopyala
 loop:
-    git-add-commit "commit_message"
+    git-add-commit <commit_message>
     git-push-to-branch <branch_name>
+// hata yaparsan bilgisayarındaki son commit'e dönmek için `git-restore` yürüt
+
 // githubda branch sayfana git
 // create pull request -> merge pull request
 ```
