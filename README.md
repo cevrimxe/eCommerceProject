@@ -68,10 +68,17 @@ echo ""
 
 * bu aliasları kullanarak normal geliştirme döngüsü (TAB basarak auto-complete mümkün):
 ```h
-// powershell terminali aç (VSCode'da default olarak powershell terminali açılıyor, CTRL+SHIFT+P -> "Terminal: Create New Terminal)
+// powershell terminali aç 
+// (VSCode'da default olarak powershell terminali açıyor, CTRL+SHIFT+P -> "Terminal: Create New Terminal)
 
-git branch   // branch listesini göster, kendi branch'inde olduğundan emin ol, değilsen `git checkout <branch_name>` ile branch'ine geç
-git-copy-main  // güncel main branchini dosyaya kopyala
+// branch listesini göster,
+git branch
+// kendi branch'inde değilsen `git checkout <branch_name>` ile branch'ine geç
+git checkout <branch_name>
+
+// branch yaratmadıysan `git checkout -b <branch_name>` ile yeni branch yarat ve o branch'e geç
+
+git-copy-main  // güncel main branchini bulunduğun branch'e kopyala
 
 // LOOP
 git-add-commit "commit_message"
