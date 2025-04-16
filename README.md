@@ -70,9 +70,11 @@ echo ""
 git branch   // branch listesini göster, kendi branch'inde olduğundan emin ol, değilsen `git checkout <branch_name>` ile branch'ine geç
 git-copy-main  // güncel main branchini dosyaya kopyala
 
+// LOOP
 git-add-commit <commit_message>
 git-push-to-branch <branch_name>
 // hata yaparsan bilgisayarındaki son commit'e dönmek için `git-restore` yürüt
+// END LOOP
 
 // kodunu main'e aktarmak istediğinde githubda branch sayfana git
 // create pull request -> merge pull request
