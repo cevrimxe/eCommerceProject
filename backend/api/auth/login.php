@@ -14,8 +14,8 @@ $conn = $database->getConnection();
 $data = json_decode(file_get_contents("php://input"));
 
 if (!empty($data->email) && !empty($data->password)) {
-    // Kullanıcıyı bul
-    $query = "SELECT id, name, email, password FROM users WHERE email = :email";
+    // Kullanıcıyı email'e göre bul
+    $query = "SELECT user_id, first_name, last_name, email, pass_word FROM user_tbl WHERE email = :email";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(":email", $data->email);
     $stmt->execute();
@@ -24,15 +24,16 @@ if (!empty($data->email) && !empty($data->password)) {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // Şifreyi kontrol et
-        if (password_verify($data->password, $user['password'])) {
-            $_SESSION['user_id'] = $user['id']; // Kullanıcı ID'sini oturumda sakla
-            $_SESSION['user_name'] = $user['name']; // Kullanıcı adını oturumda sakla
+        if (password_verify($data->password, $user['pass_word'])) {
+            $_SESSION['user_id'] = $user['user_id']; // Kullanıcı ID'sini oturumda sakla
+            $_SESSION['user_name'] = $user['first_name'] . " " . $user['last_name']; // Kullanıcı adını oturumda sakla
             $_SESSION['user_email'] = $user['email']; // Kullanıcı e-posta adresini oturumda sakla
+
             echo json_encode([
                 "message" => "Giriş başarılı!",
                 "user" => [
-                    "id" => $user['id'],
-                    "name" => $user['name'],
+                    "id" => $user['user_id'],
+                    "name" => $user['first_name'] . " " . $user['last_name'],
                     "email" => $user['email']
                 ]
             ]);
