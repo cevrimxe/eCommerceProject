@@ -13,7 +13,7 @@ $conn = $database->getConnection();
 $data = json_decode(file_get_contents("php://input"));
 
 // Verilerin boş olup olmadığını kontrol et
-if (!empty($data->email) && !empty($data->password) && !empty($data->first_name) && !empty($data->last_name)) {
+if (!empty($data->email) && !empty($data->password) && !empty($data->first_name) && !empty($data->last_name) && !empty($data->phone)) {
 
     // Şifreyi hashle
     $passwordHash = password_hash($data->password, PASSWORD_BCRYPT);
