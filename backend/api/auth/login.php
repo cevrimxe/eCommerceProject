@@ -1,4 +1,6 @@
 <?php
+session_start(); // Oturumu başlat
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 header("Access-Control-Allow-Methods: POST");
@@ -23,6 +25,9 @@ if (!empty($data->email) && !empty($data->password)) {
 
         // Şifreyi kontrol et
         if (password_verify($data->password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id']; // Kullanıcı ID'sini oturumda sakla
+            $_SESSION['user_name'] = $user['name']; // Kullanıcı adını oturumda sakla
+            $_SESSION['user_email'] = $user['email']; // Kullanıcı e-posta adresini oturumda sakla
             echo json_encode([
                 "message" => "Giriş başarılı!",
                 "user" => [

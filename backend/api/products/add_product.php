@@ -1,32 +1,47 @@
 <?php
+session_start();
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 header("Access-Control-Allow-Methods: POST");
 
-include_once "../../config/database.php";
+// Admin kontrolü yap
+if (!isset($_SESSION['user_id']) || $_SESSION['usercode'] != 2) { // admin usercode 2 kabul edilmiş
+    http_response_code(403); // Forbidden
+    echo json_encode(["message" => "Unauthorized - Only admins can add products."]);
+    exit;
+}
 
+// Veritabanı bağlantısı
+include_once "../../config/database.php";
 $database = new Database();
 $conn = $database->getConnection();
 
-// Read JSON input
+// Gelen JSON verisini al
 $data = json_decode(file_get_contents("php://input"));
 
-if (!empty($data->name) && !empty($data->description) && !empty($data->price) && isset($data->stock)) {
-    $query = "INSERT INTO products (name, description, price, stock) VALUES (:name, :description, :price, :stock)";
+// Veriyi kontrol et
+if (!empty($data->product_name) && !empty($data->price) && !empty($data->category_id) && isset($data->stock)) {
+    // Ürün ekleme sorgusu
+    $query = "INSERT INTO product (product_name, description, price, category_id, stock) 
+              VALUES (:product_name, :description, :price, :category_id, :stock)";
     $stmt = $conn->prepare($query);
 
-    // Bind values
-    $stmt->bindParam(":name", $data->name);
+    // Parametreleri bağla
+    $stmt->bindParam(":product_name", $data->product_name);
     $stmt->bindParam(":description", $data->description);
     $stmt->bindParam(":price", $data->price);
+    $stmt->bindParam(":category_id", $data->category_id);
     $stmt->bindParam(":stock", $data->stock);
 
+    // Sorguyu çalıştır ve yanıtı dön
     if ($stmt->execute()) {
-        echo json_encode(["message" => "Product added successfully!"]);
+        echo json_encode(["message" => "Product successfully added."]);
     } else {
-        echo json_encode(["message" => "Failed to add product!"]);
+        http_response_code(500);
+        echo json_encode(["message" => "Failed to add product."]);
     }
 } else {
-    echo json_encode(["message" => "Please provide all required fields including stock!"]);
+    echo json_encode(["message" => "Please provide product name, price, category id, and stock."]);
 }
 ?>
