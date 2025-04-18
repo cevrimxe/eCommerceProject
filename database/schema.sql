@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS user_tbl (
     usercode INT,
     first_name VARCHAR(20) NOT NULL,
     last_name VARCHAR(20),
-    FOREIGN KEY (usercode) REFERENCES accsess_tbl(usercode)
+    FOREIGN KEY (usercode) REFERENCES accsess_tbl(usercode) ON DELETE CASCADE
 );
 
 -- 3️⃣ Kullanıcı adresleri
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS user_address (
     city VARCHAR(50),
     postal_code VARCHAR(20),  -- Postal code'u VARCHAR olarak değiştirdik
     country VARCHAR(50),
-    FOREIGN KEY (user_id) REFERENCES user_tbl(user_id)
+    FOREIGN KEY (user_id) REFERENCES user_tbl(user_id) ON DELETE CASCADE
 );
 
 -- 4️⃣ Kategoriler
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS product (
     price FLOAT,  -- Fiyatı FLOAT olarak değiştirdik
     category_id INT,
     stock INT,  -- Stok miktarını INT olarak değiştirdik
-    FOREIGN KEY (category_id) REFERENCES category_table(category_id)
+    FOREIGN KEY (category_id) REFERENCES category_table(category_id) ON DELETE CASCADE
 );
 
 -- 6️⃣ Siparişler
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS order_tbl (
     user_id INT,  -- user_id'yi INT olarak değiştirdik
     order_date DATE,
     total FLOAT,  -- Toplam tutarı FLOAT olarak değiştirdik
-    FOREIGN KEY (user_id) REFERENCES user_tbl(user_id)
+    FOREIGN KEY (user_id) REFERENCES user_tbl(user_id) ON DELETE CASCADE
 );
 
 -- 7️⃣ Sipariş detayları
@@ -61,8 +61,8 @@ CREATE TABLE IF NOT EXISTS order_detail (
     quantity INT,
     unit_price FLOAT,  -- Birim fiyatı FLOAT olarak değiştirdik
     total FLOAT,  -- Toplam tutarı FLOAT olarak değiştirdik
-    FOREIGN KEY (order_id) REFERENCES order_tbl(order_id),
-    FOREIGN KEY (product_id) REFERENCES product(product_id)
+    FOREIGN KEY (order_id) REFERENCES order_tbl(order_id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
 );
 
 -- 8️⃣ Sepet tablosu
@@ -73,8 +73,8 @@ CREATE TABLE IF NOT EXISTS cart_tbl (
     quantity INT,
     unit_price FLOAT,  -- Birim fiyatı FLOAT olarak değiştirdik
     total FLOAT,  -- Toplam tutarı FLOAT olarak değiştirdik
-    FOREIGN KEY (user_id) REFERENCES user_tbl(user_id),
-    FOREIGN KEY (product_id) REFERENCES product(product_id)
+    FOREIGN KEY (user_id) REFERENCES user_tbl(user_id)  ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
 );
 
 -- 9️⃣ Ürün puanlama
@@ -83,6 +83,6 @@ CREATE TABLE IF NOT EXISTS rate_tbl (
     user_id INT NOT NULL,  -- user_id'yi INT olarak değiştirdik
     product_id INT,
     rate FLOAT,  -- Puanlama değeri FLOAT olarak değiştirildi
-    FOREIGN KEY (user_id) REFERENCES user_tbl(user_id),
-    FOREIGN KEY (product_id) REFERENCES product(product_id)
+    FOREIGN KEY (user_id) REFERENCES user_tbl(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
 );
