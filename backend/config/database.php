@@ -1,22 +1,20 @@
 <?php
 class Database {
-    private $host = "localhost";
-    private $db_name = "eticaret";
-    private $username = "postgres";
-    private $password = "12345"; // PostgreSQL şifreni yaz
+    private $dsn = "pgsql:host=us-east-1.sql.xata.sh;port=5432;dbname=postgres:main";
+    private $username = "2llanj";  // Xata'dan aldığın kullanıcı adı
+    private $password = "xau_ZlNmCquzJnkhQMgomV9ULd4O4hAXvqL11";  // API key'in
     public $conn;
 
     public function getConnection() {
         $this->conn = null;
         try {
-            $this->conn = new PDO("pgsql:host=" . $this->host . ";dbname=" . $this->db_name,
-                $this->username, $this->password);
+            // Bağlantı dizesini oluşturuyoruz
+            $this->conn = new PDO($this->dsn, $this->username, $this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $exception) {
-            echo "Bağlantı hatası: " . $exception->getMessage();
+            echo "❌ Bağlantı hatası: " . $exception->getMessage();
         }
         return $this->conn;
     }
 }
 ?>
-
