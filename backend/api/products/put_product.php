@@ -1,4 +1,5 @@
 <?php
+session_start();
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 header("Access-Control-Allow-Methods: PUT");
@@ -9,25 +10,53 @@ $database = new Database();
 $conn = $database->getConnection();
 
 // Admin kontrolü: Eğer giriş yapılmamışsa ya da admin değilse, erişim reddedilir
-session_start();
-if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
-    echo json_encode(["message" => "Access denied. Admins only."]);
+
+// Admin kontrolü yap
+if (!isset($_SESSION['user_id']) || $_SESSION['usercode'] != 2) { // admin usercode 2 kabul edilmiş
+    http_response_code(403); // Forbidden
+    echo json_encode(["message" => "Unauthorized - Only admins can add products."]);
     exit;
 }
 
 // Gelen JSON verisini al
 $data = json_decode(file_get_contents("php://input"));
+error_log(print_r($data, true)); // JSON verisini loglara yazdır
 
 // Ürün ID'sini al
-$product_id = isset($data->id) ? intval($data->id) : 0;
+$product_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-if ($product_id > 0 && !empty($data->name) && !empty($data->description) && !empty($data->price) && !empty($data->stock)) {
+
+if ($product_id > 0 && !empty($data->product_name) && !empty($data->description) && !empty($data->price) && !empty($data->stock)) {
+    // Ürün bilgilerini güncelleme işlemi
+} else {
+    $error_message = "Invalid product ID or incomplete data. ";
+    if ($product_id <= 0) {
+        $error_message .= "Product ID is invalid. ";
+    }
+    if (empty($data->product_name)) {
+        $error_message .= "Name is missing. ";
+    }
+    if (empty($data->description)) {
+        $error_message .= "Description is missing. ";
+    }
+    if (empty($data->price)) {
+        $error_message .= "Price is missing. ";
+    }
+    if (empty($data->stock)) {
+        $error_message .= "Stock is missing. ";
+    }
+    echo json_encode(["message" => $error_message]);
+}
+
+
+
+if ($product_id > 0 && !empty($data->product_name) && !empty($data->description) && !empty($data->price) && !empty($data->stock)) {
     // Ürün bilgilerini güncelle
-    $query = "UPDATE products SET name = :name, description = :description, price = :price, stock = :stock WHERE product_id = :id";
+    $query = "UPDATE product SET product_name = :product_name, description = :description, price = :price, stock = :stock WHERE product_id = :id";
     $stmt = $conn->prepare($query);
 
     // Parametreleri bağla
-    $stmt->bindParam(":name", $data->name);
+    $stmt->bindParam(":product_name", $data->product_name);
     $stmt->bindParam(":description", $data->description);
     $stmt->bindParam(":price", $data->price);
     $stmt->bindParam(":stock", $data->stock);
