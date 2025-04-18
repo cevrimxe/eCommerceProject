@@ -27,30 +27,6 @@ $product_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 
 if ($product_id > 0 && !empty($data->product_name) && !empty($data->description) && !empty($data->price) && !empty($data->stock)) {
-    // Ürün bilgilerini güncelleme işlemi
-} else {
-    $error_message = "Invalid product ID or incomplete data. ";
-    if ($product_id <= 0) {
-        $error_message .= "Product ID is invalid. ";
-    }
-    if (empty($data->product_name)) {
-        $error_message .= "Name is missing. ";
-    }
-    if (empty($data->description)) {
-        $error_message .= "Description is missing. ";
-    }
-    if (empty($data->price)) {
-        $error_message .= "Price is missing. ";
-    }
-    if (empty($data->stock)) {
-        $error_message .= "Stock is missing. ";
-    }
-    echo json_encode(["message" => $error_message]);
-}
-
-
-
-if ($product_id > 0 && !empty($data->product_name) && !empty($data->description) && !empty($data->price) && !empty($data->stock)) {
     // Ürün bilgilerini güncelle
     $query = "UPDATE product SET product_name = :product_name, description = :description, price = :price, stock = :stock WHERE product_id = :id";
     $stmt = $conn->prepare($query);
