@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS category_table (
 
 -- 5️⃣ Ürünler
 CREATE TABLE IF NOT EXISTS product (
-    product_id INT PRIMARY KEY,
+    product_id SERIAL PRIMARY KEY,
     product_name VARCHAR(50),
     description TEXT,
     price FLOAT,  -- Fiyatı FLOAT olarak değiştirdik
