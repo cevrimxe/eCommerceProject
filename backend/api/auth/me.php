@@ -13,7 +13,7 @@ if(!isset($_SESSION['user_id'])) {
 
 echo json_encode([
     "id" => $_SESSION['user_id'],
-    "email" => $_SESSION['user_email'],
+    "email" => $_SESSION['email'],
     "first_name" => $_SESSION['first_name'],
     "last_name" => $_SESSION['last_name'],
     "usercode" => $_SESSION['usercode']

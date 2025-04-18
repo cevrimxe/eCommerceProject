@@ -10,8 +10,9 @@ $conn = $database->getConnection();
 
 // Admin kontrolü: Eğer giriş yapılmamışsa ya da admin değilse, erişim reddedilir
 session_start();
-if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
-    echo json_encode(["message" => "Access denied. Admins only."]);
+if (!isset($_SESSION['user_id']) || $_SESSION['usercode'] != 2) { // admin usercode 2 kabul edilmiş
+    http_response_code(403); // Forbidden
+    echo json_encode(["message" => "Unauthorized - Only admins can add products."]);
     exit;
 }
 
@@ -20,7 +21,7 @@ $product_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 if ($product_id > 0) {
     // Ürünü sil
-    $query = "DELETE FROM products WHERE product_id = :id";
+    $query = "DELETE FROM product WHERE product_id = :id";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(":id", $product_id);
 
