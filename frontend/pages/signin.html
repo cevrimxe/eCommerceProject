@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In</title>
+  <link rel="stylesheet" href="signin.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <div class="tabs">
+        <button class="active">Sign In</button>
+        <button>Sign Up</button>
+      </div>
+      <form>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+
+        <div class="password-row">
+          <label for="password">Password</label>
+          <a href="#">Forget Password</a>
+        </div>
+        <input type="password" id="password" placeholder="Enter your password" required />
+
+        <button type="submit" class="signin-btn">SIGN IN</button>
+        <div class="divider">or</div>
+        <button type="button" class="google-btn">
+          <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google" />
+          Login with Google
+        </button>
+        <button type="button" class="apple-btn">
+          <img src="https://img.icons8.com/ios-filled/16/000000/mac-os.png" alt="Apple" />
+          Login with Apple
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

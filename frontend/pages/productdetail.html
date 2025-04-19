@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İNTERNET TEKNOLOJİLERİ PROJE</title>
+  <link rel="stylesheet" href="productdetail.css" />
+</head>
+<body>
+
+  <!-- Üst Banner -->
+  <div class="top-banner">
+  </div>
+
+  <!-- Ana Menü -->
+  <nav class="main-nav">
+    <div class="container">
+      <div class="logo">🔵 İNT. TEKNO.</div>
+      <input type="text" class="search-bar" placeholder="Search for anything..." />
+      <div class="nav-icons">🛒 ♥ 👤</div>
+    </div>
+  </nav>
+
+  <!-- Alt Menü -->
+  <div class="sub-nav">
+    <div class="container">
+      <select>
+        <option>All Category</option>
+      </select>
+      <a href="#">Track Order</a>
+      <a href="#">------</a>
+      <a href="#">------</a>
+      <a href="#">------</a>
+      <span class="phone">📞 +90 0555 555 55 55</span>
+    </div>
+  </div>
+
+  <nav class="breadcrumb">
+    <ul>
+      <li><i class="fas fa-home"></i> <a href="#">Home</a></li>
+      <li>›</li>
+      <li><a href="#">Shop</a></li>
+      <li>›</li>
+      <li><a href="#">Shop Grid</a></li>
+      <li>›</li>
+      <li><a href="#" class="current">Electronics Devices</a></li>
+      <li>›</li>
+      <li><a href="#" class="current">Ürün_İsmi</a></li>
+    </ul>
+  </nav>
+
+
+
+  <main class="container product-detail">
+    <div class="product-images">
+      <img src="macbook1.jpg" alt="MacBook Pro" class="main-image">
+      <div class="thumbnail-list">
+        <img src="macbook1.jpg" alt="Thumb 1"><!--Link olacak-->
+        <img src="macbook2.jpg" alt="Thumb 2">
+        <img src="macbook3.jpg" alt="Thumb 3">
+        <!--img üzerine onclick yazılacak-->
+      </div>
+    </div>
+    <div class="product-info">
+      <h2>2020 Apple MacBook Pro</h2><!--veri tabanından gelecek-->
+      <p class="price">$1699 <span class="old-price">$1999.00</span></p><!--ürün görseli title ve açıklaması bunları card view olarak
+      tasarla.Ve bu veriyi sql'den çekicez-->
+      <p>With Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray</p>
+
+      <label for="memory">Memory:</label>
+      <select id="memory">
+        <option>8GB</option>
+        <option>16GB</option>
+      </select>
+
+      <label for="storage">Storage:</label>
+      <select id="storage">
+        <option>256GB SSD</option>
+        <option>512GB SSD</option>
+        <option>1TB SSD</option>
+      </select>
+
+      <div class="actions">
+        <button class="btn primary">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+      </div>
+
+      <ul class="features">
+        <li>✅ Free 1 Year Warranty</li>
+        <li>✅ Free Shipping</li>
+        <li>✅ 24/7 Customer Support</li>
+      </ul>
+    </div>
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  <!-- footer -->
+  <section class="newsletter">
+    <h2>Subscribe to our newsletter</h2>
+    <p>
+      Praesent fringilla erat a lacinia egestas. Donec vehicula tempor libero et cursus.
+      Donec non quam urna. Quisque vitae porta ipsum.
+    </p>
+    <form class="subscription-form">
+      <input type="email" placeholder="Email address" required />
+      <button type="submit">SUBSCRIBE <span>&rarr;</span></button>
+    </form>
+  
+  
+  </section>
+  
+  </body>
+</html>
