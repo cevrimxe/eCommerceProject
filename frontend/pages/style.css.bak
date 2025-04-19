@@ -1,0 +1,214 @@
+/* Genel Ayarlar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9fb;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Üst Banner */
+.top-banner {
+  background: #111;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.black-friday {
+  background: #fdd835;
+  color: #000;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.shop-now-btn {
+  background: gold;
+  border: none;
+  padding: 6px 12px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Ana Menü */
+.main-nav {
+  background: #1565c0;
+  padding: 15px 0;
+}
+
+.main-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.search-bar {
+  width: 50%;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+.nav-icons {
+  color: white;
+  font-size: 20px;
+}
+
+/* Alt Menü */
+.sub-nav {
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.sub-nav .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.sub-nav a {
+  text-decoration: none;
+  color: #1565c0;
+}
+
+.phone {
+  margin-left: auto;
+  font-weight: bold;
+}
+
+/* Ana İçerik */
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.hero {
+  flex: 1 1 60%;
+  background: #fff;
+  padding: 30px;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.hero img {
+  width: 160px;
+  margin-top: 20px;
+}
+
+.price-tag {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: #29a8ff;
+  color: #fff;
+  padding: 12px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.tagline {
+  color: #2196f3;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.shop-btn {
+  background: #ff6600;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.shop-btn.small {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* Yan Kartlar */
+.side-cards {
+  flex: 1 1 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.discount {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fdd835;
+  padding: 6px;
+  font-weight: bold;
+}
+
+/* Alt Bilgi */
+.info-strip {
+  background: white;
+  padding: 30px 20px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: 14px;
+  text-align: center;
+  gap: 20px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .sub-nav .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .phone {
+    margin-left: 0;
+  }
+}
