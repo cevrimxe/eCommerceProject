@@ -7,6 +7,8 @@
  */
 
 
+/*
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
@@ -37,4 +39,6 @@ if ($stmt->execute()) {
 } else {
     echo json_encode(["message" => "Tablo silme hatası."]);
 }
+
+*/
 ?>
