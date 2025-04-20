@@ -13,7 +13,7 @@ $conn = $database->getConnection();
 // Veritabanı bağlantısı başarılıysa
 if (!isset($_GET['id'])) {
     http_response_code(400);
-    echo json_encode(["message" => "Cart item ID is required."]);
+    echo json_encode(["message" => "Cart item ID is required. "]);
     exit;
 }
 
