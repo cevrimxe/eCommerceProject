@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS order_tbl (
 
 -- 7️⃣ Sipariş detayları
 CREATE TABLE IF NOT EXISTS order_detail (
-    detail_id INT PRIMARY KEY,
+    detail_id SERIAL PRIMARY KEY,
     order_id INT,
     product_id INT,
     quantity INT,
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS order_detail (
 
 -- 8️⃣ Sepet tablosu
 CREATE TABLE IF NOT EXISTS cart_tbl (
-    cartt_id INT PRIMARY KEY,
+    cartt_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL,  -- user_id'yi INT olarak değiştirdik
     product_id INT,
     quantity INT,
