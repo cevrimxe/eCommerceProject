@@ -11,7 +11,7 @@ product_name: "Laptop"
 stock: 20
 */
 function refresh_products_raw() {
-  fetch('../../backend/api/products/get_products_nocateg.php')
+  fetch('../../backend/api/products/get_products.php')
     .then(response => response.json())
     .then(data =>
     {
