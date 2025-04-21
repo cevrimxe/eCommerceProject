@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>İNTERNET TEKNOLOJİLERİ PROJE</title>
   <link rel="stylesheet" href="shoppages.css" />
+  <script src="../assets/script.js" defer></script>
 </head>
 <body>
 
@@ -30,6 +31,7 @@
       <a href="#">------</a>
       <a href="#">------</a>
       <a href="#">------</a>
+      <button onclick="refresh_products_raw()">refresh_products_raw</button>
       <span class="phone">📞 +90 0555 555 55 55</span>
     </div>
   </div>
@@ -85,7 +87,7 @@
 
   <!-- Product Grid -->
   <main class="product-area">
-    <div class="product-grid">
+    <div class="product-grid" id="product_grid_id">
       <div class="product-card">
         <img src="https://via.placeholder.com/200x200" alt="">
         <div class="product-info">
