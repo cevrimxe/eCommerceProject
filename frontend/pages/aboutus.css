@@ -1,0 +1,421 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9fb;
+    color: #222222;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+  }
+
+  /* Üst Header */
+  .main-nav {
+    background: #1565c0;
+    padding: 15px 0;
+  }
+
+  .main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .search-bar {
+    width: 50%;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+  }
+
+  .nav-icons {
+    color: white;
+    font-size: 20px;
+  }
+
+  .sub-nav {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+
+  .sub-nav .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .sub-nav a {
+    text-decoration: none;
+    color: #1565c0;
+  }
+
+  .phone {
+    margin-left: auto;
+    font-weight: bold;
+  }
+
+
+ 
+  
+  .hakkimizda-bolum {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .hakkimizda-icerik {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .metin-kismi {
+    flex: 1 1 500px;
+    padding: 20px;
+  }
+  
+  .etiket {
+    background-color: #007bff;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .baslik {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .aciklama {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  .ozellik-listesi {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ozellik-listesi li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #222;
+  }
+  
+  .gorsel-kismi {
+    flex: 1 1 500px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .hakkimizda-gorsel {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive Tasarım */
+  @media screen and (max-width: 768px) {
+    .hakkimizda-icerik {
+      flex-direction: column;
+    }
+  
+    .gorsel-kismi,
+    .metin-kismi {
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .baslik {
+      font-size: 24px;
+    }
+  }
+  /*ekip css*/
+  
+  
+  .ekip-bolumu {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .ekip-baslik {
+    font-size: 28px;
+    margin-bottom: 40px;
+    font-weight: 600;
+  }
+  
+  .ekip-kartlar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .ekip-kart {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fafafa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .ekip-kart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .ekip-resim {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+  }
+  
+  .ekip-isim {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 5px 0;
+  }
+  
+  .ekip-gorev {
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* banner.css */
+
+
+  
+  .banner-alani {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+  }
+  
+  .banner-icerik {
+    flex: 1 1 400px;
+    padding: 20px;
+    max-width: 600px;
+  }
+  
+  .banner-baslik {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+  }
+  
+  .banner-aciklama {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .banner-butonu {
+    width: 60px;
+    height: 60px;
+    background-color: #ff7b2e;
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .banner-butonu:hover {
+    background-color: #ff5400;
+  }
+  
+  .oynat-sembol {
+    transform: translateX(1px);
+  }
+  
+  .banner-gorsel {
+    flex: 1 1 400px;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .banner-gorsel img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /*ürünler falan kısmı*/
+ 
+  
+  .urunler-kapsayici {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .urun-kategori {
+    flex: 1 1 220px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    min-width: 250px;
+  }
+  
+  .urun-kategori h2 {
+    font-size: 18px;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+  }
+  
+  .urun-karti {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid #eee;
+    padding: 10px 0;
+  }
+  
+  .urun-karti:first-of-type {
+    border-top: none;
+  }
+  
+  .urun-karti img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+  
+  .urun-karti p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .urun-karti span {
+    display: block;
+    margin-top: 4px;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .urunler-kapsayici {
+      flex-direction: column;
+    }
+  }
+  /* Newsletter */
+  .newsletter {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: #20638e;
+    color: white;
+    text-align: center;
+  }
+
+  .newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .newsletter p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #dbeaf5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .subscription-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .subscription-form input {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 6px;
+    flex: 1 1 300px;
+    max-width: 450px;
+    font-size: 1rem;
+  }
+
+  .subscription-form button {
+    padding: 15px 25px;
+    background-color: #f47734;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .subscription-form button:hover {
+    background-color: #d95f20;
+  }
+
+  @media (max-width: 768px) {
+    .zmb-container {
+      flex-direction: column;
+    }
+    .search-bar {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .sub-nav .container, .main-nav .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .phone {
+      margin-left: 0;
+    }
+  }

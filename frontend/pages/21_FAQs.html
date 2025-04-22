@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sıkça Sorulan Sorular</title>
+  <link rel="stylesheet" href="FAQs.css" />
+
+<body>
+    <div id="header"></div>
+
+   
+  
+
+  <main class="container zmb-container">
+    <section class="zmb-faqs">
+      <h2 class="zmb-faq-title">Sıkça Sorulan Sorular</h2>
+
+      <div class="zmb-accordion-item">
+        <div class="zmb-accordion-header">Suspendisse ultrices pharetra libero sed interdum. +</div>
+      </div>
+      <div class="zmb-accordion-item">
+        <div class="zmb-accordion-header">Fusce molestie condimentum facilisis. +</div>
+      </div>
+      <div class="zmb-accordion-item">
+        <div class="zmb-accordion-header">Quisque quis nunc quis urna tempor lobortis. +</div>
+      </div>
+      <div class="zmb-accordion-item">
+        <div class="zmb-accordion-header">Donec rutrum ultrices ante nec malesuada. +</div>
+      </div>
+      <div class="zmb-accordion-item">
+        <div class="zmb-accordion-header">Nulla sed sapien maximus, faucibus massa vitae. +</div>
+      </div>
+    </section>
+
+    <aside class="zmb-support-form">
+      <h3>Cevabını bulamadın mı? Bize sor!</h3>
+      <p>Sorunun cevabını burada bulamazsan, bizimle iletişime geç. Yardımcı olmaktan memnuniyet duyarız.</p>
+      <input type="email" placeholder="E-posta adresin" class="zmb-input">
+      <input type="text" placeholder="Konu" class="zmb-input">
+      <textarea placeholder="Mesaj (İsteğe bağlı)" class="zmb-input" rows="4"></textarea>
+      <button class="zmb-btn">MESAJ GÖNDER ➝</button>
+    </aside>
+  </main>
+
+  
+
+  
+    <script>
+      // Accordion Etkileşimi
+      document.querySelectorAll(".zmb-accordion-header").forEach(header => {
+        header.addEventListener("click", () => {
+          const content = header.nextElementSibling;
+          const isOpen = header.classList.contains("active");
+  
+          document.querySelectorAll(".zmb-accordion-header").forEach(h => {
+            h.classList.remove("active");
+            h.querySelector("span").textContent = "+";
+            h.nextElementSibling.style.display = "none";
+          });
+  
+          if (!isOpen) {
+            header.classList.add("active");
+            header.querySelector("span").textContent = "-";
+            content.style.display = "block";
+          }
+        });
+      });
+    </script>
+   <div id="footer"></div>
+   <script src="js/include.js"></script>
+  </body>
+  </html>
