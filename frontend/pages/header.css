@@ -8,7 +8,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
   }
 
   .logo {
@@ -53,3 +58,67 @@
     font-weight: bold;
   }
   
+  select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  /* Newsletter */
+  .newsletter {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: #20638e;
+    color: white;
+    text-align: center;
+  }
+
+  .newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .newsletter p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #dbeaf5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .subscription-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .subscription-form input {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 6px;
+    flex: 1 1 300px;
+    max-width: 450px;
+    font-size: 1rem;
+  }
+
+  .subscription-form button {
+    padding: 15px 25px;
+    background-color: #f47734;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .subscription-form button:hover {
+    background-color: #d95f20;
+  }
