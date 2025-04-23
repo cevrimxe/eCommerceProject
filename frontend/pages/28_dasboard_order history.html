@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sipariş Geçmişi</title>
+  <link rel="stylesheet" href="dasboardorder.css" />
+</head>
+<body>
+
+    <div id="header"></div>
+
+  <div class="kontener">
+    <div class="yan-menu">
+      <ul>
+        <li><span>📊</span><span>Panel</span></li>
+        <li class="aktif"><span>🧾</span><span>Sipariş Geçmişi</span></li>
+        <li><span>📍</span><span>Siparişi Takip Et</span></li>
+        <li><span>🛒</span><span>Alışveriş Sepeti</span></li>
+        <li><span>💖</span><span>İstek Listesi</span></li>
+        <li><span>🔁</span><span>Karşılaştır</span></li>
+        <li><span>💳</span><span>Kartlar ve Adres</span></li>
+        <li><span>🕓</span><span>Geçmiş</span></li>
+        <li><span>⚙️</span><span>Ayarlar</span></li>
+        <li><span>🚪</span><span>Çıkış Yap</span></li>
+      </ul>
+    </div>
+    <div class="icerik">
+      <div class="siparis-tablosu">
+        <table>
+          <thead>
+            <tr>
+              <th>Sipariş No</th>
+              <th>Durum</th>
+              <th>Tarih</th>
+              <th>Toplam</th>
+              <th>İşlem</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#96459761</td>
+              <td class="durum-devam">DEVAM EDİYOR</td>
+              <td>30 Ara 2019 07:52</td>
+              <td>$80 (5 Ürün)</td>
+              <td><a href="#">Detayları Gör</a></td>
+            </tr>
+            <!-- Benzer şekilde diğer satırlar buraya eklenebilir -->
+          </tbody>
+        </table>
+      </div>
+      <div class="sayfalama">
+        <button class="sayfa-btn">←</button>
+        <button class="sayfa-btn aktif">01</button>
+        <button class="sayfa-btn">02</button>
+        <button class="sayfa-btn">03</button>
+        <button class="sayfa-btn">04</button>
+        <button class="sayfa-btn">05</button>
+        <button class="sayfa-btn">06</button>
+        <button class="sayfa-btn">→</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- order history -->
+  <div class="siparis-kapsayici">
+  <div class="siparis-karti">
+    <div class="siparis-bilgi">
+      <div class="durum-etiket">DEVAM EDİYOR</div>
+      <div class="siparis-id">Sipariş No: #71667167</div>
+      <div class="siparis-detay">7 Aralık 2019 23:26 • 2 Ürün</div>
+      <div class="siparis-fiyat">$160,00 USD</div>
+    </div>
+    <button class="detay-ok" aria-label="Detayları Gör">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+  <div id="footer"></div>
+  <script src="js/include.js"></script>
+</body>
+</html>

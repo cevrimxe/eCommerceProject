@@ -1,0 +1,55 @@
+/* Üst Header */
+.main-nav {
+    background: #1565c0;
+    padding: 15px 0;
+  }
+
+  .main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .search-bar {
+    width: 50%;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+  }
+
+  .nav-icons {
+    color: white;
+    font-size: 20px;
+  }
+
+  .sub-nav {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+
+  .sub-nav .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .sub-nav a {
+    text-decoration: none;
+    color: #1565c0;
+  }
+
+  .phone {
+    margin-left: auto;
+    font-weight: bold;
+  }
+  
