@@ -72,61 +72,6 @@ body {
   font-weight: bold;
 }
 
-/* Ana Menü */
-.main-nav {
-  background: #1565c0;
-  padding: 15px 0;
-}
-
-.main-nav .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 20px;
-  color: #fff;
-  font-weight: bold;
-}
-
-.search-bar {
-  width: 50%;
-  padding: 8px;
-  border-radius: 4px;
-  border: none;
-}
-
-.nav-icons {
-  color: white;
-  font-size: 20px;
-}
-
-/* Alt Menü */
-.sub-nav {
-  background: #fff;
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
-}
-
-.sub-nav .container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  align-items: center;
-  font-size: 14px;
-}
-
-.sub-nav a {
-  text-decoration: none;
-  color: #1565c0;
-}
-
-.phone {
-  margin-left: auto;
-  font-weight: bold;
-}
-
 /* Ana İçerik */
 .main-content {
   display: flex;
@@ -651,49 +596,7 @@ body {
   margin-bottom: 5px;
 } 
 
-.subscription-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 30px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.subscription-form input {
-  padding: 15px 20px;
-  border: none;
-  border-radius: 6px;
-  flex: 1 1 300px;
-  max-width: 450px;
-  font-size: 1rem;
-}
-
-.subscription-form button {
-  padding: 15px 25px;
-  background-color: #f47734;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.subscription-form button:hover {
-  background-color: #d95f20;
-}
-
-.stars {
-  color: orange;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
 
 
 /* Responsive */

@@ -4,37 +4,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>İNTERNET TEKNOLOJİLERİ PROJE</title>
   <link rel="stylesheet" href="shoppages.css" />
+  <link rel="stylesheet" href="header.css" />
   <script src="../assets/script.js" defer></script>
+  <script src="js/include.js" defer></script>
 </head>
 <body>
 
-  <!-- Üst Banner -->
-  <div class="top-banner">
-  </div>
+  <div data-include="header"></div>
+  <button onclick="refresh_products_raw()">refresh_products_raw</button>
 
-  <!-- Ana Menü -->
-  <nav class="main-nav">
-    <div class="container">
-      <div class="logo">🔵 İNT. TEKNO.</div>
-      <input type="text" class="search-bar" placeholder="Search for anything..." />
-      <div class="nav-icons">🛒 ♥ 👤</div>
-    </div>
-  </nav>
-
-  <!-- Alt Menü -->
-  <div class="sub-nav">
-    <div class="container">
-      <select>
-        <option>All Category</option>
-      </select>
-      <a href="#">Track Order</a>
-      <a href="#">------</a>
-      <a href="#">------</a>
-      <a href="#">------</a>
-      <button onclick="refresh_products_raw()">refresh_products_raw</button>
-      <span class="phone">📞 +90 0555 555 55 55</span>
-    </div>
-  </div>
 
   <nav class="breadcrumb">
     <ul>
@@ -181,7 +159,7 @@
 
 
 
-  <!-- footer -->
+  <!-- footer
   <section class="newsletter">
     <h2>Subscribe to our newsletter</h2>
     <p>
@@ -194,7 +172,10 @@
     </form>
   
   
-  </section>
+  </section> -->
+
+  <div data-include="footer"></div>
+  
   
   </body>
 </html>

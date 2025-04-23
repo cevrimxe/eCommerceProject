@@ -2,13 +2,13 @@
   /*setting css*/
 
 
-  /* * {
+  * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     
-  } */
+  }
 
   body {
     background-color: #f9f9f9;
@@ -91,8 +91,8 @@
     margin-bottom: 5px;
   }
 
-  input, select {
-    /* width: 100%; */
+  input{
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
