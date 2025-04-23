@@ -1,0 +1,286 @@
+/* Üst Header */
+.main-nav {
+    background: #1565c0;
+    padding: 15px 0;
+  }
+
+  .main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .search-bar {
+    width: 50%;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+  }
+
+  .nav-icons {
+    color: white;
+    font-size: 20px;
+  }
+
+  .sub-nav {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+
+  .sub-nav .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .sub-nav a {
+    text-decoration: none;
+    color: #1565c0;
+  }
+
+  .phone {
+    margin-left: auto;
+    font-weight: bold;
+  }
+
+/*cardveaddress*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9fafb;
+    
+  }
+
+  .ana-kapsayici {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 70vh;
+  }
+
+  .odeme-baslik {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 7vh;
+  }
+
+  .odeme-baslik h2 {
+    font-size: 18px;
+  }
+
+  .kart-ekle {
+    color: #f97316;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .kartlar-alani {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .kart-kutu {
+    flex: 1;
+    min-width: 280px;
+    background-color: #1e3a8a;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+  }
+
+  .kart-kutu.yesil {
+    background-color: #047857;
+  }
+
+  .kart-miktar {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .kart-numara, .kart-sahibi {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .kart-logo {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .kart-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+  }
+
+  .kart-kutu:hover .kart-menu {
+    display: flex;
+  }
+
+  .kart-menu button {
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .adres-kapsayici {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .adres-kutu {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  .adres-kutu.secili {
+    border: 2px dashed #3b82f6;
+  }
+
+  .adres-baslik {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .adres-icerik {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #374151;
+  }
+
+  .adres-dugme {
+    padding: 8px 16px;
+    background-color: white;
+    color: #3b82f6;
+    border: 1px solid #3b82f6;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .adres-dugme:hover {
+    background-color: #3b82f6;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .kartlar-alani, .adres-kapsayici {
+      flex-direction: column;
+    }
+  }
+  /* Newsletter */
+  .newsletter {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: #20638e;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .newsletter p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #dbeaf5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .subscription-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .subscription-form input {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 6px;
+    flex: 1 1 300px;
+    max-width: 450px;
+    font-size: 1rem;
+  }
+
+  .subscription-form button {
+    padding: 15px 25px;
+    background-color: #f47734;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .subscription-form button:hover {
+    background-color: #d95f20;
+  }
+
+  @media (max-width: 768px) {
+    .zmb-container {
+      flex-direction: column;
+    }
+    .search-bar {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .sub-nav .container, .main-nav .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .phone {
+      margin-left: 0;
+    }
+  }

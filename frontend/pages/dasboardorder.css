@@ -1,0 +1,331 @@
+/* Üst Header */
+.main-nav {
+    background: #1565c0;
+    padding: 15px 0;
+  }
+
+  .main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .search-bar {
+    width: 50%;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+  }
+
+  .nav-icons {
+    color: white;
+    font-size: 20px;
+  }
+
+  .sub-nav {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+
+  .sub-nav .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .sub-nav a {
+    text-decoration: none;
+    color: #1565c0;
+  }
+
+  .phone {
+    margin-left: auto;
+    font-weight: bold;
+  }
+
+/*dashboard kısmı*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .yan-menu {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  .yan-menu ul {
+    list-style: none;
+  }
+  .yan-menu li {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .yan-menu li:hover, .yan-menu .aktif {
+    background-color: #ff7a29;
+    color: white;
+  }
+  .yan-menu li span {
+    margin-left: 10px;
+  }
+
+  .icerik {
+    flex: 1;
+    padding: 30px;
+  }
+
+  .siparis-tablosu {
+    width: 100%;
+    overflow-x: auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  .siparis-tablosu table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .siparis-tablosu th, .siparis-tablosu td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+  }
+  .siparis-tablosu th {
+    background-color: #f0f0f0;
+  }
+  .durum-tamamlandi {
+    color: green;
+    font-weight: bold;
+  }
+  .durum-iptal {
+    color: red;
+    font-weight: bold;
+  }
+  .durum-devam {
+    color: orange;
+    font-weight: bold;
+  }
+
+  .sayfalama {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  .sayfa-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .sayfa-btn.aktif {
+    background-color: #ff7a29;
+    color: white;
+  }
+
+  .kontener {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex: 1;
+  }
+
+  @media (max-width: 768px) {
+    .kontener {
+      flex-direction: column;
+    }
+    .yan-menu {
+      width: 100%;
+    }
+  }
+
+  /* Newsletter */
+  .newsletter {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: #20638e;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .newsletter p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #dbeaf5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .subscription-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .subscription-form input {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 6px;
+    flex: 1 1 300px;
+    max-width: 450px;
+    font-size: 1rem;
+  }
+
+  .subscription-form button {
+    padding: 15px 25px;
+    background-color: #f47734;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .subscription-form button:hover {
+    background-color: #d95f20;
+  }
+
+  @media (max-width: 768px) {
+    .zmb-container {
+      flex-direction: column;
+    }
+    .search-bar {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .sub-nav .container, .main-nav .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .phone {
+      margin-left: 0;
+    }
+  }
+
+  /*orderhistory*/
+  .siparis-karti {
+    background-color: white;
+    border-radius: 12px;
+    padding: 16px 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .siparis-bilgi {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .durum-etiket {
+    background-color: #fef3c7;
+    color: #92400e;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  .siparis-id {
+    color: #374151;
+    font-weight: bold;
+  }
+
+  .siparis-detay {
+    color: #6b7280;
+    font-size: 14px;
+  }
+
+  .siparis-fiyat {
+    color: #3b82f6;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .detay-ok {
+    background-color: transparent;
+    border: 2px solid #ffedd5;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .detay-ok:hover {
+    background-color: #ffedd5;
+  }
+
+  .detay-ok svg {
+    width: 16px;
+    height: 16px;
+    stroke: #f97316;
+  }
+
+  @media (max-width: 480px) {
+    .siparis-karti {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .detay-ok {
+      align-self: flex-end;
+    }
+  }
+  .siparis-kapsayici {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+  }

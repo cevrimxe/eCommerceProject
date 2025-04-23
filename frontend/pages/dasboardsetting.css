@@ -1,0 +1,132 @@
+
+  /*setting css*/
+
+
+  /* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    
+  } */
+
+  body {
+    background-color: #f9f9f9;
+    
+    
+  }
+
+  .panel-genel {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .sol-menu {
+    width: 250px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex-shrink: 0;
+  }
+
+  .sol-menu ul {
+    list-style: none;
+  }
+
+  .sol-menu li {
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .sol-menu li:hover, .sol-menu .aktif {
+    background-color: #ff7a00;
+    color: white;
+  }
+
+  .icerik-alani {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ayar-karti {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .profil-alani {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .profil-resmi img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .form-alani {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input, select {
+    /* width: 100%; */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .btn-kaydet {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff7a00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .adres-kutulari {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .adres-kutusu {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  @media (max-width: 768px) {
+    .panel-genel {
+      flex-direction: column;
+    }
+    .sol-menu {
+      width: 100%;
+    }
+  }
+  
+
+  
