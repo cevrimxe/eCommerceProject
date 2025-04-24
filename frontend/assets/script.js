@@ -10,12 +10,12 @@ product_id: 1
 product_name: "Laptop"
 stock: 20
 */
-function refresh_products_raw() {
+function add_products() {
   fetch('../../backend/api/products/get_products.php')
     .then(response => response.json())
     .then(data =>
     {
-      console.log("GOT DATA FROM DB");
+      /* console.log(data); */
       
       let num_of_products = data.length;
       let html = "";
@@ -27,7 +27,7 @@ function refresh_products_raw() {
         `
 
       <div class="product-card">
-        <img src="../assets/paint.png" alt="">
+        <img src="../assets/products/${data[i].product_id}.webp" alt="">
         <div class="product-info">
           <h4>${data[i].product_name}</h4>
           <div class="stars">⭐⭐</div>
@@ -37,7 +37,7 @@ function refresh_products_raw() {
       </div>
         `;
       }
-      product_grid.innerHTML = html;
+      product_grid.innerHTML += html;
       /* product_grid.style.display = ""; */
     })
     .catch(error => {
