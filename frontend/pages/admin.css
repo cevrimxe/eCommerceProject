@@ -1,0 +1,63 @@
+/* Body'yi ortala ve arka plan ver */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Login kutusu */
+  .login-container {
+    background: #fff;
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    text-align: center;
+    width: 320px;
+  }
+  
+  /* Başlık */
+  .login-container h2 {
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  /* Form inputları */
+  .login-form input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  /* Login butonu */
+  .login-form button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #667eea;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover efekti */
+  .login-form button:hover {
+    background-color: #5a67d8;
+  }
+  
+  /* Responsive */
+  @media (max-width: 400px) {
+    .login-container {
+      width: 90%;
+    }
+  }
+  
