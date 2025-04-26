@@ -7,18 +7,18 @@
  */
 
 
-/*
+
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
 include_once "database.php";
 
-// Veritabanı bağlantısını başlat
+//Veritabanı bağlantısını başlat
 $database = new Database();
 $conn = $database->getConnection();
 
-// Tabloları silmek için SQL komutları
+//Tabloları silmek için SQL komutları
 $sql = "
     DROP TABLE IF EXISTS rate_tbl, 
                         cart_tbl, 
@@ -27,11 +27,11 @@ $sql = "
                         product, 
                         category_table, 
                         user_address, 
-                        user_tbl, 
-                        accsess_tbl;
+                        user_tbl,
+                        product_images;
 ";
 
-// Sorguyu çalıştır
+//Sorguyu çalıştır
 $stmt = $conn->prepare($sql);
 
 if ($stmt->execute()) {
@@ -40,5 +40,4 @@ if ($stmt->execute()) {
     echo json_encode(["message" => "Tablo silme hatası."]);
 }
 
-*/
 ?>

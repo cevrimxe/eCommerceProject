@@ -1,8 +1,3 @@
--- 1️⃣ Kullanıcı türleri tablosu
-CREATE TABLE IF NOT EXISTS accsess_tbl (
-    usercode INT PRIMARY KEY,
-    usertype VARCHAR(20)
-);
 
 -- Kullanıcılar tablosunu güncelleme
 CREATE TABLE IF NOT EXISTS user_tbl (
@@ -12,13 +7,12 @@ CREATE TABLE IF NOT EXISTS user_tbl (
     phone VARCHAR(15) UNIQUE,  -- Phone alanına UNIQUE kısıtlaması ekledik
     usercode INT,
     first_name VARCHAR(20) NOT NULL,
-    last_name VARCHAR(20),
-    FOREIGN KEY (usercode) REFERENCES accsess_tbl(usercode) ON DELETE CASCADE
+    last_name VARCHAR(20)
 );
 
 -- 3️⃣ Kullanıcı adresleri
 CREATE TABLE IF NOT EXISTS user_address (
-    add_id INT PRIMARY KEY,
+    add_id SERIAL PRIMARY KEY,
     user_id INT,  -- user_id'yi INT olarak değiştirdik
     address VARCHAR(100),
     city VARCHAR(50),
@@ -29,7 +23,7 @@ CREATE TABLE IF NOT EXISTS user_address (
 
 -- 4️⃣ Kategoriler
 CREATE TABLE IF NOT EXISTS category_table (
-    category_id INT PRIMARY KEY,
+    category_id SERIAL PRIMARY KEY,
     category_name VARCHAR(50)
 );
 
@@ -38,15 +32,17 @@ CREATE TABLE IF NOT EXISTS product (
     product_id SERIAL PRIMARY KEY,
     product_name VARCHAR(50),
     description TEXT,
-    price FLOAT,  -- Fiyatı FLOAT olarak değiştirdik
+    price FLOAT,
     category_id INT,
-    stock INT,  -- Stok miktarını INT olarak değiştirdik
+    stock INT,
+    cover_image_url TEXT, -- 📸 Kapak fotoğrafı
     FOREIGN KEY (category_id) REFERENCES category_table(category_id) ON DELETE CASCADE
 );
 
+
 -- 6️⃣ Siparişler
 CREATE TABLE IF NOT EXISTS order_tbl (
-    order_id INT PRIMARY KEY,
+    order_id SERIAL PRIMARY KEY,
     user_id INT,  -- user_id'yi INT olarak değiştirdik
     order_date DATE,
     total FLOAT,  -- Toplam tutarı FLOAT olarak değiştirdik
@@ -79,10 +75,17 @@ CREATE TABLE IF NOT EXISTS cart_tbl (
 
 -- 9️⃣ Ürün puanlama
 CREATE TABLE IF NOT EXISTS rate_tbl (
-    rate_id INT PRIMARY KEY,
+    rate_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL,  -- user_id'yi INT olarak değiştirdik
     product_id INT,
     rate FLOAT,  -- Puanlama değeri FLOAT olarak değiştirildi
     FOREIGN KEY (user_id) REFERENCES user_tbl(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS product_images (
+    image_id SERIAL PRIMARY KEY,
+    product_id INT NOT NULL,
+    image_url TEXT NOT NULL,
     FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
 );
