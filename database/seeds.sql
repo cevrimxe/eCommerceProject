@@ -15,9 +15,21 @@ INSERT INTO user_address (add_id, user_id, address, city, postal_code, country) 
 
 -- 4️⃣ Kategoriler
 INSERT INTO category_table (category_id, category_name) VALUES
-(1, 'Electronics'),
-(2, 'Clothing'),
-(3, 'Books');
+(1, 'Parfüm'),
+(2, 'Oda Kokusu ve Mum'),
+(3, 'Güneş Kremi'),
+(4, 'Nemlendirici'),
+(5, 'Bakım Serumu'),
+(6, 'Ruj'),
+(7, 'Fondöten'),
+(8, 'Maskara'),
+(9, 'Kapatıcı'),
+(10,'Far'),
+(11, 'Allık'),
+(12, 'Oje'),
+(13, 'Şampuan'),
+(14, 'Saç Kremi'),
+(15, 'Duş Jeli');
 
 -- 5️⃣ Ürünler
 INSERT INTO product (product_id, product_name, description, price, category_id, stock,) VALUES
@@ -27,7 +39,7 @@ INSERT INTO product (product_id, product_name, description, price, category_id, 
 (4, 'Maison Francis Kurkdjian Baccarat Rouge', '75ml. Amber, yasemin ve safran notalarıyla sıcak, şekerli ve kristal gibi parlayan bir iz bırakan, hem kadınlar hem de erkekler için büyüleyici ve çarpıcı bir unisex parfümdür.', 13230.00, 1, 20),
 (5, 'Creed Aventus for Her', '75ml. Ananas, yeşil elma ve miskle açılan, güçlü ama zarif duruşuyla özgüvenli kadınları yansıtan, ferah ve meyvemsi bir kadın parfümüdür.', 6750.00, 1, 20),
 (6, 'Diptyque Philosykos', '100ml. Taze incir, incir yaprağı ve odunsu notalarla Akdeniz ruhunu taşıyan, doğal ve sakin havasıyla hem kadınlar hem de erkekler için ferahlatıcı bir unisex parfümdür.', 7450.00, 1, 10),
-(7, 'Parfums de Marly Delina', '75ml. TTürk gülü, liçi ve miskin başrolde olduğu, feminenliği zarafetle harmanlayan, tatlı, çiçeksi ve aynı zamanda ferah bir kadın parfümüdür.', 13110.00, 1, 10),
+(7, 'Parfums de Marly Delina', '75ml. Türk gülü, liçi ve miskin başrolde olduğu, feminenliği zarafetle harmanlayan, tatlı, çiçeksi ve aynı zamanda ferah bir kadın parfümüdür.', 13110.00, 1, 10),
 (8, 'Yves Saint Laurent Libre', '90ml. Lavanta ve portakal çiçeğinin güçlü birleşimiyle özgür ruhlu kadınları simgeleyen, ferah ama derin, modern ve cesur bir kadın parfümüdür.', 7600.00, 1, 30),
 (9, 'Killian Paris Rolling In Love', '50ml. Badem, vanilya ve iris notalarıyla sıcak, tatlı ve romantik bir iz bırakan, lüks ve yoğun bir kadın parfümüdür.', 10500.00, 1, 10),
 (10, 'Tom Ford Tobacco Vanille', '100ml. Zengin tütün ve vanilya notalarının sıcak, tatlı ve baharatlı bir birleşimiyle derin, lüks ve maskülen bir etki yaratan, kış ayları için mükemmel bir parfümdür.', 14870.00, 1, 10)
