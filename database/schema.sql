@@ -95,3 +95,6 @@ CREATE TABLE IF NOT EXISTS product_images (
     image_url TEXT NOT NULL,
     FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
 );
+
+ALTER TABLE user_tbl DROP CONSTRAINT IF EXISTS user_tbl_usercode_fkey;
+DROP TABLE IF EXISTS accsess_tbl;
