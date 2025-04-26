@@ -1,0 +1,211 @@
+.error-page {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: #1f1f1f;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .error-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  
+  .error-page h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .error-page p {
+    color: #495057;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+  }
+  
+  .btn.back {
+    background-color: #f58220;
+    color: white;
+  }
+  
+  .btn.home {
+    border: 2px solid #f58220;
+    color: #f58220;
+    background-color: transparent;
+  }
+  
+  .btn.back:hover {
+    background-color: #e37310;
+  }
+  
+  .btn.home:hover {
+    background-color: #fef4ec;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9fb;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+  }
+  
+  /* Üst Banner */
+  .top-banner {
+    background: #111;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  .main-nav {
+    background: #1565c0;
+    padding: 15px 0;
+  }
+  
+  .main-nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .search-bar {
+    width: 50%;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+  }
+  
+  .nav-icons {
+    color: white;
+    font-size: 20px;
+  }
+  
+  /* Alt Menü */
+  .sub-nav {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  .sub-nav .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .sub-nav a {
+    text-decoration: none;
+    color: #1565c0;
+  }
+  
+  .phone {
+    margin-left: auto;
+    font-weight: bold;
+  }
+
+
+  @media (max-width: 768px) {
+    .zmb-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  .newsletter {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: #20638e;
+    color: white;
+    text-align: center;
+  }
+  
+  .newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .newsletter p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #dbeaf5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .subscription-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .subscription-form input {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 6px;
+    flex: 1 1 300px;
+    max-width: 450px;
+    font-size: 1rem;
+  }
+  
+  .subscription-form button {
+    padding: 15px 25px;
+    background-color: #f47734;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  @media (max-width: 768px) {
+    .zmb-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }

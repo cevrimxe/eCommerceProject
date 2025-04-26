@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="tabs">
+        <span class="inactive">Sign In</span>
+        <span class="active">Sign Up</span>
+      </div>
+
+      <form>
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <div class="password-wrapper">
+          <input type="password" placeholder="Password" required />
+          <span class="eye">👁️</span>
+        </div>
+        <div class="password-wrapper">
+          <input type="password" placeholder="Confirm Password" required />
+          <span class="eye">👁️</span>
+        </div>
+
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="terms" required />
+          <label for="terms">
+            Are you agree to Clicon
+            <a href="#">Terms of Condition</a> and
+            <a href="#">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <button type="submit">SIGN UP →</button>
+      </form>
+
+      <div class="or">or</div>
+
+      <button class="social google">
+        <img src="https://img.icons8.com/color/24/google-logo.png" alt="Google" />
+        Sign up with Google
+      </button>
+      <button class="social apple">
+        <img src="https://img.icons8.com/ios-filled/24/000000/mac-os.png" alt="Apple" />
+        Sign up with Apple
+      </button>
+    </div>
+  </div>
+</body>
+</html>

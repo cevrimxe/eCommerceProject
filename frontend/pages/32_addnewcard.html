@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="addnewcard.css" />
+</head><!-- Buton -->
+<button id="openCardModal" class="btn">Add New Card</button>
+
+<!-- Modal -->
+<div id="cardModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Add New Card</h2>
+
+    <form id="cardForm">
+      <label for="name">Name on Card</label>
+      <input type="text" id="name" class="input" placeholder="Name on Card">
+
+      <label for="cardNumber">Card Number</label>
+      <input type="text" id="cardNumber" class="input" placeholder="Card Number">
+
+      <div class="row">
+        <div class="half">
+          <label for="expireDate">Expire Date</label>
+          <input type="text" id="expireDate" class="input" placeholder="MM/YY">
+        </div>
+        <div class="half">
+          <label for="cvc">CVC</label>
+          <input type="text" id="cvc" class="input" placeholder="CVC">
+        </div>
+      </div>
+
+      <button type="submit" class="btn">Add Card</button>
+    </form>
+  </div>
+</div>
+
+<script>
+    const cardModal = document.getElementById("cardModal");
+    const openCardBtn = document.getElementById("openCardModal");
+    const closeCard = cardModal.getElementsByClassName("close")[0];
+    
+    // Aç
+    openCardBtn.onclick = function() {
+      cardModal.style.display = "block";
+    }
+    
+    // Kapat (çarpıya basınca)
+    closeCard.onclick = function() {
+      cardModal.style.display = "none";
+    }
+    
+    // Kapat (modal dışına tıklayınca)
+    window.onclick = function(event) {
+      if (event.target == cardModal) {
+        cardModal.style.display = "none";
+      }
+    }
+    </script>
+    
