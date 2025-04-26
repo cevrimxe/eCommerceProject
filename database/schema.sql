@@ -1,8 +1,3 @@
--- 1️⃣ Kullanıcı türleri tablosu
-CREATE TABLE IF NOT EXISTS accsess_tbl (
-    usercode INT PRIMARY KEY,
-    usertype VARCHAR(20)
-);
 
 -- Kullanıcılar tablosunu güncelleme
 CREATE TABLE IF NOT EXISTS user_tbl (
@@ -12,8 +7,7 @@ CREATE TABLE IF NOT EXISTS user_tbl (
     phone VARCHAR(15) UNIQUE,  -- Phone alanına UNIQUE kısıtlaması ekledik
     usercode INT,
     first_name VARCHAR(20) NOT NULL,
-    last_name VARCHAR(20),
-    FOREIGN KEY (usercode) REFERENCES accsess_tbl(usercode) ON DELETE CASCADE
+    last_name VARCHAR(20)
 );
 
 -- 3️⃣ Kullanıcı adresleri
@@ -38,11 +32,13 @@ CREATE TABLE IF NOT EXISTS product (
     product_id SERIAL PRIMARY KEY,
     product_name VARCHAR(50),
     description TEXT,
-    price FLOAT,  -- Fiyatı FLOAT olarak değiştirdik
+    price FLOAT,
     category_id INT,
-    stock INT,  -- Stok miktarını INT olarak değiştirdik
+    stock INT,
+    cover_image_url TEXT, -- 📸 Kapak fotoğrafı
     FOREIGN KEY (category_id) REFERENCES category_table(category_id) ON DELETE CASCADE
 );
+
 
 -- 6️⃣ Siparişler
 CREATE TABLE IF NOT EXISTS order_tbl (
@@ -84,5 +80,12 @@ CREATE TABLE IF NOT EXISTS rate_tbl (
     product_id INT,
     rate FLOAT,  -- Puanlama değeri FLOAT olarak değiştirildi
     FOREIGN KEY (user_id) REFERENCES user_tbl(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS product_images (
+    image_id SERIAL PRIMARY KEY,
+    product_id INT NOT NULL,
+    image_url TEXT NOT NULL,
     FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
 );
