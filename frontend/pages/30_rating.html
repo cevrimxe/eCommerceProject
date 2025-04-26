@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="rating.css" />
+</head>
+    <!-- Buton -->
+<button id="openRatingModal" class="btn">Leave a Rating</button>
+
+<!-- Modal -->
+<div id="ratingModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Leave a Rating</h2>
+
+    <label for="rating">Rating</label>
+    <select id="rating" class="rating-select">
+      <option value="5">⭐️⭐️⭐️⭐️⭐️ 5 Star Rating</option>
+      <option value="4">⭐️⭐️⭐️⭐️ 4 Star Rating</option>
+      <option value="3">⭐️⭐️⭐️ 3 Star Rating</option>
+      <option value="2">⭐️⭐️ 2 Star Rating</option>
+      <option value="1">⭐️ 1 Star Rating</option>
+    </select>
+
+    <button class="btn submit-rating">Publish Rating</button>
+  </div>
+</div>
+
+<script>
+    const modal = document.getElementById("ratingModal");
+    const btn = document.getElementById("openRatingModal");
+    const span = document.getElementsByClassName("close")[0];
+    
+    // Aç
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // Kapat (çarpıya basınca)
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // Kapat (modal dışına tıklayınca)
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+    

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sıkça Sorulan Sorular</title>
+  <link rel="stylesheet" href="faq.css" />
+
+<body>
+    <div id="header"></div>
+
+    <div class="zmb-container">
+      <!-- SSS Alanı -->
+      <div class="zmb-faqs">
+        <h2 class="zmb-faq-title">Sıkça Sorulan Sorular</h2>
+  
+        <div class="zmb-accordion-item">
+          <div class="zmb-accordion-header">Suspendisse ultrices pharetra libero sed interdum. <span>+</span></div>
+          <div class="zmb-accordion-content">
+            Açıklama içeriği buraya gelecek.
+          </div>
+        </div>
+  
+        <div class="zmb-accordion-item">
+          <div class="zmb-accordion-header active">Fusce molestie condimentum facilisis. <span>-</span></div>
+          <div class="zmb-accordion-content" style="display: block;">
+            <p>
+              Nulla malesuada iaculis nisi, vitae sagittis lacus laoreet in. Morbi aliquet pulvinar orci non vulputate...
+            </p>
+            <ul>
+              <li>Vivamus sed est non arcu porta aliquet.</li>
+              <li>Integer et lacus vitae justo fermentum rutrum.</li>
+              <li>Proin blandit nunc risus, at semper turpis.</li>
+              <li>Quisque ut dolor erat.</li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="zmb-accordion-item">
+          <div class="zmb-accordion-header">Quisque quis nunc quis urna tempor lobortis. <span>+</span></div>
+          <div class="zmb-accordion-content">
+            İçerik buraya gelecek.
+          </div>
+        </div>
+  
+        <div class="zmb-accordion-item">
+          <div class="zmb-accordion-header">Donec rutrum ultrices ante nec malesuada. <span>+</span></div>
+          <div class="zmb-accordion-content">
+            İçerik buraya gelecek.
+          </div>
+        </div>
+  
+        <div class="zmb-accordion-item">
+          <div class="zmb-accordion-header">Nulla sed sapien maximus, faucibus massa vitae. <span>+</span></div>
+          <div class="zmb-accordion-content">
+            İçerik buraya gelecek.
+          </div>
+        </div>
+      </div>
+  
+      <!-- Destek Formu -->
+      <div class="zmb-support-form">
+        <h3>Cevabını bulamadın mı? Bize sor!</h3>
+        <p>
+          Sorunun cevabını burada bulamazsan, bizimle iletişime geç. Yardımcı olmaktan memnuniyet duyarız.
+        </p>
+        <input type="email" class="zmb-input" placeholder="E-posta adresin" />
+        <input type="text" class="zmb-input" placeholder="Konu" />
+        <textarea class="zmb-input" rows="4" placeholder="Mesaj (İsteğe bağlı)"></textarea>
+        <button class="zmb-btn">MESAJ GÖNDER →</button>
+      </div>
+    </div>
+  
+    <script>
+      // Accordion Etkileşimi
+      document.querySelectorAll(".zmb-accordion-header").forEach(header => {
+        header.addEventListener("click", () => {
+          const content = header.nextElementSibling;
+          const isOpen = header.classList.contains("active");
+  
+          document.querySelectorAll(".zmb-accordion-header").forEach(h => {
+            h.classList.remove("active");
+            h.querySelector("span").textContent = "+";
+            h.nextElementSibling.style.display = "none";
+          });
+  
+          if (!isOpen) {
+            header.classList.add("active");
+            header.querySelector("span").textContent = "-";
+            content.style.display = "block";
+          }
+        });
+      });
+    </script>
+   <div id="footer"></div>
+   <script src="js/include.js"></script>
+  </body>
+  </html>
