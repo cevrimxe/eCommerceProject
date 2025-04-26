@@ -55,7 +55,17 @@ INSERT INTO product ( product_name, description, price, category_id, stock) VALU
 ('LANCASTER Sun Perfect Unifying Serum', 'SPF 50. Cilt tonunu dengeleyip lekeleri azaltırken yüksek UV koruması sağlayan, hafif ve nemlendirici özellikte bir serumdur.', 2560.00, 3, 10),
 ('SUPERGOOP! Glowscreen', 'SPF 30 PA+++ ile cilde güneş koruması sağlarken, hyaluronic asit ve niacinamide içeriğiyle nemlendirir, aydınlık bir ışıltı kazandırır', 2899.00, 3, 10),
 ('LA MER The Radiant Skintint', 'SPF 30. Cilt tonunu eşitleyip doğal bir ışıltı sağlarken güneş koruması sunan hafif ve nemlendirici özellikte bir renkli nemlendiricidir.', 4510.0, 3, 10),
-('DIOR Dreamskin Moist & Perfect Cushion', 'SPF 50 - PA+++, Cilt tonunu eşitleyip gözenek görünümünü azaltarak doğal, mat ve ışıltılı bir görünüm sunan, yüksek UV koruması sağlayan, yaşlanma karşıtı etki gösteren ve anında nemlendirici özellik sunan bir makyaj ve cilt bakım ürünüdür.', 3795.00, 3, 10);
+('DIOR Dreamskin Moist & Perfect Cushion', 'SPF 50 - PA+++, Cilt tonunu eşitleyip gözenek görünümünü azaltarak doğal, mat ve ışıltılı bir görünüm sunan, yüksek UV koruması sağlayan, yaşlanma karşıtı etki gösteren ve anında nemlendirici özellik sunan bir makyaj ve cilt bakım ürünüdür.', 3795.00, 3, 10),
+('GLOW RECIPE Plum Plump', '20ml. Kakadu eriği ve çok moleküllü hyaluronik asit içeriğiyle cildi yoğun şekilde nemlendirip dolgunlaştıran, hafif yapılı ve yağsız bir jel kremdir.', 1420.00, 4, 15),
+('THE ORDINARY Natural Moisturizing Factors', '30ml. Cildin doğal nem bariyerini destekleyen amino asitler, hyaluronik asit ve seramidler içeren, hafif yapılı ve yağsız bir nemlendiricidir.', 295.00, 4, 15),
+('CLINIQUE Moisture Surge™', '30ml. Aloe bioferment ve hyaluronik asit içeriğiyle cildi 3 saniyede nemlendirip 100 saate kadar nemi hapseden, yağsız ve hafif yapılı bir jel kremdir.', 1025.00, 4, 15),
+('BYOMA Moisturizing Gel Cream', '50ml. Tri-Ceramide Kompleksi, niacinamide ve yeşil çay özleriyle cilt bariyerini güçlendirip nemlendiren, hafif yapılı ve yağsız bir jel kremdir.', 1089.00, 4, 15),
+('LA MER Moisturizing Cream', '30ml. Deniz kaynaklı Miracle Broth™ içeriğiyle cildi derinlemesine nemlendirip yatıştıran, ince çizgi ve kırışıklık görünümünü azaltarak cilde genç ve sağlıklı bir ışıltı kazandıran lüks bir nemlendiricidir.',9260.00, 4, 15),
+('Bioderma Atoderm Ultra', '500ml. Gliserin, niasinamid ve omega 3-6-9 içeriğiyle cildi 24 saat boyunca nemlendirip besleyen, kuru ve hassas ciltler için yüz ve vücutta kullanılabilen, bebek, çocuk ve yetişkinlere uygun, hafif dokulu ve gözenekleri tıkamayan bir nemlendirici kremdir.', 845.00, 4, 15),
+('cream co. Moisturizer', '50ml. Beş çeşit hyalronik asit, niasinamid ve panthenol içeriğiyle cildi derinlemesine nemlendirip aydınlatan, su bazlı ve hafif yapılı bir yüz nemlendiricisidir.', 291.00, 4, 15),
+('IS Clinical Youth Intensive Creme', '50g. Hyaluronik asit, C vitamini ve bakır tripeptit gibi güçlü içerikleriyle cildi 24 saat boyunca derinlemesine nemlendirip ince çizgi ve kırışıklık görünümünü azaltan, yaşlanma karşıtı lüks bir bakım kremidir.', 15988.50, 4, 15),
+('Aveda Stress Fix Body Lotion', '200ml. Organik lavanta ve adaçayı özleriyle formüle edilerek cildi nemlendirirken, stres hissini azaltmaya yardımcı olan rahatlatıcı bir vücut losyonudur.', 2810.00, 4, 15),
+('Janssen Cosmetics Nemlendirici Krem', '50ml. Kuru ve nemsiz ciltler için özel olarak formüle edilmiş, cildi derinlemesine nemlendirip besleyen, hafif dokulu ve hızlı emilen bir bakım kremidir.', 1460.00, 4, 15);
 -- 6️⃣ Siparişler
 INSERT INTO order_tbl (user_id, order_date, total) VALUES
 (1, '2025-04-08', 1020.00),
