@@ -32,19 +32,25 @@ INSERT INTO category_table (category_id, category_name) VALUES
 (15, 'Duş Jeli');
 
 -- 5️⃣ Ürünler
-INSERT INTO product (product_id, product_name, description, price, category_id, stock,) VALUES
+INSERT INTO product (product_id, product_name, description, price, category_id, stock) VALUES
 (1, 'BLEU DE CHANEL', '50ml. Odunsu ve aromatik yapısıyla maskülen zarafeti yansıtan, modern ve kendine güvenen erkeklerin imza kokusu olmaya aday, ferah ama derinlikli bir parfümdür.', 4400.00, 1, 20),
 (2, 'Frédéric Malle Portrait of a Lady', '100ml. Yoğun gül ve paçuli notalarıyla zarif ama baş döndürücü bir tutkunun kokusal ifadesidir.', 16950.00, 1, 20),
 (3, 'Byredo Mojave Ghost', '100ml. Çölün gizemli ve narin ruhunu yansıtan, hafif odunsu ve çiçeksi yapısıyla hem kadınlar hem de erkekler tarafından kullanılabilen zarif ve sakin bir unisex parfümdür.', 12840.00, 1, 10),
 (4, 'Maison Francis Kurkdjian Baccarat Rouge', '75ml. Amber, yasemin ve safran notalarıyla sıcak, şekerli ve kristal gibi parlayan bir iz bırakan, hem kadınlar hem de erkekler için büyüleyici ve çarpıcı bir unisex parfümdür.', 13230.00, 1, 20),
 (5, 'Creed Aventus for Her', '75ml. Ananas, yeşil elma ve miskle açılan, güçlü ama zarif duruşuyla özgüvenli kadınları yansıtan, ferah ve meyvemsi bir kadın parfümüdür.', 6750.00, 1, 20),
 (6, 'Diptyque Philosykos', '100ml. Taze incir, incir yaprağı ve odunsu notalarla Akdeniz ruhunu taşıyan, doğal ve sakin havasıyla hem kadınlar hem de erkekler için ferahlatıcı bir unisex parfümdür.', 7450.00, 1, 10),
-(7, 'Parfums de Marly Delina', '75ml. Türk gülü, liçi ve miskin başrolde olduğu, feminenliği zarafetle harmanlayan, tatlı, çiçeksi ve aynı zamanda ferah bir kadın parfümüdür.', 13110.00, 1, 10),
+(7, 'Parfums de Marly Delina', '75ml. TTürk gülü, liçi ve miskin başrolde olduğu, feminenliği zarafetle harmanlayan, tatlı, çiçeksi ve aynı zamanda ferah bir kadın parfümüdür.', 13110.00, 1, 10),
 (8, 'Yves Saint Laurent Libre', '90ml. Lavanta ve portakal çiçeğinin güçlü birleşimiyle özgür ruhlu kadınları simgeleyen, ferah ama derin, modern ve cesur bir kadın parfümüdür.', 7600.00, 1, 30),
 (9, 'Killian Paris Rolling In Love', '50ml. Badem, vanilya ve iris notalarıyla sıcak, tatlı ve romantik bir iz bırakan, lüks ve yoğun bir kadın parfümüdür.', 10500.00, 1, 10),
-(10, 'Tom Ford Tobacco Vanille', '100ml. Zengin tütün ve vanilya notalarının sıcak, tatlı ve baharatlı bir birleşimiyle derin, lüks ve maskülen bir etki yaratan, kış ayları için mükemmel bir parfümdür.', 14870.00, 1, 10)
+(10, 'Tom Ford Tobacco Vanille', '100ml. Zengin tütün ve vanilya notalarının sıcak, tatlı ve baharatlı bir birleşimiyle derin, lüks ve maskülen bir etki yaratan, kış ayları için mükemmel bir parfümdür.', 14870.00, 1, 10),
+(11, 'Jo Malone London Velvet Rose & Oud', '165ml. Zengin gül ve yoğun odunsu oud notalarıyla bulunduğu ortama sıcaklık, lüks ve gizemli bir atmosfer katan, özellikle şık ve sofistike alanlar için ideal bir oda kokusu etkisi yaratır.', 4920.00, 2, 15),
+(12, 'Atelier Rebul İstanbul Xl Scented Candle', '950gr. Bergamot, baharatlar ve odunsu notalarla İstanbulun mistik ruhunu yansıtarak ortama sıcak ve lüks bir atmosfer katan büyük boy bir kokulu mumdur.', 5200.00, 2, 15),
+(13, 'FEU DE CIEL Kalp Çakra', '130gr. Gül notalarıyla kalp çakrasını dengelemeyi hedefleyen, duygusal blokajlardan arınmaya ve içsel huzura katkı sağlayan, doğal içerikli ve el yapımı bir mumdur.', 949.90, 2, 15),
+(14, 'Charya Maison Mystic Amber', '230gr. Amber ve sandal ağacının sıcak tonlarıyla derin ve sofistike bir atmosfer yaratan doğal ve vegan bir kokulu mumdur.', 750.00, 2, 15),
+(15, 'Atelier Rebul Saffron Oud', '200ml. Havuç ve tarçınla açılıp safran, tütsü ve deriyle zenginleşen, paçuli ve sandal ağacıyla derinleşen, sofistike ve baharatlı bir atmosfer yaratan lüks bir oda kokusudur.', 1700.00, 2, 15),
+(16, 'Jo Malone London English Pear & Freesia', '200gr. Olgun armut ve beyaz frezya notalarının amber ve paçuliyle harmanlandığı, ferah, zarif ve sofistike bir kadın parfümüdür.', 2720.00, 2, 15),
+(17, 'Yankee Candle Amber & Sandalwood', '567gr. Odunsu sandal ağacı ve sıcak amberin birleşimiyle sofistike ve rahatlatıcı bir atmosfer yaratan, tatlı ve baharatlı notalara sahip bir kokulu mumdur.', 1799.00, 2, 1)
 ;
-
 -- 6️⃣ Siparişler
 INSERT INTO order_tbl (order_id, user_id, order_date, total) VALUES
 (1, 1, '2025-04-08', 1020.00),
