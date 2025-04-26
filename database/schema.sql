@@ -1,8 +1,3 @@
--- 1️⃣ Kullanıcı türleri tablosu
-CREATE TABLE IF NOT EXISTS accsess_tbl (
-    usercode INT PRIMARY KEY,
-    usertype VARCHAR(20)
-);
 
 -- Kullanıcılar tablosunu güncelleme
 CREATE TABLE IF NOT EXISTS user_tbl (
@@ -12,8 +7,7 @@ CREATE TABLE IF NOT EXISTS user_tbl (
     phone VARCHAR(15) UNIQUE,  -- Phone alanına UNIQUE kısıtlaması ekledik
     usercode INT,
     first_name VARCHAR(20) NOT NULL,
-    last_name VARCHAR(20),
-    FOREIGN KEY (usercode) REFERENCES accsess_tbl(usercode) ON DELETE CASCADE
+    last_name VARCHAR(20)
 );
 
 -- 3️⃣ Kullanıcı adresleri
@@ -95,6 +89,3 @@ CREATE TABLE IF NOT EXISTS product_images (
     image_url TEXT NOT NULL,
     FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
 );
-
-ALTER TABLE user_tbl DROP CONSTRAINT IF EXISTS user_tbl_usercode_fkey;
-DROP TABLE IF EXISTS accsess_tbl;
