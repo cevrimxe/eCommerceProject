@@ -28,7 +28,7 @@ $product_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 if ($product_id > 0 && !empty($data->product_name) && !empty($data->description) && !empty($data->price) && !empty($data->stock)) {
     // Ürün bilgilerini güncelle
-    $query = "UPDATE product SET product_name = :product_name, description = :description, price = :price, stock = :stock WHERE product_id = :id";
+    $query = "UPDATE product SET product_name = :product_name, description = :description, price = :price, stock = :stock, cover_image_url = :cover_image_url WHERE product_id = :id";
     $stmt = $conn->prepare($query);
 
     // Parametreleri bağla
@@ -37,6 +37,10 @@ if ($product_id > 0 && !empty($data->product_name) && !empty($data->description)
     $stmt->bindParam(":price", $data->price);
     $stmt->bindParam(":stock", $data->stock);
     $stmt->bindParam(":id", $product_id);
+    if (empty($data->cover_image_url)) {
+        $data->cover_image_url = null;
+    }
+    $stmt->bindParam(":cover_image_url", $data->cover_image_url);
 
     // Sorguyu çalıştır ve yanıtı dön
     if ($stmt->execute()) {

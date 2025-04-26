@@ -1,4 +1,3 @@
-
 -- 2️⃣ Kullanıcılar
 INSERT INTO user_tbl (pass_word, email, phone, usercode, first_name, last_name) VALUES
 ('hashedpassword1', 'john@example.com', '1234567890', 1, 'John', 'Doe'),
@@ -56,6 +55,7 @@ INSERT INTO product ( product_name, description, price, category_id, stock) VALU
 ('SUPERGOOP! Glowscreen', 'SPF 30 PA+++ ile cilde güneş koruması sağlarken, hyaluronic asit ve niacinamide içeriğiyle nemlendirir, aydınlık bir ışıltı kazandırır', 2899.00, 3, 10),
 ('LA MER The Radiant Skintint', 'SPF 30. Cilt tonunu eşitleyip doğal bir ışıltı sağlarken güneş koruması sunan hafif ve nemlendirici özellikte bir renkli nemlendiricidir.', 4510.0, 3, 10),
 ('DIOR Dreamskin Moist & Perfect Cushion', 'SPF 50 - PA+++, Cilt tonunu eşitleyip gözenek görünümünü azaltarak doğal, mat ve ışıltılı bir görünüm sunan, yüksek UV koruması sağlayan, yaşlanma karşıtı etki gösteren ve anında nemlendirici özellik sunan bir makyaj ve cilt bakım ürünüdür.', 3795.00, 3, 10);
+
 -- 6️⃣ Siparişler
 INSERT INTO order_tbl (user_id, order_date, total) VALUES
 (1, '2025-04-08', 1020.00),
@@ -63,16 +63,16 @@ INSERT INTO order_tbl (user_id, order_date, total) VALUES
 
 -- 7️⃣ Sipariş detayları
 INSERT INTO order_detail (order_id, product_id, quantity, unit_price, total) VALUES
-(1, 1, 1000.00, 1000.00),
-(2, 1, 20.00, 20.00),
-(2, 2, 20.00, 40.00);
+(1,1, 1, 1000.00, 1000.00),
+(1,2, 1, 20.00, 20.00),
+(1,2, 2, 20.00, 40.00);
 
 -- 8️⃣ Sepet tablosu
 INSERT INTO cart_tbl (user_id, product_id, quantity, unit_price, total) VALUES
-(1, 1, 1000.00, 1000.00),
-(3, 2, 15.00, 30.00);
+(1,1, 1, 1000.00, 1000.00),
+(1,3, 2, 15.00, 30.00);
 
 -- 9️⃣ Ürün puanlama
 INSERT INTO rate_tbl (user_id, product_id, rate) VALUES
-(1, 4.5),
-(2, 4.0);
+(1,1, 4.5),
+(1,2, 4.0);
