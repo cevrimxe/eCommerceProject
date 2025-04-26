@@ -23,8 +23,8 @@ $data = json_decode(file_get_contents("php://input"));
 // Veriyi kontrol et
 if (!empty($data->product_name) && !empty($data->price) && !empty($data->category_id) && isset($data->stock)) {
     // Ürün ekleme sorgusu
-    $query = "INSERT INTO product (product_name, description, price, category_id, stock) 
-              VALUES (:product_name, :description, :price, :category_id, :stock)";
+    $query = "INSERT INTO product (product_name, description, price, category_id, stock, cover_image_url) 
+              VALUES (:product_name, :description, :price, :category_id, :stock, :cover_image_url)";
     $stmt = $conn->prepare($query);
 
     // Parametreleri bağla
@@ -33,6 +33,7 @@ if (!empty($data->product_name) && !empty($data->price) && !empty($data->categor
     $stmt->bindParam(":price", $data->price);
     $stmt->bindParam(":category_id", $data->category_id);
     $stmt->bindParam(":stock", $data->stock);
+    $stmt->bindParam(":cover_image_url", $data->cover_image_url);
 
     // Sorguyu çalıştır ve yanıtı dön
     if ($stmt->execute()) {

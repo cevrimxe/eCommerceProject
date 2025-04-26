@@ -12,7 +12,7 @@ $conn = $database->getConnection();
 $product_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 if ($product_id > 0) {
-    $query = "SELECT product_id, product_name, description, price, category_id, stock FROM product WHERE product_id = :id";
+    $query = "SELECT product_id, product_name, description, price, category_id, stock, cover_image_url FROM product WHERE product_id = :id";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(":id", $product_id);
     $stmt->execute();

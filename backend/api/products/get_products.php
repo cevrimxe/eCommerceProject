@@ -9,7 +9,7 @@ $database = new Database();
 $conn = $database->getConnection();
 
 // Ürünleri çek
-$query = "SELECT product_id, product_name, description, price, category_id, stock FROM product";
+$query = "SELECT product_id, product_name, description, price, category_id, stock, cover_image_url FROM product";
 $stmt = $conn->prepare($query);
 $stmt->execute();
 
