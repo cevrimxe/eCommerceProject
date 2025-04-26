@@ -50,7 +50,16 @@ INSERT INTO product (product_id, product_name, description, price, category_id, 
 (15, 'Atelier Rebul Saffron Oud', '200ml. Havuç ve tarçınla açılıp safran, tütsü ve deriyle zenginleşen, paçuli ve sandal ağacıyla derinleşen, sofistike ve baharatlı bir atmosfer yaratan lüks bir oda kokusudur.', 1700.00, 2, 15),
 (16, 'Jo Malone London English Pear & Freesia', '200gr. Olgun armut ve beyaz frezya notalarının amber ve paçuliyle harmanlandığı, ferah, zarif ve sofistike bir kadın parfümüdür.', 2720.00, 2, 15),
 (17, 'Yankee Candle Amber & Sandalwood', '567gr. Odunsu sandal ağacı ve sıcak amberin birleşimiyle sofistike ve rahatlatıcı bir atmosfer yaratan, tatlı ve baharatlı notalara sahip bir kokulu mumdur.', 1799.00, 2, 1)
-;
+(18, 'Shiseido Clear Suncare Stick', 'SPF 50+. Ciltte beyaz iz bırakmadan yüksek koruma sağlayan, hafif ve suya dayanıklı güneş koruyucu stikttir.', 2790.00, 3, 10),
+(19, 'Beauty Of Joseon Matte Mugwort + Camelia', 'SPF 50+ PA++++ ile yüksek koruma sağlarken, mat bir bitiş ve hafif, yağsız bir görünüm sunan, cilt dostu ve pratik bir güneş koruyucu sticktir.', 1019.00, 3, 10),
+(20, 'La Roche Posay Anthelios İnvisible Fluid', 'Spf 50+. Yüksek UV koruması sağlayan, ciltte iz bırakmayan, hafif ve suya dayanıklı güneş koruyucu fluidtir.', 687.06, 3, 10),
+(21, 'Lancome UV Expert Youth Shield Milky Bright', 'SPF 50+. Geniş spektrumlu koruma sunan, cilt tonunu dengeleyen ve nemlendirici etkisiyle genç görünüm sağlayan güneş koruyucu kremdir.', 2800.00, 3, 10),
+(22, 'SISLEY Super Soin Solitaire Youth', 'SPF 30. Cildi UV ışınlarından korurken, anti-aging etkisiyle cildin genç ve sağlıklı kalmasını sağlayan güneş koruyucu bakım ürünüdür.', 7780.0, 3, 10),
+(23, 'CLINIQUE Moisture Surge Sheertint Hydrator', 'SPF 25. Hafif renkli dokusu ve nemlendirici formülüyle cilde doğal bir ışıltı verirken UV koruması sunan cilt bakım ürünüdür.', 1600.00, 3, 10),
+(24, 'LANCASTER Sun Perfect Unifying Serum', 'SPF 50. Cilt tonunu dengeleyip lekeleri azaltırken yüksek UV koruması sağlayan, hafif ve nemlendirici özellikte bir serumdur.', 2560.00, 3, 10),
+(25, 'SUPERGOOP! Glowscreen', 'SPF 30 PA+++ ile cilde güneş koruması sağlarken, hyaluronic asit ve niacinamide içeriğiyle nemlendirir, aydınlık bir ışıltı kazandırır', 2899.00, 3, 10),
+(26, 'LA MER The Radiant Skintint', 'SPF 30. Cilt tonunu eşitleyip doğal bir ışıltı sağlarken güneş koruması sunan hafif ve nemlendirici özellikte bir renkli nemlendiricidir.', 4510.0, 3, 10),
+(27, 'DIOR Dreamskin Moist & Perfect Cushion', 'SPF 50 - PA+++, Cilt tonunu eşitleyip gözenek görünümünü azaltarak doğal, mat ve ışıltılı bir görünüm sunan, yüksek UV koruması sağlayan, yaşlanma karşıtı etki gösteren ve anında nemlendirici özellik sunan bir makyaj ve cilt bakım ürünüdür.', 3795.00, 3, 10);
 -- 6️⃣ Siparişler
 INSERT INTO order_tbl (order_id, user_id, order_date, total) VALUES
 (1, 1, '2025-04-08', 1020.00),
