@@ -21,7 +21,7 @@ INSERT INTO category_table (category_name) VALUES
 ('Maskara'),
 ('Kapatıcı'),
 ('Far'),
-('Allık'),
+('Pudra'),
 ('Oje'),
 ('Şampuan'),
 ('Saç Kremi'),
