@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS category_table (
 -- 5️⃣ Ürünler
 CREATE TABLE IF NOT EXISTS product (
     product_id SERIAL PRIMARY KEY,
-    product_name VARCHAR(50),
+    product_name VARCHAR(70),
     description TEXT,
     price FLOAT,
     category_id INT,
@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS product (
     cover_image_url TEXT, -- 📸 Kapak fotoğrafı
     FOREIGN KEY (category_id) REFERENCES category_table(category_id) ON DELETE CASCADE
 );
+
 
 
 -- 6️⃣ Siparişler
