@@ -65,7 +65,17 @@ INSERT INTO product ( product_name, description, price, category_id, stock) VALU
 ('cream co. Moisturizer', '50ml. Beş çeşit hyalronik asit, niasinamid ve panthenol içeriğiyle cildi derinlemesine nemlendirip aydınlatan, su bazlı ve hafif yapılı bir yüz nemlendiricisidir.', 291.00, 4, 15),
 ('IS Clinical Youth Intensive Creme', '50g. Hyaluronik asit, C vitamini ve bakır tripeptit gibi güçlü içerikleriyle cildi 24 saat boyunca derinlemesine nemlendirip ince çizgi ve kırışıklık görünümünü azaltan, yaşlanma karşıtı lüks bir bakım kremidir.', 15988.50, 4, 15),
 ('Aveda Stress Fix Body Lotion', '200ml. Organik lavanta ve adaçayı özleriyle formüle edilerek cildi nemlendirirken, stres hissini azaltmaya yardımcı olan rahatlatıcı bir vücut losyonudur.', 2810.00, 4, 15),
-('Janssen Cosmetics Nemlendirici Krem', '50ml. Kuru ve nemsiz ciltler için özel olarak formüle edilmiş, cildi derinlemesine nemlendirip besleyen, hafif dokulu ve hızlı emilen bir bakım kremidir.', 1460.00, 4, 15);
+('Janssen Cosmetics Nemlendirici Krem', '50ml. Kuru ve nemsiz ciltler için özel olarak formüle edilmiş, cildi derinlemesine nemlendirip besleyen, hafif dokulu ve hızlı emilen bir bakım kremidir.', 1460.00, 4, 15),
+('THE ORDINARY Hyaluronıc Acid %2 + B5', '30ml. Cildi derinlemesine nemlendirip dolgunlaştırırken, vitamin B5 ile cilt bariyerini güçlendirip su kaybını azaltan, hafif yapılı ve yağsız bir serumdur.', 398.90, 5, 20),
+('ESTÉE LAUDER Advanced Night Repair', '30ml. Cildin gece boyunca onarımını destekleyen, hiyalüronik asit ve Chronolux™ Power Signal Teknolojisi içeren, yaşlanma karşıtı etkileriyle bilinen bir gece serumudur.', 3850.00, 5, 20),
+('GLOW RECIPE Watermelon Glow Dew Drops', '15ml. Cilde anında ışıltı kazandıran, niasinamid ve su kavunu özü içeren, ışıltılı bir serumdur. Mika, sim veya inci içermez, bu sayede doğal bir parlaklık sağlar.', 1340.00, 5, 20),
+('CLINIQUE Moisture Surge Active Glow', '30ml. Cildi derinlemesine nemlendirip aydınlatarak anında ışıltı sağlayan, dermatologlar tarafından hassas ciltler dahil tüm cilt tipleri için test edilmiş, parfümsüz ve alerji testinden geçmiş bir serumdur.',  1990.00, 5, 20),
+('DIOR Capture Totale Super Potent Eye Serum', '20ml. Göz çevresindeki 9 yaşlanma belirtisini hedef alarak, özel 360° Cryo-Flex aplikatörüyle uygulandığında anında ışıltı ve sıkılaşma sağlar; 4 haftada göz çevresini 4 yaş daha genç gösterir.', 5110.00, 5, 20),
+('LANCÔME Rénergie Triple Serum', '50ml. CLancôme Rénergie H.C.F. Triple Serum, cilt tonunu eşitleyen, kırışıklık görünümünü azaltan ve cilde anında ışıltı sağlayan üçlü etkiye sahip yaşlanma karşıtı bir serumdur.', 7250.00, 5, 20),
+('La Roche Posay Hyalu B5', '30ml. İki çeşit hyalüronik asit ve vitamin B5 içeren formülüyle cildi derinlemesine nemlendirir, kırışıklıkların görünümünü azaltarak dolgun ve sıkı bir görünüm sağlar.', 2166.00, 5, 20),
+('Clarins Double Serum Light Texture', '50ml. Cildi nemlendirirken ince çizgilerin görünümünü azaltarak daha sıkı ve parlak bir cilt sağlar.', 5480.00, 5, 20),
+('Lumene Moisturizing Prebiotic Oil Coctail', '30ml. Cildin nem bariyerini destekleyerek 24 saat boyunca yoğun nem sağlar ve kuru ciltler için özel olarak formüle edilmiştir.', 1100.00, 5, 20),
+('Anua Niacinamide 10% + TXA 4%', '30ml. Cilt tonunu eşitleyerek lekelerin görünümünü azaltır, gözenekleri sıkılaştırır ve cilde ışıltı kazandırır.', 1235.20, 5, 20);
 -- 6️⃣ Siparişler
 INSERT INTO order_tbl (user_id, order_date, total) VALUES
 (1, '2025-04-08', 1020.00),
