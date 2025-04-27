@@ -49,7 +49,7 @@ INSERT INTO product ( product_name, description, price, category_id, stock) VALU
 ('Shiseido Clear Suncare Stick', 'SPF 50+. Ciltte beyaz iz bırakmadan yüksek koruma sağlayan, hafif ve suya dayanıklı güneş koruyucu stikttir.', 2790.00, 3, 10),
 ('Beauty Of Joseon Matte Mugwort + Camelia', 'SPF 50+ PA++++ ile yüksek koruma sağlarken, mat bir bitiş ve hafif, yağsız bir görünüm sunan, cilt dostu ve pratik bir güneş koruyucu sticktir.', 1019.00, 3, 10),
 ('La Roche Posay Anthelios İnvisible Fluid', 'Spf 50+. Yüksek UV koruması sağlayan, ciltte iz bırakmayan, hafif ve suya dayanıklı güneş koruyucu fluidtir.', 687.06, 3, 10),
-('Lancome UV Expert Youth Shield Milky Bright', 'SPF 50+. Geniş spektrumlu koruma sunan, cilt tonunu dengeleyen ve nemlendirici etkisiyle genç görünüm sağlayan güneş koruyucu kremdir.', 2800.00, 3, 10),
+('LANCÔME UV Expert Youth Shield Milky Bright', 'SPF 50+. Geniş spektrumlu koruma sunan, cilt tonunu dengeleyen ve nemlendirici etkisiyle genç görünüm sağlayan güneş koruyucu kremdir.', 2800.00, 3, 10),
 ('SISLEY Super Soin Solitaire Youth', 'SPF 30. Cildi UV ışınlarından korurken, anti-aging etkisiyle cildin genç ve sağlıklı kalmasını sağlayan güneş koruyucu bakım ürünüdür.', 7780.0, 3, 10),
 ('CLINIQUE Moisture Surge Sheertint Hydrator', 'SPF 25. Hafif renkli dokusu ve nemlendirici formülüyle cilde doğal bir ışıltı verirken UV koruması sunan cilt bakım ürünüdür.', 1600.00, 3, 10),
 ('LANCASTER Sun Perfect Unifying Serum', 'SPF 50. Cilt tonunu dengeleyip lekeleri azaltırken yüksek UV koruması sağlayan, hafif ve nemlendirici özellikte bir serumdur.', 2560.00, 3, 10),
