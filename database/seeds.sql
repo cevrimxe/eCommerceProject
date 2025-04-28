@@ -152,7 +152,21 @@ INSERT INTO product ( product_name, description, price, category_id, stock) VALU
 ('TARTE Tartelette™ In Bloom Clay Palette', '9 mat ve 3 ışıltılı tondan oluşan 12 nötr ve sıcak renk seçeneğiyle gündüzden geceye her makyaj stiline uyum sağlayan, Amazon kilinden üretilmiş ve uzun süre kalıcılık sunan bir far paletidir.', 2659.00, 10, 10),
 ('CHANEL LES BEIGES Healthy Glow Natural Eyeshadow Palette', 'Doğal ve zarif tonlarıyla gözlerde sıcak ve ışıltılı bir görünüm yaratır.', 3000.00, 10, 10),
 ('REM BEAUTY Midnight Shadows babydoll', 'Altı ultra karıştırılabilir mat ve ışıltılı tonu ile gündüzden geceye göz alıcı makyajlar sunar.', 1619.00, 10, 10),
-('GIVENCHY Le 9 De Givenchy 9.1', 'Mat, saten ve metalik dokularda dokuz ultra pigmentli tonuyla doğal ve sofistike göz makyajları için 12 saat kalıcılık sunar.', 3447.00, 10, 10);
+('GIVENCHY Le 9 De Givenchy 9.1', 'Mat, saten ve metalik dokularda dokuz ultra pigmentli tonuyla doğal ve sofistike göz makyajları için 12 saat kalıcılık sunar.', 3447.00, 10, 10),
+('ANASTASIA BEVERLY HILLS Mini Loose Setting Powder', 'Hafif ve ipeksi yapısıyla makyajı sabitleyerek ciltte pürüzsüz, mat bir bitiş sağlar ve gün boyu kalıcılığı artırır.', 1189.00, 11, 15),
+('HUDA BEAUTY Easy Bake Loose Ube Birthday Cake', 'İnce yapılı ve hafif formülüyle makyajı sabitleyerek ciltte mat, pürüzsüz ve uzun süre kalıcı bir görünüm sağlar.', 3939.00, 11, 10),
+('HUDA BEAUTY Easy Bake Loose Coffee Cake', 'İnce yapılı ve hafif formülüyle makyajı sabitleyerek ciltte mat, pürüzsüz ve uzun süre kalıcı bir görünüm sağlar.', 3939.00, 11, 10),
+('HUDA BEAUTY Easy Bake Loose Cookie', 'İnce yapılı ve hafif formülüyle makyajı sabitleyerek ciltte mat, pürüzsüz ve uzun süre kalıcı bir görünüm sağlar.', 3939.00, 11, 10),
+('LANCÔME Long Time No Shine', 'Hafif ve ince dokusuyla fazla yağı emer, cildi pürüzsüzleştirir ve makyajı gün boyu sabitleyerek parlama kontrolü sağlar.',3350.00, 11, 10),
+('NARS Nars Light Kompakt Pudra', 'Cildi sabitleyerek makyajın kalıcılığını artırırken, ince yapısıyla doğal bir ışıltı ve pürüzsüz bir görünüm sunar.', 1330.00, 11, 10),
+('DIOR Forever Cushion Powder 010', 'Su ve menekşe özüyle zenginleştirilmiş formülüyle makyajı sabitleyerek cilde doğal, mat ve ışıltılı bir görünüm kazandıran ince yapılı bir pudradır.', 2986.00, 11, 10),
+('DIOR Forever Cushion Powder 020', 'Su ve menekşe özüyle zenginleştirilmiş formülüyle makyajı sabitleyerek cilde doğal, mat ve ışıltılı bir görünüm kazandıran ince yapılı bir pudradır.', 2986.00, 11, 10),
+('DIOR Forever Cushion Powder 040', 'Su ve menekşe özüyle zenginleştirilmiş formülüyle makyajı sabitleyerek cilde doğal, mat ve ışıltılı bir görünüm kazandıran ince yapılı bir pudradır.', 2986.00, 11, 10),
+('MAKE UP FOR EVER HD Skin Setting Powder', '24 saat kalıcılı, ultra ince formülüyle ciltteki fazla yağı kontrol altına alarak mat ve pürüzsüz bir görünüm sağlar, gözenekleri ve ince çizgileri bulanıklaştırır, fotoğraf flaşı altında bile doğal bir bitiş sunar.', 1309.00, 11, 10),
+('TOO FACED Translucent Deep Born This Way', 'Hafif yapısıyla makyajı sabitleyerek cilde doğal, ışıltılı bir bitiş kazandırır ve kusurları bulanıklaştırır.', 2419.00, 11, 10),
+('FENTY BEAUTY Pro Filt"r Mini Instant Retouch Banana', 'Yağsız ve hafif yapısıyla gözenekleri bulanıklaştırarak cilt tonunu eşitler, parlamayı kontrol altına alır ve makyajın kalıcılığını artırır.',1009.00, 11, 10),
+('FENTY BEAUTY Pro Filt"r Mini Instant Retouch Honey', 'Yağsız ve hafif yapısıyla gözenekleri bulanıklaştırarak cilt tonunu eşitler, parlamayı kontrol altına alır ve makyajın kalıcılığını artırır.',1009.00, 11, 10),
+('FENTY BEAUTY Pro Filt"r Mini Instant Retouch Butter', 'Yağsız ve hafif yapısıyla gözenekleri bulanıklaştırarak cilt tonunu eşitler, parlamayı kontrol altına alır ve makyajın kalıcılığını artırır.',1009.00, 11, 10);
 -- 6️⃣ Siparişler
 INSERT INTO order_tbl (user_id, order_date, total) VALUES
 (1, '2025-04-08', 1020.00),
