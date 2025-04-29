@@ -30,12 +30,13 @@ try {
 
     // Toplam tutarı hesapla
     $totalAmount = array_sum(array_column($cartItems, 'total'));
-
+    $status = "Pending";
     // Sipariş ekleme sorgusu
-    $orderQuery = "INSERT INTO order_tbl (user_id, total, order_date) VALUES (:user_id, :total, NOW())";
+    $orderQuery = "INSERT INTO order_tbl (user_id, total, order_date, status) VALUES (:user_id, :total, NOW(), :status)";
     $orderStmt = $conn->prepare($orderQuery);
     $orderStmt->bindParam(':user_id', $loggedInUserId);
     $orderStmt->bindParam(':total', $totalAmount);
+    $orderStmt->bindParam(':status', $status);
     $orderStmt->execute();
 
     $orderId = $conn->lastInsertId(); // Yeni siparişin ID'sini al
