@@ -112,7 +112,7 @@ INSERT INTO product ( product_name, description, price, category_id, stock) VALU
 ('Charlotte Tilbury Pillow Talk Push Up Lashes Dream Pop', 'Kirpikleri anında hacimlendirip uzatarak 24 saat boyunca dikey kaldırma etkisi sunan, göz rengini vurgulayan mürdüm kahverengi tonunda bir maskaradır.', 1919.00, 8, 15),
 ('Charlotte Tilbury Pillow Talk Push Up Lashes Super Black', 'Kirpiklere anında hacim, uzunluk ve 24 saatlik dikey kaldırma etkisi sağlayan yoğun siyah tonlu bir maskaradır.', 1919.00, 8, 15),
 ('Yves Saint Laurent Lash Clash', 'Kirpiklere ekstra hacim ve yoğun siyah renk kazandırarak çarpıcı ve cesur bir görünüm sunan uzun süre kalıcı bir maskaradır.', 2200.00, 8, 15),
-('Yves Saint Laurent Mascara Lash Clash 02 Brown', 'Kirpiklere anında maksimum %200 hacim kazandıran, 24 saat kalıcı, yoğun kahverengi tonlu bir maskaradır.', 2200.0, 8, 15),
+('Yves Saint Laurent Mascara Lash Clash 02 Brun', 'Kirpiklere anında maksimum %200 hacim kazandıran, 24 saat kalıcı, yoğun kahverengi tonlu bir maskaradır.', 2200.0, 8, 15),
 ('BENEFIT COSMETICS BADgal Bounce', 'Kirpikleri kökten uca yoğun hacimle yükselten ve esnek yapısıyla gün boyu çarpıcı bir görünüm sağlayan maskaradır.', 1809.00, 8, 15),
 ('LANCÔME Cils Booster Lash Serum', 'Amino asitlerle zenginleştirilmiş formülüyle kirpikleri kökten uca besleyerek güçlendirir ve makyaj temizliği sırasında dökülmeleri azaltır.', 2550.00, 8, 15),
 ('LANCÔME Lash Idôle', 'Kirpiklere anında hacim, uzunluk ve kalkıklık sağlayarak 24 saate kadar kalıcı, topaklanmayan ve hafif bir görünüm sunar.', 1750.00, 8, 15),
