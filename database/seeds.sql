@@ -22,10 +22,7 @@ INSERT INTO category_table (category_name) VALUES
 ('Kapatıcı'),
 ('Far'),
 ('Pudra'),
-('Vücut Losyonu'),
-('Şampuan'),
-('Saç Kremi'),
-('Duş Jeli');
+('Vücut Losyonu');
 
 -- 5️⃣ Ürünler
 INSERT INTO product ( product_name, description, price, category_id, stock) VALUES
