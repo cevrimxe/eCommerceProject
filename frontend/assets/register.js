@@ -14,74 +14,55 @@ const errorMessageField = document.querySelector('#error-message');
 
 // Check if there is stored data in sessionStorage and populate the form fields
 window.onload = function () {
-    if (sessionStorage.getItem('name')) {
-        nameField.value = sessionStorage.getItem('name');
+    if (sessionStorage.getItem('name_register')) {
+        nameField.value = sessionStorage.getItem('name_register');
     }
-    if (sessionStorage.getItem('last-name')) {
-        lastnameField.value = sessionStorage.getItem('last-name');
+    if (sessionStorage.getItem('last-name_register')) {
+        lastnameField.value = sessionStorage.getItem('last-name_register');
     }
-    if (sessionStorage.getItem('phone')) {
-        phoneField.value = sessionStorage.getItem('phone');
+    if (sessionStorage.getItem('phone_register')) {
+        phoneField.value = sessionStorage.getItem('phone_register');
     }
-    if (sessionStorage.getItem('email')) {
-        emailField.value = sessionStorage.getItem('email');
+    if (sessionStorage.getItem('email_register')) {
+        emailField.value = sessionStorage.getItem('email_register');
     }
-    if (sessionStorage.getItem('password')) {
-        passwordField.value = sessionStorage.getItem('password');
+    if (sessionStorage.getItem('password_register')) {
+        passwordField.value = sessionStorage.getItem('password_register');
     }
-    if (sessionStorage.getItem('confirm-password')) {
-        confirmPasswordField.value = sessionStorage.getItem('confirm-password');
+    if (sessionStorage.getItem('confirm-password_register')) {
+        confirmPasswordField.value = sessionStorage.getItem('confirm-password_register');
     }
-    termsField.checked = sessionStorage.getItem('terms') === 'true';
+    termsField.checked = sessionStorage.getItem('terms_register') === 'true';
 };
 
 // Store values in sessionStorage as the user types
 nameField.addEventListener('input', function () {
-    sessionStorage.setItem('name', nameField.value);
+    sessionStorage.setItem('name_register', nameField.value);
 });
 
 lastnameField.addEventListener('input', function () {
-    sessionStorage.setItem('last-name', lastnameField.value);
+    sessionStorage.setItem('last-name_register', lastnameField.value);
 });
 
 phoneField.addEventListener('input', function () {
-    sessionStorage.setItem('phone', phoneField.value);
+    sessionStorage.setItem('phone_register', phoneField.value);
 });
 
 emailField.addEventListener('input', function () {
-    sessionStorage.setItem('email', emailField.value);
+    sessionStorage.setItem('email_register', emailField.value);
 });
 
 passwordField.addEventListener('input', function () {
-    sessionStorage.setItem('password', passwordField.value);
+    sessionStorage.setItem('password_register', passwordField.value);
 });
 
 confirmPasswordField.addEventListener('input', function () {
-    sessionStorage.setItem('confirm-password', confirmPasswordField.value);
+    sessionStorage.setItem('confirm-password_register', confirmPasswordField.value);
 });
 
-// Use 'change' or 'input' for checkbox
 termsField.addEventListener('change', function () {
-    sessionStorage.setItem('terms', termsField.checked); // store as boolean
+    sessionStorage.setItem('terms_register', termsField.checked); // store as boolean
 });
-
-function register(user) {
-    fetch('../../backend/api/auth/register.php', {
-        method: 'POST', // Use POST for sending data
-        headers: {
-            'Content-Type': 'application/json'  // Tell PHP we're sending JSON data
-        },
-        body: JSON.stringify(user)  // Convert the user object to a JSON string
-    })
-        .then(response => response.json())  // Parse the response as JSON
-        .then(data => {
-            // Handle the response, for example, log a success message
-            console.log(data);
-        })
-        .catch(error => {
-            console.error('Error adding user:', error);
-        });
-}
 
 form.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission
@@ -112,24 +93,23 @@ form.addEventListener('submit', function (event) {
         console.log(new_user);
 
         fetch('../../backend/api/auth/register.php', {
-            method: 'POST', // Use POST for sending data
+            method: 'POST',
             headers: {
-                'Content-Type': 'application/json'  // Tell PHP we're sending JSON data
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(new_user)  // Convert the user object to a JSON string
+            body: JSON.stringify(new_user)
         })
-        .then(response => response.json())  // Parse the response as JSON
+        .then(response => response.json())
         .then(data => {
-            // Handle the response, for example, log a success message
             console.log(data);
 
-            sessionStorage.removeItem('name');
-            sessionStorage.removeItem('last-name');
-            sessionStorage.removeItem('phone');
-            sessionStorage.removeItem('email');
-            sessionStorage.removeItem('password');
-            sessionStorage.removeItem('confirm-password');
-            sessionStorage.removeItem('terms');
+            sessionStorage.removeItem('name_register');
+            sessionStorage.removeItem('last-name_register');
+            sessionStorage.removeItem('phone_register');
+            sessionStorage.removeItem('email_register');
+            sessionStorage.removeItem('password_register');
+            sessionStorage.removeItem('confirm-password_register');
+            sessionStorage.removeItem('terms_register');
         })
         .catch(error => {
             console.error('Error adding user:', error);
