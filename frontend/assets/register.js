@@ -110,6 +110,7 @@ form.addEventListener('submit', function (event) {
             sessionStorage.removeItem('password_register');
             sessionStorage.removeItem('confirm-password_register');
             sessionStorage.removeItem('terms_register');
+            window.location.href = './signin.html';
         })
         .catch(error => {
             console.error('Error adding user:', error);
