@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up</title>
   <link rel="stylesheet" href="signup.css" />
+  <script src="../assets/register.js" defer></script>
 </head>
+
 <body>
   <div class="container">
     <div class="card">
@@ -15,16 +18,19 @@
       </div>
 
       <form>
-        <input type="text" placeholder="Name" required />
-        <input type="email" placeholder="Email Address" required />
+        <input type="text" id="name" placeholder="AD" required />
+        <input type="text" id="last-name" placeholder="SOYAD" required />
+        <input type="text" id="phone" placeholder="TELEFON" required />
+        <input type="email" id="email" placeholder="Email Address" required />
         <div class="password-wrapper">
-          <input type="password" placeholder="Password" required />
+          <input type="password" id="password" placeholder="Password" required />
           <span class="eye">👁️</span>
         </div>
         <div class="password-wrapper">
-          <input type="password" placeholder="Confirm Password" required />
+          <input type="password" id="confirm-password" placeholder="Confirm Password" required />
           <span class="eye">👁️</span>
         </div>
+        <div id="error-message" style="color: red; display: none;">Passwords do not match!</div>
 
         <div class="checkbox-wrapper">
           <input type="checkbox" id="terms" required />
@@ -51,4 +57,5 @@
     </div>
   </div>
 </body>
+
 </html>
