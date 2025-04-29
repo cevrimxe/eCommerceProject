@@ -43,9 +43,9 @@ form.addEventListener('submit',
         .then(data => {
             console.log(data);
 
-            sessionStorage.setItem('user_email', data.user.email);
-            sessionStorage.setItem('user_id', data.user.id);
-            sessionStorage.setItem('user_name', data.user.name);
+            localStorage.setItem('user_email', data.user.email);
+            localStorage.setItem('user_id', data.user.id);
+            localStorage.setItem('user_name', data.user.name);
 
             sessionStorage.removeItem('email_login');
             sessionStorage.removeItem('password_login');
