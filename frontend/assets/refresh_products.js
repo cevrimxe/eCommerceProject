@@ -1,6 +1,6 @@
-function add_product() {
-  document.getElementById("product-list").innerHTML += '<div class="product">product_added</div>';
-}
+document.addEventListener('DOMContentLoaded', function() {
+  get_products();
+});
 /*   
 category_id: "1"
 category_name: "Electronics"
@@ -10,7 +10,7 @@ product_id: 1
 product_name: "Laptop"
 stock: 20
 */
-function add_products() {
+function get_products() {
   fetch('../../backend/api/products/get_products.php')
     .then(response => response.json())
     .then(data =>
