@@ -18,7 +18,7 @@ if (!$loggedInUserId) {
 }
 
 try {
-    $query = "SELECT c.cartt_id, p.product_name, p.price, c.quantity 
+    $query = "SELECT c.cartt_id, p.product_name, p.price, c.quantity, p.product_id
               FROM cart_tbl c
               JOIN product p ON c.product_id = p.product_id
               WHERE c.user_id = :user_id";
