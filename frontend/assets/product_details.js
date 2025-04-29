@@ -9,7 +9,14 @@
       console.log(product);
       document.getElementById('product-name').textContent = product.product_name;
       document.getElementById('product-price').textContent = `$${product.price}`;
-      document.getElementById('product-image').src = `./products/${product.id}.webp`;
+
+      document.getElementById('product-image').src = `../assets/products/${product.product_id}.webp`;
+
+      const elements = document.getElementsByClassName('product-thumb');
+
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].src = `../assets/products/${product.product_id}_${i+1}.webp`;
+      }
 
       document.getElementById('product-category').textContent = `KATEGORİ: ${product.category_name}`;
       document.getElementById('product-description').textContent = `ÜRÜN TANIMI: ${product.description}`;
