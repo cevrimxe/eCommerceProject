@@ -22,7 +22,7 @@ INSERT INTO category_table (category_name) VALUES
 ('Kapatıcı'),
 ('Far'),
 ('Pudra'),
-('Oje'),
+('Vücut Losyonu'),
 ('Şampuan'),
 ('Saç Kremi'),
 ('Duş Jeli');
@@ -166,7 +166,18 @@ INSERT INTO product ( product_name, description, price, category_id, stock) VALU
 ('TOO FACED Translucent Deep Born This Way', 'Hafif yapısıyla makyajı sabitleyerek cilde doğal, ışıltılı bir bitiş kazandırır ve kusurları bulanıklaştırır.', 2419.00, 11, 10),
 ('FENTY BEAUTY Pro Filt"r Mini Instant Retouch Banana', 'Yağsız ve hafif yapısıyla gözenekleri bulanıklaştırarak cilt tonunu eşitler, parlamayı kontrol altına alır ve makyajın kalıcılığını artırır.',1009.00, 11, 10),
 ('FENTY BEAUTY Pro Filt"r Mini Instant Retouch Honey', 'Yağsız ve hafif yapısıyla gözenekleri bulanıklaştırarak cilt tonunu eşitler, parlamayı kontrol altına alır ve makyajın kalıcılığını artırır.',1009.00, 11, 10),
-('FENTY BEAUTY Pro Filt"r Mini Instant Retouch Butter', 'Yağsız ve hafif yapısıyla gözenekleri bulanıklaştırarak cilt tonunu eşitler, parlamayı kontrol altına alır ve makyajın kalıcılığını artırır.',1009.00, 11, 10);
+('FENTY BEAUTY Pro Filt"r Mini Instant Retouch Butter', 'Yağsız ve hafif yapısıyla gözenekleri bulanıklaştırarak cilt tonunu eşitler, parlamayı kontrol altına alır ve makyajın kalıcılığını artırır.',1009.00, 11, 10),
+('LANCÔME Absolue Rose80 Vücut Losyonu', '150ml. %80 Absolue gül özü, Biotech Renewal Fractions™ ve Pro-Xylane™ içeren formülüyle cildi sıkılaştırır, pürüzsüzleştirir ve nem kaybını azaltarak daha güçlü bir cilt görünümü sağlar.', 8250.00, 12, 15),
+('RARE BEAUTY Find Comfort Hydrating Body Lotion', '250ml. Niacinamide, şeftali çiçeği ve ashwagandha özleriyle zenginleştirilmiş formülüyle cildi 24 saat boyunca nemlendirir, yumuşatır ve doğal bir ışıltı kazandırır.', 2059.00, 12, 15),
+('FIRST AID BEAUTY KP Smoothing Body Lotion', '170g. %10 laktik asit (AHA) içeren formülüyle keratozis pilaris kaynaklı pürüzlü cilt görünümünü azaltırken, üre, kolloidal yulaf ve seramidler sayesinde cildi derinlemesine nemlendirir ve yatıştırır.', 2169.00, 12, 15),
+('CHANEL N°5 Body Lotion', '200ml. Gül ve yasemin özleriyle zenginleştirilmiş hafif dokusuyla cildi 8 saat boyunca nemlendirir ve ikonik N°5 parfümünün zarif notalarını cilde nazikçe bırakır.', 2800.00, 12, 15),
+('NARCISO RODRIGUEZ All of Me Vücut Losyonu', '200ml. Cildi nemlendirirken zarif ve kalıcı bir parfüm kokusu bırakır.', 2970.00, 12, 15),
+('DRUNK ELEPHANT Sili™ Whipped Vücut Losyonu', '240ml. İpeksi bir dokunuşla cildinize kadifemsi bir yumuşaklık sunar, tüm gün süren derin nemlendirme etkisiyle cildinizin doğal ışıltısını ortaya çıkarır.', 2479.00, 12, 15),
+('AUGUSTINUS BADER Vücut Losyonu', '100ml. Cildinizi yoğun şekilde beslerken, sağlıklı ve pürüzsüz bir görünüm kazandırır; her uygulamada cildinize lüks bir dokunuş sunar.', 4199.00, 12, 15),
+('LA MER The Reparative Body Lotion', '160ml. Cildinizi onarırken derinlemesine nemlendirir. Zarif, yenileyici bir etkiyle yumuşaklık sağlayarak cildinizi şımartır.', 7635.00, 12, 15),
+('CHANEL COCO NOIR Body Lotion', '200ml. Cildinizi derinlemesine nemlendirirken, sofistike ve kalıcı bir parfüm notasıyla zarif bir iz bırakır, cildinize pürüzsüz bir dokunuş sunar.', 2800.00, 12, 15),
+('SOL DE JANEIRO Rio Radiance Body Lotion', '200ml. Yüksek güneş koruması sağlarken cildinizi derinlemesine nemlendirir ve doğal bir ışıltı ile aydınlatır, güneşin keyfini güvenle çıkarmanızı sağlar.', 2969.00, 12, 15)
+;
 -- 6️⃣ Siparişler
 INSERT INTO order_tbl (user_id, order_date, total) VALUES
 (1, '2025-04-08', 1020.00),
