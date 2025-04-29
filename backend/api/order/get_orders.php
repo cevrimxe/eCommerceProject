@@ -18,7 +18,7 @@ if (!$loggedInUserId) {
 
 try {
 
-    $query = "SELECT order_id, order_date, total FROM order_tbl WHERE user_id = :user_id ORDER BY order_date DESC";
+    $query = "SELECT order_id, order_date, total, status FROM order_tbl WHERE user_id = :user_id ORDER BY order_date DESC";
 
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':user_id',$loggedInUserId);
