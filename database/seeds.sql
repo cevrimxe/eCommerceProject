@@ -41,7 +41,7 @@ INSERT INTO product ( product_name, description, price, category_id, stock) VALU
 ('FEU DE CIEL Kalp Çakra', '130gr. Gül notalarıyla kalp çakrasını dengelemeyi hedefleyen, duygusal blokajlardan arınmaya ve içsel huzura katkı sağlayan, doğal içerikli ve el yapımı bir mumdur.', 949.90, 2, 15),
 ('Charya Maison Mystic Amber', '230gr. Amber ve sandal ağacının sıcak tonlarıyla derin ve sofistike bir atmosfer yaratan doğal ve vegan bir kokulu mumdur.', 750.00, 2, 15),
 ('Atelier Rebul Saffron Oud', '200ml. Havuç ve tarçınla açılıp safran, tütsü ve deriyle zenginleşen, paçuli ve sandal ağacıyla derinleşen, sofistike ve baharatlı bir atmosfer yaratan lüks bir oda kokusudur.', 1700.00, 2, 15),
-('Jo Malone London English Pear & Freesia', '200gr. Olgun armut ve beyaz frezya notalarının amber ve paçuliyle harmanlandığı, ferah, zarif ve sofistike bir kadın parfümüdür.', 2720.00, 2, 15),
+('Jo Malone London English Pear & Freesia', '165ml. Olgun armut ve beyaz frezya notalarının amber ve paçuliyle harmanlandığı, ferah, zarif ve sofistike bir oda kokusudur.', 3950.00, 2, 15),
 ('Yankee Candle Amber & Sandalwood', '567gr. Odunsu sandal ağacı ve sıcak amberin birleşimiyle sofistike ve rahatlatıcı bir atmosfer yaratan, tatlı ve baharatlı notalara sahip bir kokulu mumdur.', 1799.00, 2, 1),
 ('Shiseido Clear Suncare Stick', 'SPF 50+. Ciltte beyaz iz bırakmadan yüksek koruma sağlayan, hafif ve suya dayanıklı güneş koruyucu stikttir.', 2790.00, 3, 10),
 ('Beauty Of Joseon Matte Mugwort + Camelia', 'SPF 50+ PA++++ ile yüksek koruma sağlarken, mat bir bitiş ve hafif, yağsız bir görünüm sunan, cilt dostu ve pratik bir güneş koruyucu sticktir.', 1019.00, 3, 10),
