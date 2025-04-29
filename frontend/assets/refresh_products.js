@@ -26,7 +26,7 @@ function get_products() {
         html +=
         `
 
-      <div class="product-card">
+      <div class="product-card" style="cursor: pointer" data-product-id="${data[i].product_id}">
         <img src="../assets/products/${data[i].product_id}.webp" alt="">
         <div class="product-info">
           <h4>${data[i].product_name}</h4>
@@ -37,8 +37,17 @@ function get_products() {
       </div>
         `;
       }
-      product_grid.innerHTML += html;
-      /* product_grid.style.display = ""; */
+      product_grid.innerHTML = html;
+
+      document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', function () {
+          const productId = this.dataset.productId;
+          // Redirect to product detail page
+          window.location.href = `./productdetail.html?id=${productId}`;
+        });
+      });
+
+
     })
     .catch(error => {
       console.error('Error fetching get_products.php:', error);
