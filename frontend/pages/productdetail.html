@@ -54,11 +54,11 @@
   <main class="container product-detail">
 
     <div class="product-images">
-      <img src="macbook1.jpg" alt="MacBook Pro" class="main-image">
+      <img id="product-image" src="macbook1.jpg" alt="MacBook Pro" class="main-image">
       <div class="thumbnail-list">
-        <img id="product-image" src="macbook1.jpg" alt="Thumb 1"><!--Link olacak-->
-        <img src="macbook2.jpg" alt="Thumb 2">
-        <img src="macbook3.jpg" alt="Thumb 3">
+        <img class="product-thumb" src="macbook1.jpg" alt="Thumb 1"><!--Link olacak-->
+        <img class="product-thumb" src="macbook2.jpg" alt="Thumb 2">
+        <img class="product-thumb" src="macbook3.jpg" alt="Thumb 3">
         <!--img üzerine onclick yazılacak-->
       </div>
     </div>
@@ -86,7 +86,7 @@
       </select>
 
       <div class="actions">
-        <button class="btn primary">Add to Cart</button>
+        <button class="btn primary" onclick="add_to_cart()">Add to Cart</button>
         <button class="btn">Buy Now</button>
       </div>
 
