@@ -46,6 +46,7 @@ CREATE TABLE IF NOT EXISTS order_tbl (
     user_id INT,  -- user_id'yi INT olarak değiştirdik
     order_date DATE,
     total FLOAT,  -- Toplam tutarı FLOAT olarak değiştirdik
+    status VARCHAR(20),  -- Sipariş durumu için bir alan ekledik
     FOREIGN KEY (user_id) REFERENCES user_tbl(user_id) ON DELETE CASCADE
 );
 
