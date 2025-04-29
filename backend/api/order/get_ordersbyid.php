@@ -26,7 +26,7 @@ $orderId = $_GET['id'];
 
 try {
     // 1. Önce siparişi kontrol et
-    $orderQuery = "SELECT order_id, order_date, total FROM order_tbl WHERE order_id = :order_id AND user_id = :user_id";
+    $orderQuery = "SELECT order_id, order_date, total, status FROM order_tbl WHERE order_id = :order_id AND user_id = :user_id";
     $orderStmt = $conn->prepare($orderQuery);
     $orderStmt->execute([
         ':order_id' => $orderId,
@@ -42,7 +42,7 @@ try {
     }
 
     // 2. Siparişin ürünlerini al
-    $itemsQuery = "SELECT product_id, quantity, unit_price, total 
+    $itemsQuery = "SELECT product_id, quantity, unit_price, total
                    FROM order_detail
                    WHERE order_id = :order_id";
     $itemsStmt = $conn->prepare($itemsQuery);
