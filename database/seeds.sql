@@ -120,7 +120,7 @@ INSERT INTO product ( product_name, description, price, category_id, stock) VALU
 ('ARMANI Vertigo Lift', 'Kirpiklere yoğun hacim ve dramatik uzunluk kazandırarak etkileyici, kalkık ve hacimli kirpikler yaratır; 24 saat boyunca akma ve topaklanma yapmaz.', 2250.00, 8, 15),
 ('ESTÉE LAUDER Sumptuous Extreme', 'Kirpiklere dramatik hacim, kalkıklık ve uzunluk kazandırarak takma kirpik etkisi yaratır; özel formülüyle gün boyu kalıcıdır.', 1890.00, 8, 15),
 ('NARS Climax Extreme', 'Tek katta uygulamada bile dramatik hacim ve derin siyah pigment sunarak kirpiklere çarpıcı bir görünüm kazandırır.', 1490.00, 8, 15),
-('TARTE Tartelette™ Tubing', 'Kirpiklere hacim, uzunluk ve kalkıklık kazandıran, 24 saat boyunca topaklanma ve akma yapmayan, sıcak suyla kolayca temizlenen bir maskaradır.', 899.00, 8, 15),
+('TARTE Tartelette™ Tubing', 'Kirpiklere hacim, uzunluk ve kalkıklık kazandıran, 24 saat boyunca topaklanma ve akma yapmayan, sıcak suyla kolayca temizlenen bir maskaradır.', 1689.00, 8, 15),
 ('RARE BEAUTY Perfect Strokes Universal', 'Kirpikleri kökten uca besleyerek hacimlendirir, uzatır ve kıvırırken topaklanma yapmadan doğal bir görünüm sunar; formülünde bulunan hint yağı sayesinde kirpikleri yumuşak tutar ve gün boyu kalıcılık sağlar.', 1379.00, 8, 15),
 ('ARMANI Luminous Silk 4.75', 'İpeksi dokusu ve orta kapatıcılığıyla cilde doğal bir ışıltı kazandırarak gün boyu kalıcı, kusursuz bir görünüm sağlar.', 2400.00, 9, 10),
 ('ARMANI Luminous Silk 5.00', 'İpeksi dokusu ve orta kapatıcılığıyla cilde doğal bir ışıltı kazandırarak gün boyu kalıcı, kusursuz bir görünüm sağlar.', 2400.00, 9, 10),
