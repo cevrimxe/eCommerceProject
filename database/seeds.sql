@@ -34,7 +34,7 @@ INSERT INTO product ( product_name, description, price, category_id, stock) VALU
 ('Diptyque Philosykos', '100ml. Taze incir, incir yaprağı ve odunsu notalarla Akdeniz ruhunu taşıyan, doğal ve sakin havasıyla hem kadınlar hem de erkekler için ferahlatıcı bir unisex parfümdür.', 7450.00, 1, 10),
 ('Parfums de Marly Delina', '75ml. TTürk gülü, liçi ve miskin başrolde olduğu, feminenliği zarafetle harmanlayan, tatlı, çiçeksi ve aynı zamanda ferah bir kadın parfümüdür.', 13110.00, 1, 10),
 ('Yves Saint Laurent Libre', '90ml. Lavanta ve portakal çiçeğinin güçlü birleşimiyle özgür ruhlu kadınları simgeleyen, ferah ama derin, modern ve cesur bir kadın parfümüdür.', 7600.00, 1, 30),
-('Killian Paris Rolling In Love', '50ml. Badem, vanilya ve iris notalarıyla sıcak, tatlı ve romantik bir iz bırakan, lüks ve yoğun bir kadın parfümüdür.', 10500.00, 1, 10),
+('Kilian Paris Rolling In Love', '50ml. Badem, vanilya ve iris notalarıyla sıcak, tatlı ve romantik bir iz bırakan, lüks ve yoğun bir kadın parfümüdür.', 10500.00, 1, 10),
 ('Tom Ford Tobacco Vanille', '100ml. Zengin tütün ve vanilya notalarının sıcak, tatlı ve baharatlı bir birleşimiyle derin, lüks ve maskülen bir etki yaratan, kış ayları için mükemmel bir parfümdür.', 14870.00, 1, 10),
 ('Jo Malone London Velvet Rose & Oud', '165ml. Zengin gül ve yoğun odunsu oud notalarıyla bulunduğu ortama sıcaklık, lüks ve gizemli bir atmosfer katan, özellikle şık ve sofistike alanlar için ideal bir oda kokusu etkisi yaratır.', 4920.00, 2, 15),
 ('Atelier Rebul İstanbul Xl Scented Candle', '950gr. Bergamot, baharatlar ve odunsu notalarla İstanbulun mistik ruhunu yansıtarak ortama sıcak ve lüks bir atmosfer katan büyük boy bir kokulu mumdur.', 5200.00, 2, 15),
