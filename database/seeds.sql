@@ -153,7 +153,7 @@ INSERT INTO product ( product_name, description, price, category_id, stock) VALU
 ('ANASTASIA BEVERLY HILLS Mini Loose Setting Powder', 'Hafif ve ipeksi yapısıyla makyajı sabitleyerek ciltte pürüzsüz, mat bir bitiş sağlar ve gün boyu kalıcılığı artırır.', 1189.00, 11, 15),
 ('HUDA BEAUTY Easy Bake Loose Ube Birthday Cake', 'İnce yapılı ve hafif formülüyle makyajı sabitleyerek ciltte mat, pürüzsüz ve uzun süre kalıcı bir görünüm sağlar.', 3939.00, 11, 10),
 ('HUDA BEAUTY Easy Bake Loose Coffee Cake', 'İnce yapılı ve hafif formülüyle makyajı sabitleyerek ciltte mat, pürüzsüz ve uzun süre kalıcı bir görünüm sağlar.', 3939.00, 11, 10),
-('HUDA BEAUTY Easy Bake Loose Cookie', 'İnce yapılı ve hafif formülüyle makyajı sabitleyerek ciltte mat, pürüzsüz ve uzun süre kalıcı bir görünüm sağlar.', 3939.00, 11, 10),
+('HUDA BEAUTY Easy Bake Loose Sugar Cookie', 'İnce yapılı ve hafif formülüyle makyajı sabitleyerek ciltte mat, pürüzsüz ve uzun süre kalıcı bir görünüm sağlar.', 3939.00, 11, 10),
 ('LANCÔME Long Time No Shine', 'Hafif ve ince dokusuyla fazla yağı emer, cildi pürüzsüzleştirir ve makyajı gün boyu sabitleyerek parlama kontrolü sağlar.',3350.00, 11, 10),
 ('NARS Nars Light Kompakt Pudra', 'Cildi sabitleyerek makyajın kalıcılığını artırırken, ince yapısıyla doğal bir ışıltı ve pürüzsüz bir görünüm sunar.', 1330.00, 11, 10),
 ('DIOR Forever Cushion Powder 010', 'Su ve menekşe özüyle zenginleştirilmiş formülüyle makyajı sabitleyerek cilde doğal, mat ve ışıltılı bir görünüm kazandıran ince yapılı bir pudradır.', 2986.00, 11, 10),
