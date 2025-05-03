@@ -1,26 +1,39 @@
 <header>
-<div class="top-banner">
 </div>
 
 <!-- Ana Menü -->
 <nav class="main-nav">
   <div class="container">
-    <div class="logo">🔵 İNT. TEKNO.</div>
+    <a href="index.html" class="logo">🔵 İNT. TEKNO.</a>
+
     <input type="text" class="search-bar" placeholder="Search for anything..." />
-    <div class="nav-icons">🛒 ♥ 👤</div>
+
+    <div class="nav-icons">
+        <a href="cart.html" title="Cart">🛒</a>
+        <a href="favorites.html" title="Favorites">♥</a>
+        <a href="profile.html" title="My Account">👤</a>
+      </div>
   </div>
 </nav>
 
 <!-- Alt Menü -->
 <div class="sub-nav">
-  <div class="container">
-    <select>
-      <option>All Category</option>
-    </select>
-    <a href="homepage.html">Homepage</a>
-    <a href="23_About US.html">About Us</a>
-    <a href="19_signup.html">Sign Up</a>
-    <a href="signin.html">Sign In</a>
-    <span class="phone">📞 +90 0555 555 55 55</span>
+    <div class="container">
+      <select>
+        <option value="all">All Categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+        <!-- Kategoriler buraya -->
+      </select>
+
+      <nav class="sub-links">
+        <a href="index.html">Homepage</a>
+        <a href="about.html">About Us</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="signin.html">Sign In</a>
+      </nav>
+
+      <span class="phone">📞 +90 555 555 55 55</span>
+    </div>
   </div>
-</div></header>
+</header>

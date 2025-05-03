@@ -1,7 +1,5 @@
-
 // Select the form and input fields
 const form = document.querySelector('form');
-
 const nameField = document.querySelector('#name');
 const lastnameField = document.querySelector('#last-name');
 const phoneField = document.querySelector('#phone');
@@ -11,6 +9,7 @@ const confirmPasswordField = document.querySelector('#confirm-password');
 const termsField = document.querySelector('#terms');
 
 const errorMessageField = document.querySelector('#error-message');
+const resultMessageField = document.querySelector('#result-message');
 
 // Check if there is stored data in sessionStorage and populate the form fields
 window.onload = function () {
@@ -39,27 +38,21 @@ window.onload = function () {
 nameField.addEventListener('input', function () {
     sessionStorage.setItem('name_register', nameField.value);
 });
-
 lastnameField.addEventListener('input', function () {
     sessionStorage.setItem('last-name_register', lastnameField.value);
 });
-
 phoneField.addEventListener('input', function () {
     sessionStorage.setItem('phone_register', phoneField.value);
 });
-
 emailField.addEventListener('input', function () {
     sessionStorage.setItem('email_register', emailField.value);
 });
-
 passwordField.addEventListener('input', function () {
     sessionStorage.setItem('password_register', passwordField.value);
 });
-
 confirmPasswordField.addEventListener('input', function () {
     sessionStorage.setItem('confirm-password_register', confirmPasswordField.value);
 });
-
 termsField.addEventListener('change', function () {
     sessionStorage.setItem('terms_register', termsField.checked); // store as boolean
 });
@@ -79,8 +72,8 @@ form.addEventListener('submit', function (event) {
     // Check if the passwords match
     if (password_val !== confirmPassword_val) {
         errorMessageField.style.display = 'block';
-    }
-    else {
+        errorMessageField.textContent = 'Şifreler uyuşmuyor!';
+    } else {
         errorMessageField.style.display = 'none';
 
         const new_user = {
@@ -90,46 +83,50 @@ form.addEventListener('submit', function (event) {
             first_name: name_val,
             last_name: lastname_val,
         };
-        console.log(new_user);
 
-        fetch('../../backend/api/auth/register.php', {
+        // AJAX request to send data
+        fetch('http://localhost/eCommerceProject/backend/api/auth/register.php', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(new_user)
+            body: JSON.stringify(new_user),
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            if (data.success) {
+                resultMessageField.textContent = data.message || 'Kayıt başarılı!';
+                resultMessageField.style.display = 'block';
+                errorMessageField.style.display = 'none';
 
-            sessionStorage.removeItem('name_register');
-            sessionStorage.removeItem('last-name_register');
-            sessionStorage.removeItem('phone_register');
-            sessionStorage.removeItem('email_register');
-            sessionStorage.removeItem('password_register');
-            sessionStorage.removeItem('confirm-password_register');
-            sessionStorage.removeItem('terms_register');
-            window.location.href = './signin.html';
+                // Clear session storage after successful registration
+                sessionStorage.clear();
+
+                // Redirect after successful registration
+                setTimeout(() => {
+                    window.location.href = './signin.html';
+                }, 2000); // Redirect after 2 seconds
+            } else {
+                resultMessageField.style.display = 'none';
+                errorMessageField.textContent = data.message || 'Kayıt sırasında bir hata oluştu!';
+                errorMessageField.style.display = 'block';
+            }
         })
         .catch(error => {
-            console.error('Error adding user:', error);
+            console.error('Error:', error);
+            errorMessageField.textContent = 'Sunucu hatası. Lütfen tekrar deneyin.';
+            errorMessageField.style.display = 'block';
         });
     }
-}
-);
+});
 
 
-// Get the eye icons
+// Toggle password visibility
 const eyeIcons = document.querySelectorAll('.eye');
-
-// Add event listeners to each eye icon to toggle password visibility
 eyeIcons.forEach(eyeIcon => {
     eyeIcon.addEventListener('click', function () {
         const passwordField = this.previousElementSibling;
         const isPasswordVisible = passwordField.type === 'text';
-
-        // Toggle the type between 'password' and 'text' to show/hide password
         passwordField.type = isPasswordVisible ? 'password' : 'text';
     });
 });
