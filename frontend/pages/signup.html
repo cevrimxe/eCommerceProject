@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up</title>
   <link rel="stylesheet" href="signup.css" />
-  <script src="../assets/register.js"></script>
+  <script src="../assets/register.js" defer></script>
 </head>
+
 
 <body>
   <div class="container">
@@ -18,9 +19,9 @@
       </div>
 
       <form>
-        <input type="text" id="name" placeholder="AD" required />
-        <input type="text" id="last-name" placeholder="SOYAD" required />
-        <input type="text" id="phone" placeholder="TELEFON" required />
+        <input type="text" id="name" placeholder="First Name" required />
+        <input type="text" id="last-name" placeholder="Last Name" required />
+        <input type="text" id="phone" placeholder="Phone" required />
         <input type="email" id="email" placeholder="Email Address" required />
         <div class="password-wrapper">
           <input type="password" id="password" placeholder="Password" required />
@@ -42,18 +43,9 @@
         </div>
 
         <button type="submit">SIGN UP →</button>
+        <div id="result-message" style="display:none; color: green;"></div>
+        <div id="error-message" class="error-message"></div>
       </form>
-
-      <div class="or">or</div>
-
-      <button class="social google">
-        <img src="https://img.icons8.com/color/24/google-logo.png" alt="Google" />
-        Sign up with Google
-      </button>
-      <button class="social apple">
-        <img src="https://img.icons8.com/ios-filled/24/000000/mac-os.png" alt="Apple" />
-        Sign up with Apple
-      </button>
     </div>
   </div>
 </body>
