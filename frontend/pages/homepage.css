@@ -344,8 +344,6 @@ body {
 }
 
 .featured-section {
-  background: #fff;
-  padding: 50px 20px;
   font-family: Arial, sans-serif;
 }
 
@@ -354,6 +352,19 @@ body {
   margin: 0 auto;
   display: flex;
   gap: 40px;
+}
+
+.container3 {
+  background-color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .discount-banner {
