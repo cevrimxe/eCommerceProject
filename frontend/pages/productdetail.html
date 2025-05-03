@@ -5,49 +5,25 @@
   <title>İNTERNET TEKNOLOJİLERİ PROJE</title>
   <link rel="stylesheet" href="productdetail.css" />
   <script src="../assets/product_details.js"></script>
+  <script src="js/include.js" defer></script>
+  <link rel="stylesheet" href="header.css" />
 </head>
 <body>
 
-  <!-- Üst Banner -->
-  <div class="top-banner">
-  </div>
-
-  <!-- Ana Menü -->
-  <nav class="main-nav">
-    <div class="container">
-      <div class="logo">🔵 İNT. TEKNO.</div>
-      <input type="text" class="search-bar" placeholder="Search for anything..." />
-      <div class="nav-icons">🛒 ♥ 👤</div>
-    </div>
-  </nav>
-
-  <!-- Alt Menü -->
-  <div class="sub-nav">
-    <div class="container">
-      <select>
-        <option>All Category</option>
-      </select>
-      <a href="#">Track Order</a>
-      <a href="#">------</a>
-      <a href="#">------</a>
-      <a href="#">------</a>
-      <span class="phone">📞 +90 0555 555 55 55</span>
-    </div>
-  </div>
+  <div data-include="header"></div>
 
   <nav class="breadcrumb">
     <ul>
-      <li><i class="fas fa-home"></i> <a href="#">Home</a></li>
+      <li><i class="fas fa-home"></i> <a href="index.html">Home</a></li>
       <li>›</li>
-      <li><a href="#">Shop</a></li>
+      <li><a href="shoppage.html">Shop</a></li>
       <li>›</li>
-      <li><a href="#">Shop Grid</a></li>
+      <li><a id="breadcrumb-category" href="#">Category</a></li>
       <li>›</li>
-      <li><a href="#" class="current">Electronics Devices</a></li>
-      <li>›</li>
-      <li><a href="#" class="current">Ürün_İsmi</a></li>
-    </ul>
+      <li><a id="breadcrumb-product" href="#" class="current">Product Name</a></li>
+    </ul>
   </nav>
+  
 
 
 
@@ -72,22 +48,14 @@
       <p id="product-stock"></p>
 
 
-      <label for="memory">Memory:</label>
+      <!-- <label for="memory">Memory:</label>
       <select id="memory">
         <option>8GB</option>
         <option>16GB</option>
-      </select>
-
-      <label for="storage">Storage:</label>
-      <select id="storage">
-        <option>256GB SSD</option>
-        <option>512GB SSD</option>
-        <option>1TB SSD</option>
-      </select>
+      </select> -->
 
       <div class="actions">
         <button class="btn primary" onclick="add_to_cart()">Add to Cart</button>
-        <button class="btn">Buy Now</button>
       </div>
 
       <ul class="features">
@@ -99,46 +67,32 @@
 
   </main>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   
 
 
 
 
+  <div data-include="footer"></div>
 
 
-  <!-- footer -->
-  <section class="newsletter">
-    <h2>Subscribe to our newsletter</h2>
-    <p>
-      Praesent fringilla erat a lacinia egestas. Donec vehicula tempor libero et cursus.
-      Donec non quam urna. Quisque vitae porta ipsum.
-    </p>
-    <form class="subscription-form">
-      <input type="email" placeholder="Email address" required />
-      <button type="submit">SUBSCRIBE <span>&rarr;</span></button>
-    </form>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.getElementById('product-image');
+      const thumbnails = document.querySelectorAll('.product-thumb');
   
-  
-  </section>
+      thumbnails.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+          mainImage.src = thumb.src; // Büyük resmi güncelle
+        });
+      });
+    });
+
+  </script>
   
   </body>
 </html>
