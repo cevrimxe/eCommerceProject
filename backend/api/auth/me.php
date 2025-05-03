@@ -1,16 +1,20 @@
 <?php 
-session_start(); // Oturumu başlat
+session_start();
 
-header("Access-Control-Allow-Origin: *");
+// Güvenli CORS ayarları
+header("Access-Control-Allow-Origin: http://localhost"); // frontend nerede çalışıyorsa onu yaz
+header("Access-Control-Allow-Credentials: true"); // session için gerekli
 header("Content-Type: application/json");
 header("Access-Control-Allow-Methods: GET");
 
-if(!isset($_SESSION['user_id'])) {
+// Eğer kullanıcı giriş yapmamışsa
+if (!isset($_SESSION['user_id'])) {
     http_response_code(401); // Unauthorized
     echo json_encode(["message" => "Unauthorized access. Please log in."]);
     exit;
 }
 
+// Giriş yapan kullanıcının bilgilerini dön
 echo json_encode([
     "id" => $_SESSION['user_id'],
     "email" => $_SESSION['email'],
@@ -18,11 +22,4 @@ echo json_encode([
     "last_name" => $_SESSION['last_name'],
     "usercode" => $_SESSION['usercode']
 ]);
-
-
-
-
-
-
-
 ?>
