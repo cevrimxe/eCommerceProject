@@ -179,19 +179,42 @@ body {
   padding: 6px;
   font-weight: bold;
 }
-
-/* Alt Bilgi */
 .info-strip {
-  background: white;
-  padding: 30px 20px;
-  /*margin-top: 40px;*/
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  font-size: 14px;
-  text-align: center;
-  gap: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: #f4f4f4;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 2px solid #ddd;
+    gap: 15px;
+    text-align: center;
+    font-size: 14px;
 }
+
+.info-strip div {
+    flex: 1 1 200px;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-strip div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.info-strip small {
+    display: block;
+    color: #777;
+    margin-top: 4px;
+    font-size: 12px;
+}
+
 .best-deals {
   padding: 40px 20px;
   background-color: #fff;
