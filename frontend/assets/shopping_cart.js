@@ -105,13 +105,28 @@ function change_quantity_db(button, new_quantity)
     };
     console.log("new product info: ", p);
 
+    if (new_quantity === null || isNaN(new_quantity) || new_quantity <= 0)
+    {
+        console.log("deleting product...");
+    
+        fetch(`../../backend/api/cart/delete_cartbyid.php?id=${p.id}&user_id=${p.user_id}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log("DELETE: ", data);
+        })
+        .catch(error => {
+          console.error('Error DELETING PRODUCT VIA delete_cartbyid.php:', error);
+        });
+        return;
+    }
+
     fetch(`../../backend/api/cart/put_cartbyid.php?id=${p.id}&user_id=${p.user_id}&quantity=${p.quantity}`)
     .then(response => response.json())
     .then(data => {
         console.log("PUTT: ", data);
     })
     .catch(error => {
-      console.error('Error PUTT PUTT.php:', error);
+      console.error('Error UPDATING PRODUCT VIA put_cartbyid.php:', error);
     });
 }
 
