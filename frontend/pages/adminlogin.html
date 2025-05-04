@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="adminlogin.css">
+</head>
+<body>
+
+<div class="login-container">
+  <h2>Admin Panel</h2>
+  <form class="login-form" id="adminLoginForm">
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById("adminLoginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    fetch("http://localhost/eCommerceProject/backend/api/auth/admin_login.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.user) {
+        alert("Admin girişi başarılı. Hoş geldin " + data.user.name);
+        window.location.href = "admin-dashboard.html";
+      } else {
+        alert("Hata: " + data.message);
+      }
+    })
+    .catch(error => {
+      console.error("Giriş hatası:", error);
+      alert("Bir hata oluştu. Lütfen tekrar deneyin.");
+    });
+  });
+</script>
+
+</body>
+</html>

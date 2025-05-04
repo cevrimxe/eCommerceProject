@@ -37,10 +37,20 @@ if (!empty($data->product_name) && !empty($data->price) && !empty($data->categor
 
     // Sorguyu çalıştır ve yanıtı dön
     if ($stmt->execute()) {
-        echo json_encode(["message" => "Product successfully added."]);
+        $product_id = $conn->lastInsertId(); // ID'yi al
+    
+        // JSON olarak başarılı yanıt döndür
+        echo json_encode([
+            "message" => "Product successfully added.",
+            "product_id" => $product_id, // product_id'yi dön
+        ]);
     } else {
+        // Eğer ekleme başarısızsa
         http_response_code(500);
-        echo json_encode(["message" => "Failed to add product."]);
+        echo json_encode([
+            "message" => "Failed to add product.",
+            "error" => $stmt->errorInfo(), // SQL hatasını da döndür
+        ]);
     }
 } else {
     echo json_encode(["message" => "Please provide product name, price, category id, and stock."]);

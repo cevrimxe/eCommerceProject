@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Admin Panel</h1>
+
+  <div class="nav-tabs">
+    <button onclick="showSection('products')">Product Management</button>
+    <button onclick="showSection('users')">User Management</button>
+  </div>
+
+  <!-- Product Management -->
+  <div id="products" class="section">
+    <h2>Add Product</h2>
+    <form id="productForm" enctype="multipart/form-data">
+      <input type="text" name="product_name" placeholder="Product Name" required>
+      <input type="number" name="price" placeholder="Price" required>
+      <textarea name="description" placeholder="Description" required></textarea>
+      <input type="number" name="stock" placeholder="Stock" required>
+      <select name="category_id" required>
+        <option value="">Select Category</option>
+        <!-- Dynamically populated categories -->
+      </select>
+      <input type="file" name="image" accept="image/*" required> <!-- Image upload input -->
+      <button type="submit">Add</button>
+    </form>
+
+    <h2>Product List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Details</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="productTable">
+        <!-- Products will be loaded here -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- User Management -->
+  <div id="users" class="section" style="display: none;">
+    <h2>User List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="userTable">
+        <!-- Users will be loaded here -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll(".section").forEach(section => section.style.display = "none");
+    document.getElementById(id).style.display = "block";
+  }
+</script>
+
+<!-- JavaScript files -->
+<script src="js/product.js"></script>
+<script src="js/user.js"></script>
+
+</body>
+</html>
