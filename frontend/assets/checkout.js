@@ -22,47 +22,49 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(fetchstr)
     .then(response => response.json())
     .then(data => {
-        // Ensure the cart_items array is present and contains items
-        if (data.cart_items && Array.isArray(data.cart_items))
-            {
-                // Iterate over each item in the source data.cart_items array
-                data.cart_items.forEach(sourceItem => {
-                // Create a *new* item object with the desired structure
-                const newItem = {
-                    product_name: sourceItem.product_name, // Copy product_name
-                    quantity: sourceItem.quantity,         // Copy quantity
-                    price: sourceItem.price                // Copy price
-                };
-            
-                // Add (push) the newly created item object into the cart_data.items array
-                cart_data.items.push(newItem);
-                })
-                console.log("summary to be displayed: ", cart_data);
-                populateSummaryInnerHTML(cart_data);
+    // Ensure the cart_items array is present and contains items
+    if (data.cart_items && Array.isArray(data.cart_items))
+        {
+            // Iterate over each item in the source data.cart_items array
+            data.cart_items.forEach(sourceItem => {
+            // Create a *new* item object with the desired structure
+            const newItem = {
+                product_name: sourceItem.product_name, // Copy product_name
+                quantity: sourceItem.quantity,         // Copy quantity
+                price: sourceItem.price                // Copy price
+            };
+        
+            // Add (push) the newly created item object into the cart_data.items array
+            cart_data.items.push(newItem);
+            })
+            console.log("summary to be displayed: ", cart_data);
+            populateSummaryInnerHTML(cart_data);
 
-                const placeOrderButton = document.querySelector('.order-button');
+            const placeOrderButton = document.querySelector('.order-button');
 
-                if (placeOrderButton) {
-                    placeOrderButton.addEventListener('click', (event) => {
-                        event.preventDefault(); // Prevent default button behavior if it's not type="submit" or inside a form needing submission yet
-                        
-                        // --- !!! ---
-                        // --- ADD YOUR ACTUAL ORDER SUBMISSION LOGIC HERE (e.g., fetch POST request) ---
-                        // --- !!! ---
-                        console.log('Simulating order placement...');
-            
-                        // Assuming submission is successful:
-                        // clearCheckoutSessionData();
-                        // alert('Order placed successfully! Form data cleared from session.');
+            if (placeOrderButton) {
+                placeOrderButton.addEventListener('click', (event) => {
+                    event.preventDefault(); // Prevent default button behavior if it's not type="submit" or inside a form needing submission yet
 
+
+                    const orderstr = `../../backend/api/order/post_orders.php?user_id=${localStorage.getItem('user_id')}`
+
+                    fetch(orderstr)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("POST'ed order, data:", data);
                         window.location.href = './15_checkoutsuccess.html';
-            
-                        // For now, just log and *don't* clear, so you can see persistence working
-                        alert('Place Order button clicked! (Session data is still stored for demo purposes)');
-            
-                    });
-                }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching post_orders.php:', error);
+                      });
+        
+                    // Assuming submission is successful:
+                    // clearCheckoutSessionData();
+                    // alert('Order placed successfully! Form data cleared from session.');
+                });
             }
+        }
     })
     .catch(error => {
       console.error('Error fetching get_cart.php:', error);
