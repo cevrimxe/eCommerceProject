@@ -47,69 +47,8 @@ function get_products() {
         });
       });
 
-
     })
     .catch(error => {
       console.error('Error fetching get_products.php:', error);
     });
 }
-
-
-/* function refresh_products_local() {
-  fetch('../../backend/api/products/get_products.php')
-    .then(response => response.json())
-    .then(data =>
-    {
-      console.log("GOT DATA FROM DB");
-      data.forEach
-      (datum =>
-      {
-        let product_grid = document.getElementById("product_grid_id");
-
-        let product_card = document.createElement("div");
-        product_card.classList.add("product-card");
-  
-        let product_img_link = document.createElement("img");
-        product_img_link.src = "../assets/paint.png"
-        product_img_link.alt = "";
-  
-        let product_info = document.createElement("div");
-        product_info.classList.add("product-info");
-  
-        let product_name = document.createElement("h4");
-        product_name.textContent = datum.product_name;
-  
-        let stars = document.createElement("div");
-        stars.classList.add("stars");
-        stars.textContent = "⭐⭐";
-  
-        let price = document.createElement("p");
-        price.classList.add("price");
-        price.textContent = "$" + datum.price;
-  
-        let badges = document.createElement("div");
-        badges.classList.add("badges");
-  
-        let badge_hot = document.createElement("span");
-        badge_hot.classList.add("hot");
-        badge_hot.textContent = "hot";
-  
-        product_info.appendChild(product_name);
-        product_info.appendChild(stars);
-        product_info.appendChild(price);
-  
-        badges.appendChild(badge_hot);
-  
-        product_card.appendChild(product_img_link);
-        product_card.appendChild(product_info);
-        product_card.appendChild(badges);
-  
-        product_grid.appendChild(product_card);
-      }
-      );
-      console.log(element);
-    })
-    .catch(error => {
-      console.error('Error fetching get_products.php:', error);
-    });
-} */
