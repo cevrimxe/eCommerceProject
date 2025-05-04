@@ -8,6 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Attach listeners to save data as user interacts with the form
     attachSaveListeners(formElements);
 
+
+    const sampleCartData = {
+        items: [
+            { product_name: 'Canon EOS 1500D', quantity: 1, price: 70.00 },
+            { product_name: 'Wired Over-Ear Gaming Headphones', quantity: 3, price: 250.00 },
+            { product_name: 'Extra USB Cable', quantity: 2, price: 5.99 }
+        ],
+        shippingCost: 0, // Represents "Free"
+        discountAmount: 24.00,
+        taxAmount: 61.99
+        // Backend might also provide calculated total for verification, but we recalculate here
+    };
+    populateSummaryInnerHTML(sampleCartData);
+
     // Example: Attach clearing to the place order button click (you'll likely have form submission logic here)
     const placeOrderButton = document.querySelector('.order-button');
     if (placeOrderButton) {
@@ -182,4 +196,110 @@ const clearCheckoutSessionData = (elements) => {
     });
 
     console.log('Checkout session data cleared.');
+};
+
+
+/**
+ * Formats a numeric value as a currency string (e.g., $123.45).
+ * @param {number|string} value - The numeric value to format.
+ * @returns {string} The formatted currency string.
+ */
+const formatCurrency = (value) => {
+    const number = parseFloat(value);
+    return isNaN(number) ? '$0.00' : `$${number.toFixed(2)}`;
+};
+
+/**
+ * Formats a shipping cost, displaying "Free" if zero or less.
+ * @param {number|string} value - The shipping cost.
+ * @returns {string} The formatted shipping string ("Free" or currency).
+ */
+const formatShipping = (value) => {
+    const number = parseFloat(value);
+    // Treat 0, negative, or NaN as Free for display
+    return (isNaN(number) || number <= 0) ? 'Free' : formatCurrency(number);
+};
+
+
+/**
+ * Populates the order summary box using innerHTML and client-side calculations.
+ * @param {object} cartData - Object containing cart details. Expected format:
+ *   {
+ *     items: [ { product_name: string, quantity: number, price: number|string }, ... ],
+ *     shippingCost: number|string, // Cost or 0 for free
+ *     discountAmount: number|string,
+ *     taxAmount: number|string
+ *   }
+ */
+const populateSummaryInnerHTML = (cartData) => {
+    const summaryBox = document.querySelector('.summary-box');
+    if (!summaryBox) {
+        console.error("Summary box element (.summary-box) not found!");
+        return; // Cannot proceed if the target element doesn't exist
+    }
+
+    // --- 1. Calculate Subtotal ---
+    let subtotal = 0;
+    if (cartData.items && cartData.items.length > 0) {
+        cartData.items.forEach(item => {
+            const price = parseFloat(item.price) || 0; // Default to 0 if price is invalid
+            const quantity = parseInt(item.quantity) || 0; // Default to 0 if quantity is invalid
+            subtotal += price * quantity;
+        });
+    }
+
+    // --- 2. Generate HTML for Cart Items ---
+    let itemsHtml = '';
+    if (!cartData.items || cartData.items.length === 0) {
+        itemsHtml = `<p class="summary-message" style="text-align: center; padding: 10px 0;">Your cart is empty.</p>`;
+        // Ensure subtotal is 0 if cart is empty
+        subtotal = 0;
+    } else {
+        itemsHtml = cartData.items.map(item => {
+            const price = parseFloat(item.price) || 0;
+            const quantity = parseInt(item.quantity) || 0;
+            // Basic sanitization placeholder - in real apps, consider a library if names can have HTML
+            const productName = item.product_name ? String(item.product_name).replace(/</g, "<").replace(/>/g, ">") : 'Unknown Product';
+
+            return `
+                <div class="summary-item">
+                    <p>${productName}<br><span>${quantity} × ${formatCurrency(price)}</span></p>
+                </div>
+            `;
+        }).join(''); // Join the array of HTML strings into one string
+    }
+
+    // --- 3. Prepare Summary Values (use defaults if not provided) ---
+    const shipping = parseFloat(cartData.shippingCost) || 0;
+    const discount = parseFloat(cartData.discountAmount) || 0;
+    const tax = parseFloat(cartData.taxAmount) || 0;
+
+    // --- 4. Calculate Final Total ---
+    // Ensure discount is subtracted correctly
+    const total = subtotal + shipping - discount + tax;
+
+    // --- 5. Generate HTML for Summary Details ---
+    const detailsHtml = `
+        <div class="summary-details">
+            <p>Subtotal <span>${formatCurrency(subtotal)}</span></p>
+            <p>Shipping <span>${formatShipping(shipping)}</span></p>
+            <p>Discount <span>${formatCurrency(discount)}</span></p>
+            <p>Tax <span>${formatCurrency(tax)}</span></p>
+            <p class="summary-total">Total <span>${formatCurrency(total)} USD</span></p>
+        </div>
+    `;
+
+    // --- 6. Assemble Final HTML and Update DOM ---
+    summaryBox.innerHTML = `
+        <h3 class="summary-title">Order Summary</h3>
+        ${itemsHtml}
+        ${cartData.items && cartData.items.length > 0 ? '<hr />' : ''}
+        ${detailsHtml}
+        <button class="order-button">PLACE ORDER →</button>
+    `;
+
+    console.log("Order summary populated using innerHTML.");
+
+    // Optional: Re-attach any event listeners needed for the new button if necessary
+    // e.g., addPlaceOrderListener();
 };
