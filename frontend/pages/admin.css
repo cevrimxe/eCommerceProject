@@ -114,3 +114,66 @@ button.delete {
   background-color: #e53935;
   color: white;
 }
+
+
+select[name="category_id"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  appearance: none; /* Chrome, Safari, Edge */
+  -webkit-appearance: none; /* Safari */
+  -moz-appearance: none; /* Firefox */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+}
+
+select[name="category_id"]:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #fff;
+}
+
+select[name="user_role"] {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  appearance: none; /* Chrome, Safari, Edge */
+  -webkit-appearance: none; /* Safari */
+  -moz-appearance: none; /* Firefox */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+}
+
+select[name="user_role"]:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #fff;
+}
+
+#productForm button[type="submit"] {
+  margin-top: 15px; /* istediğin boşluğa göre artırabilirsin */
+  padding: 10px 20px;
+  background-color: #43a047;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#productForm button[type="submit"]:hover {
+  background-color: #0056b3;
+}

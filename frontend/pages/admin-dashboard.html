@@ -24,11 +24,11 @@
       <input type="number" name="price" placeholder="Price" required>
       <textarea name="description" placeholder="Description" required></textarea>
       <input type="number" name="stock" placeholder="Stock" required>
+      <input type="file" name="image" accept="image/*"> <!-- Image upload input -->
       <select name="category_id" required>
         <option value="">Select Category</option>
         <!-- Dynamically populated categories -->
       </select>
-      <input type="file" name="image" accept="image/*" required> <!-- Image upload input -->
       <button type="submit">Add</button>
     </form>
 
@@ -50,21 +50,39 @@
 
   <!-- User Management -->
   <div id="users" class="section" style="display: none;">
-    <h2>User List</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Full Name</th>
-          <th>Email</th>
-          <th>Role</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="userTable">
-        <!-- Users will be loaded here -->
-      </tbody>
-    </table>
+  <h2>User List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Phone</th> <!-- Telefon Numarası Sütunu Eklendi -->
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="userTable">
+      <!-- Users will be loaded here -->
+    </tbody>
+  </table>
+
+    <!-- User Edit Form -->
+    <div id="editUserFormContainer" style="display: none;">
+    <h2>Edit User</h2>
+    <form id="editUserForm">
+      <input type="hidden" name="user_id" id="user_id">
+      <input type="text" name="user_firstname" id="user_firstname" placeholder="First Name" required>
+      <input type="text" name="user_lastname" id="user_lastname" placeholder="Last Name" required>
+      <input type="email" name="user_email" id="user_email" placeholder="Email" required>
+      <input type="text" name="user_phone" id="user_phone" placeholder="Phone" required> <!-- Telefon Numarası Eklendi -->
+      <select name="user_role" id="user_role" required>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+      <button type="submit">Update User</button>
+    </form>
   </div>
+
 </div>
 
 <script>
