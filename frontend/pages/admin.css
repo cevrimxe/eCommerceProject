@@ -1,63 +1,116 @@
-/* Body'yi ortala ve arka plan ver */
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  /* Login kutusu */
-  .login-container {
-    background: #fff;
-    padding: 3rem 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
-    text-align: center;
-    width: 320px;
-  }
-  
-  /* Başlık */
-  .login-container h2 {
-    margin-bottom: 2rem;
-    color: #333;
-  }
-  
-  /* Form inputları */
-  .login-form input {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1.2rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-  }
-  
-  /* Login butonu */
-  .login-form button {
-    width: 100%;
-    padding: 0.8rem;
-    background-color: #667eea;
-    color: white;
-    font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Hover efekti */
-  .login-form button:hover {
-    background-color: #5a67d8;
-  }
-  
-  /* Responsive */
-  @media (max-width: 400px) {
-    .login-container {
-      width: 90%;
-    }
-  }
-  
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f2f4f7;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.nav-tabs button {
+  background-color: #1e88e5;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  margin: 0 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.nav-tabs button:hover {
+  background-color: #1565c0;
+}
+
+.section h2 {
+  margin-top: 20px;
+  color: #333;
+}
+
+form {
+  margin-bottom: 30px;
+}
+
+form input,
+form textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form button {
+  padding: 12px;
+  background-color: #43a047;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #388e3c;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f0f0f0;
+}
+
+table img {
+  width: 60px;
+  height: auto;
+  border-radius: 4px;
+}
+
+table button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.edit {
+  background-color: #ff9800;
+  color: white;
+}
+
+button.delete {
+  background-color: #e53935;
+  color: white;
+}
