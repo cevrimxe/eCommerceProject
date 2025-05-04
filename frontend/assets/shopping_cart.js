@@ -130,6 +130,11 @@ function change_quantity_db(button, new_quantity)
     });
 }
 
+function route_via_button(new_location)
+{
+    window.location.href = new_location;
+}
+
 function updateCartTotals() {
     let subTotal = 0;
     
