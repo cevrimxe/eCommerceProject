@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     get_cart();
 });
 
+const indexToCartIdMap = {};
+
 function get_cart()
 {
     const fetchstr = `../../backend/api/cart/get_cart.php?user_id=${localStorage.getItem('user_id')}`
@@ -16,6 +18,10 @@ function get_cart()
         if (data.cart_items && Array.isArray(data.cart_items)) {
             const cartItems = data.cart_items;
             let number_of_cartitems = cartItems.length;
+
+            data.cart_items.forEach((item, index) => {
+              indexToCartIdMap[index] = item.cartt_id;
+            });
 
             // Get the table body element where rows will be added
             const tableBody = document.querySelector('table tbody');
@@ -37,9 +43,9 @@ function get_cart()
                     <td>$${cartItems[i].price}</td>
                     <td>
                         <div class="qty">
-                            <button onclick="change_quantity(this, -1)">-</button>
+                            <button onclick="change_quantity_visual(this, -1)">-</button>
                             <input type="text" value="${cartItems[i].quantity}">
-                            <button onclick="change_quantity(this, 1)">+</button>
+                            <button onclick="change_quantity_visual(this, 1)">+</button>
                         </div>
                     </td>
                     <td>$${(cartItems[i].price * cartItems[i].quantity).toFixed(2)}</td>
@@ -60,21 +66,14 @@ function get_cart()
     });
 }
 
-function change_quantity(button, offset)
+function change_quantity_visual(button, offset)
 {
     const quantityInput = button.closest('.qty').querySelector('input');
     let currentQuantity = parseInt(quantityInput.value);
     currentQuantity += offset;
 
-    if (currentQuantity < 1)
-    {
-        const row = button.closest('tr'); // Get the row containing the clicked button
-        row.remove();
-        
-        // Optionally update the cart totals after removing a product
-        updateCartTotals();
-        return;
-    }
+    const row = button.closest('tr');
+    const rowIndex = Array.from(row.parentElement.children).indexOf(row);
     
     quantityInput.value = currentQuantity;
     
@@ -84,8 +83,51 @@ function change_quantity(button, offset)
     const subtotalCell = button.closest('tr').querySelector('td:nth-child(4)');
     subtotalCell.textContent = `$${(price * currentQuantity).toFixed(2)}`;
     
-    // Optionally update the cart totals after changing quantity
+    // update the cart totals after changing quantity
     updateCartTotals();
+
+    change_quantity_db(button, currentQuantity);
+}
+
+function change_quantity_db(button, new_quantity)
+{
+    const row = button.closest('tr');
+    // constructing an entire array just to find index of button's row D:
+    const rowIndex = Array.from(row.parentElement.children).indexOf(row);
+
+    // the mapping is stored when we first do GET cart so we don't have to do another GET when we want to PUT
+    const cartt_id = indexToCartIdMap[rowIndex];
+
+    const p = {
+        id: cartt_id,
+        user_id: parseInt(localStorage.getItem('user_id')),
+        quantity: new_quantity,
+    };
+    console.log("new product info: ", p);
+
+    if (new_quantity === null || isNaN(new_quantity) || new_quantity <= 0)
+    {
+        console.log("deleting product...");
+    
+        fetch(`../../backend/api/cart/delete_cartbyid.php?id=${p.id}&user_id=${p.user_id}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log("DELETE: ", data);
+        })
+        .catch(error => {
+          console.error('Error DELETING PRODUCT VIA delete_cartbyid.php:', error);
+        });
+        return;
+    }
+
+    fetch(`../../backend/api/cart/put_cartbyid.php?id=${p.id}&user_id=${p.user_id}&quantity=${p.quantity}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log("PUTT: ", data);
+    })
+    .catch(error => {
+      console.error('Error UPDATING PRODUCT VIA put_cartbyid.php:', error);
+    });
 }
 
 function updateCartTotals() {

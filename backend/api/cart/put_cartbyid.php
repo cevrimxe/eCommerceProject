@@ -25,13 +25,13 @@ if (!$loggedInUserId) {
     exit;
 }
 
-$data = json_decode(file_get_contents("php://input"), true);
-
-if (!isset($data['quantity'])) {
+if (!isset($_GET['quantity'])) {
     http_response_code(400);
     echo json_encode(["message" => "Quantity is required."]);
     exit;
 }
+
+$quantity = $_GET['quantity'];
 
 try {
     // Önce mevcut item'ı çekiyoruz
@@ -50,7 +50,6 @@ try {
     }
 
     $unitPrice = $cartItem['unit_price'];
-    $quantity = $data['quantity'];
     $total = $unitPrice * $quantity;
 
     // Güncelleme işlemi
