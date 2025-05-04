@@ -9,18 +9,42 @@ document.addEventListener('DOMContentLoaded', () => {
     attachSaveListeners(formElements);
 
 
-    const sampleCartData = {
-        items: [
-            { product_name: 'Canon EOS 1500D', quantity: 1, price: 70.00 },
-            { product_name: 'Wired Over-Ear Gaming Headphones', quantity: 3, price: 250.00 },
-            { product_name: 'Extra USB Cable', quantity: 2, price: 5.99 }
-        ],
-        shippingCost: 0, // Represents "Free"
+    const cart_data = {
+        items: [], // Start with an empty array to push items into
+        shippingCost: 0,       // Represents "Free"
         discountAmount: 24.00,
         taxAmount: 61.99
-        // Backend might also provide calculated total for verification, but we recalculate here
     };
-    populateSummaryInnerHTML(sampleCartData);
+
+    const fetchstr = `../../backend/api/cart/get_cart.php?user_id=${localStorage.getItem('user_id')}`
+    console.log("fetchstr: ", fetchstr);
+
+    fetch(fetchstr)
+    .then(response => response.json())
+    .then(data => {
+        console.log("Cart data: ", data);
+        // Ensure the cart_items array is present and contains items
+        if (data.cart_items && Array.isArray(data.cart_items))
+            {
+                // Iterate over each item in the source data.cart_items array
+                data.cart_items.forEach(sourceItem => {
+                // Create a *new* item object with the desired structure
+                const newItem = {
+                    product_name: sourceItem.product_name, // Copy product_name
+                    quantity: sourceItem.quantity,         // Copy quantity
+                    price: sourceItem.price                // Copy price
+                };
+            
+                // Add (push) the newly created item object into the cart_data.items array
+                cart_data.items.push(newItem);
+                })
+                console.log("summary to be displayed: ", cart_data);
+                populateSummaryInnerHTML(cart_data);
+            }
+    })
+    .catch(error => {
+      console.error('Error fetching get_cart.php:', error);
+    });
 
     // Example: Attach clearing to the place order button click (you'll likely have form submission logic here)
     const placeOrderButton = document.querySelector('.order-button');
