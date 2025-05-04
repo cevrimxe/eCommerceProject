@@ -3,34 +3,68 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 header("Access-Control-Allow-Methods: GET");
 
-include_once "../../config/database.php";
+// Include database configuration
+include_once "../../config/database.php"; // Make sure the path is correct
 
+// Instantiate database and get connection
 $database = new Database();
 $conn = $database->getConnection();
 
-// Ürünleri çek
-$query = "SELECT product_id, product_name, description, price, category_id, stock, cover_image_url FROM product";
-$stmt = $conn->prepare($query);
-$stmt->execute();
+// Check connection
+if (!$conn) {
+    http_response_code(503); // Service Unavailable
+    echo json_encode(["message" => "Unable to connect to database."]);
+    exit(); // Stop script execution
+}
 
-$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+try {
+    // Prepare the optimized query with LEFT JOIN
+    // Use LEFT JOIN in case a product has an invalid or missing category_id
+    // Use COALESCE to provide a default 'Unknown' if category_name is NULL
+    $query = "
+        SELECT
+            p.product_id,
+            p.product_name,
+            p.description,
+            p.price,
+            p.category_id,
+            p.stock,
+            p.cover_image_url,
+            COALESCE(c.category_name, 'Unknown') AS category_name
+        FROM
+            product p
+        LEFT JOIN
+            category_table c ON p.category_id = c.category_id
+    ";
 
-if ($products) {
-    // Kategori bilgisi eklemek isteyebilirsiniz (opsiyonel)
-    foreach ($products as &$product) {
-        $category_query = "SELECT category_name FROM category_table WHERE category_id = :category_id";
-        $category_stmt = $conn->prepare($category_query);
-        $category_stmt->bindParam(":category_id", $product['category_id']);
-        $category_stmt->execute();
-        $category = $category_stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt = $conn->prepare($query);
 
-        // Kategori adını ürüne ekle
-        $product['category_name'] = $category ? $category['category_name'] : 'Unknown';
+    // Execute query
+    if ($stmt->execute()) {
+        // Fetch all products with category names included
+        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($products) {
+            http_response_code(200); // OK
+            echo json_encode($products);
+        } else {
+            http_response_code(404); // Not Found
+            echo json_encode(["message" => "No products found."]);
+        }
+    } else {
+        http_response_code(500); // Internal Server Error
+        echo json_encode(["message" => "Unable to retrieve products."]);
     }
 
-    // Ürünleri JSON olarak döndür
-    echo json_encode($products);
-} else {
-    echo json_encode(["message" => "No products found!"]);
+} catch (PDOException $exception) {
+    http_response_code(500); // Internal Server Error
+    // Log the error instead of echoing it directly in production
+    error_log("Database Error: " . $exception->getMessage());
+    echo json_encode([
+        "message" => "An error occurred while retrieving products.",
+        // Optionally include more detail during development, remove for production
+        // "error" => $exception->getMessage()
+    ]);
 }
+
 ?>
