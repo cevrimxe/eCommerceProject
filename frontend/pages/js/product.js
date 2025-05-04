@@ -3,6 +3,7 @@ document.getElementById("productForm").addEventListener("submit", async function
 
   const form = e.target;
   const formData = new FormData(form);
+  const productId = formData.get("product_id"); // Güncelleme mi kontrol et
 
   const productData = {
     product_name: formData.get("product_name"),
@@ -12,9 +13,16 @@ document.getElementById("productForm").addEventListener("submit", async function
     category_id: parseInt(formData.get("category_id")),
   };
 
-  // 1. Ürünü ekle
+  if (productId) {
+    productData.product_id = parseInt(productId);
+  }
+
+  const endpoint = productId
+    ? "http://localhost/eCommerceProject/backend/api/products/put_product.php"
+    : "http://localhost/eCommerceProject/backend/api/products/add_product.php";
+
   try {
-    const response = await fetch("http://localhost/eCommerceProject/backend/api/products/add_product.php", {
+    const response = await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,15 +33,14 @@ document.getElementById("productForm").addEventListener("submit", async function
     const result = await response.json();
 
     if (response.ok) {
-      console.log("Product added:", result.message);
+      console.log(productId ? "Product updated:" : "Product added:", result.message);
 
-      // 2. product_id'yi alıp resmi yükle
-      const newProductId = result.product_id;
       const imageFile = form.querySelector('input[type="file"]').files[0];
+      const finalProductId = productId || result.product_id;
 
-      if (imageFile && newProductId) {
+      if (imageFile && finalProductId) {
         const imageFormData = new FormData();
-        imageFormData.append("product_id", newProductId);
+        imageFormData.append("product_id", finalProductId);
         imageFormData.append("image", imageFile);
 
         const imageRes = await fetch("http://localhost/eCommerceProject/backend/api/products/upload_product_image.php", {
@@ -45,22 +52,28 @@ document.getElementById("productForm").addEventListener("submit", async function
 
         if (imageRes.ok) {
           console.log("Image uploaded:", imageResult.message);
-          alert("Ürün ve görsel başarıyla eklendi!");
-          form.reset(); // Formu temizle
+          alert(productId ? "Ürün ve görsel güncellendi!" : "Ürün ve görsel eklendi!");
         } else {
-          console.error("Image upload failed:", imageResult.message);
-          alert("Ürün eklendi ama görsel yüklenemedi.");
+          console.warn("Image upload failed:", imageResult.message);
+          alert("Ürün işlem tamam ama görsel yüklenemedi.");
         }
+      } else {
+        alert(productId ? "Ürün güncellendi!" : "Ürün eklendi!");
       }
+
+      form.reset();
+      form.querySelector('button[type="submit"]').textContent = "Add";
+      form.querySelector('[name="product_id"]')?.remove();
+      loadProducts();
     } else {
-      console.error("Product add failed:", result.message);
-      alert("Ürün eklenemedi: " + result.message);
+      alert("İşlem başarısız: " + result.message);
     }
   } catch (err) {
     console.error("Request failed:", err);
     alert("Bir hata oluştu.");
   }
 });
+
 
 
   
@@ -104,9 +117,33 @@ document.getElementById("productForm").addEventListener("submit", async function
   }
   
   function editProduct(id) {
-    // Buraya düzenleme formunu açma ve veri doldurma işlemi gelecek
-    alert("Düzenle işlemi yapılacak ürün ID: " + id);
+    fetch(`http://localhost/eCommerceProject/backend/api/products/get_product.php?id=${id}`)
+      .then(res => res.json())
+      .then(product => {
+        const form = document.getElementById("productForm");
+  
+        // Form alanlarını doldur
+        form.querySelector('[name="product_name"]').value = product.product_name;
+        form.querySelector('[name="price"]').value = product.price;
+        form.querySelector('[name="description"]').value = product.description;
+        form.querySelector('[name="stock"]').value = product.stock;
+        form.querySelector('[name="category_id"]').value = product.category_id;
+  
+        // Gizli bir input ile güncellenecek ID’yi ekle (varsa güncelle, yoksa oluştur)
+        let hiddenId = form.querySelector('[name="product_id"]');
+        if (!hiddenId) {
+          hiddenId = document.createElement("input");
+          hiddenId.type = "hidden";
+          hiddenId.name = "product_id";
+          form.appendChild(hiddenId);
+        }
+        hiddenId.value = product.product_id;
+  
+        // Submit butonunun metnini değiştir
+        form.querySelector('button[type="submit"]').textContent = "Update";
+      });
   }
+  
   
   // Sayfa yüklendiğinde ürünleri getir
   loadProducts();
