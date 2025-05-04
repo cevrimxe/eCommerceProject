@@ -3,39 +3,85 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 header("Access-Control-Allow-Methods: GET");
 
-include_once "../../config/database.php";
+// Include database configuration
+include_once "../../config/database.php"; // Make sure the path is correct
 
+// Instantiate database and get connection
 $database = new Database();
 $conn = $database->getConnection();
 
-// Get `id` from URL
-$product_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+// Check connection
+if (!$conn) {
+    http_response_code(503); // Service Unavailable
+    echo json_encode(["message" => "Unable to connect to database."]);
+    exit(); // Stop script execution
+}
 
-if ($product_id > 0) {
-    $query = "SELECT product_id, product_name, description, price, category_id, stock, cover_image_url FROM product WHERE product_id = :id";
+// Get `id` from URL and validate
+$product_id = isset($_GET['id']) ? filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT) : null;
+
+// Check if ID is provided and is a valid positive integer
+if ($product_id === null || $product_id === false || $product_id <= 0) {
+    http_response_code(400); // Bad Request
+    echo json_encode(["message" => "Invalid or missing product ID."]);
+    exit();
+}
+
+try {
+    // Prepare the optimized query with LEFT JOIN
+    // Use LEFT JOIN in case the product has an invalid or missing category_id
+    // Use COALESCE to provide a default 'Unknown' if category_name is NULL
+    $query = "
+        SELECT
+            p.product_id,
+            p.product_name,
+            p.description,
+            p.price,
+            p.category_id,
+            p.stock,
+            p.cover_image_url,
+            COALESCE(c.category_name, 'Unknown') AS category_name
+        FROM
+            product p
+        LEFT JOIN
+            category_table c ON p.category_id = c.category_id
+        WHERE
+            p.product_id = :id
+        LIMIT 1 -- Good practice when fetching by a unique ID
+    ";
+
     $stmt = $conn->prepare($query);
-    $stmt->bindParam(":id", $product_id);
-    $stmt->execute();
 
-    $product = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Bind the product ID parameter
+    // Use bindValue for integer type hint if desired, or bindParam works fine too
+    $stmt->bindValue(":id", $product_id, PDO::PARAM_INT);
 
-    if ($product) {
-        // Kategori bilgisi eklemek isteyebilirsiniz (opsiyonel)
-        $category_query = "SELECT category_name FROM category_table WHERE category_id = :category_id";
-        $category_stmt = $conn->prepare($category_query);
-        $category_stmt->bindParam(":category_id", $product['category_id']);
-        $category_stmt->execute();
-        $category = $category_stmt->fetch(PDO::FETCH_ASSOC);
+    // Execute query
+    if ($stmt->execute()) {
+        // Fetch the single product (or false if not found)
+        $product = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // Kategori adını ürüne ekle
-        $product['category_name'] = $category ? $category['category_name'] : 'Unknown';
-
-        // Ürün bilgilerini JSON olarak döndür
-        echo json_encode($product);
+        if ($product) {
+            http_response_code(200); // OK
+            echo json_encode($product);
+        } else {
+            http_response_code(404); // Not Found
+            echo json_encode(["message" => "Product not found."]);
+        }
     } else {
-        echo json_encode(["message" => "Product not found!"]);
+        // Execution failed (rare with prepare/bind unless connection drops, etc.)
+        http_response_code(500); // Internal Server Error
+        echo json_encode(["message" => "Unable to retrieve product data."]);
     }
-} else {
-    echo json_encode(["message" => "Invalid product ID!"]);
+
+} catch (PDOException $exception) {
+    http_response_code(500); // Internal Server Error
+    // Log the error instead of echoing it directly in production
+    error_log("Database Error: " . $exception->getMessage());
+    echo json_encode([
+        "message" => "An error occurred while retrieving the product.",
+        // Optionally include more detail during development, remove for production
+        // "error" => $exception->getMessage()
+    ]);
 }
 ?>
