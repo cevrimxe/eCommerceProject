@@ -17,12 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const fetchstr = `../../backend/api/cart/get_cart.php?user_id=${localStorage.getItem('user_id')}`
-    console.log("fetchstr: ", fetchstr);
 
+    console.log("beforefetch");
     fetch(fetchstr)
     .then(response => response.json())
     .then(data => {
-        console.log("Cart data: ", data);
         // Ensure the cart_items array is present and contains items
         if (data.cart_items && Array.isArray(data.cart_items))
             {
@@ -40,34 +39,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 console.log("summary to be displayed: ", cart_data);
                 populateSummaryInnerHTML(cart_data);
+
+                const placeOrderButton = document.querySelector('.order-button');
+
+                if (placeOrderButton) {
+                    placeOrderButton.addEventListener('click', (event) => {
+                        event.preventDefault(); // Prevent default button behavior if it's not type="submit" or inside a form needing submission yet
+                        
+                        // --- !!! ---
+                        // --- ADD YOUR ACTUAL ORDER SUBMISSION LOGIC HERE (e.g., fetch POST request) ---
+                        // --- !!! ---
+                        console.log('Simulating order placement...');
+            
+                        // Assuming submission is successful:
+                        // clearCheckoutSessionData();
+                        // alert('Order placed successfully! Form data cleared from session.');
+
+                        window.location.href = './15_checkoutsuccess.html';
+            
+                        // For now, just log and *don't* clear, so you can see persistence working
+                        alert('Place Order button clicked! (Session data is still stored for demo purposes)');
+            
+                    });
+                }
             }
     })
     .catch(error => {
       console.error('Error fetching get_cart.php:', error);
     });
-
-    // Example: Attach clearing to the place order button click (you'll likely have form submission logic here)
-    const placeOrderButton = document.querySelector('.order-button');
-    if (placeOrderButton) {
-        placeOrderButton.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent default button behavior if it's not type="submit" or inside a form needing submission yet
-
-            // --- !!! ---
-            // --- ADD YOUR ACTUAL ORDER SUBMISSION LOGIC HERE (e.g., fetch POST request) ---
-            // --- !!! ---
-            console.log('Simulating order placement...');
-
-            // Assuming submission is successful:
-            // clearCheckoutSessionData();
-            // alert('Order placed successfully! Form data cleared from session.');
-            // Optionally redirect: window.location.href = 'order-confirmation.html';
-
-            // For now, just log and *don't* clear, so you can see persistence working
-            alert('Place Order button clicked! (Session data is still stored for demo purposes)');
-
-        });
-    }
-
 }); // End DOMContentLoaded
 
 
@@ -222,39 +221,17 @@ const clearCheckoutSessionData = (elements) => {
     console.log('Checkout session data cleared.');
 };
 
-
-/**
- * Formats a numeric value as a currency string (e.g., $123.45).
- * @param {number|string} value - The numeric value to format.
- * @returns {string} The formatted currency string.
- */
 const formatCurrency = (value) => {
     const number = parseFloat(value);
     return isNaN(number) ? '$0.00' : `$${number.toFixed(2)}`;
 };
 
-/**
- * Formats a shipping cost, displaying "Free" if zero or less.
- * @param {number|string} value - The shipping cost.
- * @returns {string} The formatted shipping string ("Free" or currency).
- */
 const formatShipping = (value) => {
     const number = parseFloat(value);
     // Treat 0, negative, or NaN as Free for display
     return (isNaN(number) || number <= 0) ? 'Free' : formatCurrency(number);
 };
 
-
-/**
- * Populates the order summary box using innerHTML and client-side calculations.
- * @param {object} cartData - Object containing cart details. Expected format:
- *   {
- *     items: [ { product_name: string, quantity: number, price: number|string }, ... ],
- *     shippingCost: number|string, // Cost or 0 for free
- *     discountAmount: number|string,
- *     taxAmount: number|string
- *   }
- */
 const populateSummaryInnerHTML = (cartData) => {
     const summaryBox = document.querySelector('.summary-box');
     if (!summaryBox) {
@@ -327,3 +304,8 @@ const populateSummaryInnerHTML = (cartData) => {
     // Optional: Re-attach any event listeners needed for the new button if necessary
     // e.g., addPlaceOrderListener();
 };
+
+function route_via_button(new_location)
+{
+    window.location.href = new_location;
+}
