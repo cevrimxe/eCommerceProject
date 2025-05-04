@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>İNTERNET TEKNOLOJİLERİ PROJE</title>
   <link rel="stylesheet" href="productdetail.css" />
-  <script src="../assets/product_details.js"></script>
+  <script src="../assets/productdetail.js"></script>
   <script src="js/include.js" defer></script>
   <link rel="stylesheet" href="header.css" />
 </head>
@@ -25,9 +25,7 @@
   </nav>
   
 
-
-
-  <main class="container product-detail">
+  <main class="container product-detail" id="product-detail-id">
 
     <div class="product-images">
       <img id="product-image" src="macbook1.jpg" alt="MacBook Pro" class="main-image">
@@ -40,19 +38,12 @@
     </div>
 
     <div class="product-info">
-      <h2 id="product-name">2020 Apple MacBook Pro</h2><!--veri tabanından gelecek-->
+      <h2 id="product-name"></h2><!--veri tabanından gelecek-->
       <p class="price" id="product-price">$1699 <span class="old-price">$1999.00</span></p><!--ürün görseli title ve açıklaması bunları card view olarak
       tasarla.Ve bu veriyi sql'den çekicez-->
       <p id="product-category"></p>
       <p id="product-description"></p>
       <p id="product-stock"></p>
-
-
-      <!-- <label for="memory">Memory:</label>
-      <select id="memory">
-        <option>8GB</option>
-        <option>16GB</option>
-      </select> -->
 
       <div class="actions">
         <button class="btn primary" onclick="add_to_cart()">Add to Cart</button>
@@ -73,26 +64,7 @@
   <br>
   <br>
   
-
-
-
-
   <div data-include="footer"></div>
 
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const mainImage = document.getElementById('product-image');
-      const thumbnails = document.querySelectorAll('.product-thumb');
-  
-      thumbnails.forEach(thumb => {
-        thumb.addEventListener('click', () => {
-          mainImage.src = thumb.src; // Büyük resmi güncelle
-        });
-      });
-    });
-
-  </script>
-  
-  </body>
+</body>
 </html>
