@@ -21,6 +21,8 @@ function loadUsers() {
   }
   
   function deleteUser(id) {
+    const isConfirmed = confirm("Are you sure you want to delete this user?");
+    if(isConfirmed) {
     fetch(`http://localhost/eCommerceProject/backend/api/user/delete_users.php?id=${id}`, {
       method: "DELETE"
     })
@@ -29,6 +31,9 @@ function loadUsers() {
         alert(data.message);
         loadUsers();
       });
+    } else {
+      console.log("User deletion cancelled.");
+    }
   }
   
   function editUser(id) {

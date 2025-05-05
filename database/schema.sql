@@ -30,12 +30,11 @@ CREATE TABLE IF NOT EXISTS category_table (
 -- 5️⃣ Ürünler
 CREATE TABLE IF NOT EXISTS product (
     product_id SERIAL PRIMARY KEY,
-    product_name VARCHAR(50),
+    product_name VARCHAR(100),
     description TEXT,
     price FLOAT,
     category_id INT,
     stock INT,
-    cover_image_url TEXT, -- 📸 Kapak fotoğrafı
     FOREIGN KEY (category_id) REFERENCES category_table(category_id) ON DELETE CASCADE
 );
 
@@ -81,12 +80,5 @@ CREATE TABLE IF NOT EXISTS rate_tbl (
     product_id INT,
     rate FLOAT,  -- Puanlama değeri FLOAT olarak değiştirildi
     FOREIGN KEY (user_id) REFERENCES user_tbl(user_id) ON DELETE CASCADE,
-    FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
-);
-
-CREATE TABLE IF NOT EXISTS product_images (
-    image_id SERIAL PRIMARY KEY,
-    product_id INT NOT NULL,
-    image_url TEXT NOT NULL,
     FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
 );

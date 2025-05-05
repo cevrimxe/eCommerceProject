@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="admin.css">
+  <script src="js/is_admin.js"></script>
 </head>
 <body>
 
 <div class="container">
   <h1>Admin Panel</h1>
-
+  <button id="logoutBtn">Logout</button>
   <div class="nav-tabs">
     <button onclick="showSection('products')">Product Management</button>
     <button onclick="showSection('users')">User Management</button>
@@ -90,11 +91,29 @@
     document.querySelectorAll(".section").forEach(section => section.style.display = "none");
     document.getElementById(id).style.display = "block";
   }
+
+  document.getElementById("logoutBtn").addEventListener("click", function () {
+  fetch("http://localhost/eCommerceProject/backend/api/auth/logout.php", {
+    method: "POST",
+    credentials: "include" // PHPSESSID çerezini gönder
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data.message); // opsiyonel: "Logout successful."
+      window.location.href = "index.html"; // Ana sayfaya yönlendir
+    })
+    .catch((err) => {
+      console.error("Logout failed:", err);
+      window.location.href = "index.html"; // Yine de yönlendir
+    });
+});
 </script>
+
 
 <!-- JavaScript files -->
 <script src="js/product.js"></script>
 <script src="js/user.js"></script>
+
 
 </body>
 </html>

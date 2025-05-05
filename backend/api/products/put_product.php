@@ -28,7 +28,6 @@ if ($product_id > 0 && !empty($data->product_name) && !empty($data->description)
                   description = :description, 
                   price = :price, 
                   stock = :stock, 
-                  cover_image_url = :cover_image_url 
               WHERE product_id = :id";
 
     $stmt = $conn->prepare($query);
@@ -38,9 +37,6 @@ if ($product_id > 0 && !empty($data->product_name) && !empty($data->description)
     $stmt->bindParam(":price", $data->price);
     $stmt->bindParam(":stock", $data->stock);
     $stmt->bindParam(":id", $product_id);
-
-    $cover_image = empty($data->cover_image_url) ? null : $data->cover_image_url;
-    $stmt->bindParam(":cover_image_url", $cover_image);
 
     if ($stmt->execute()) {
         echo json_encode(["message" => "Product updated successfully."]);
