@@ -177,3 +177,7 @@ select[name="user_role"]:focus {
 #productForm button[type="submit"]:hover {
   background-color: #0056b3;
 }
+
+body{
+    display: none;
+  }

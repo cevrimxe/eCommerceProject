@@ -106,17 +106,30 @@ document.getElementById("productForm").addEventListener("submit", async function
   }
   
   function deleteProduct(id) {
-    fetch(`http://localhost/eCommerceProject/backend/api/products/delete_product.php?id=${id}`, {
-      method: "DELETE"
-    })
+    const isConfirmed = confirm("Are you sure you want to delete this product?");
+
+    if (isConfirmed) {
+      // Eğer onaylandıysa, silme işlemini yap
+      fetch(`http://localhost/eCommerceProject/backend/api/products/delete_product.php?id=${id}`, {
+          method: "DELETE"
+      })
       .then((res) => res.json())
       .then((data) => {
-        alert(data.message);
-        loadProducts();
+          alert(data.message);  // Kullanıcıya mesaj göster
+          loadProducts();  // Ürünleri tekrar yükle
+      })
+      .catch((err) => {
+          console.error("Error while deleting product:", err);
       });
+    } else {
+      console.log("Product deletion cancelled.");
+    }
   }
   
   function editProduct(id) {
+    
+
+
     fetch(`http://localhost/eCommerceProject/backend/api/products/get_product.php?id=${id}`)
       .then(res => res.json())
       .then(product => {
