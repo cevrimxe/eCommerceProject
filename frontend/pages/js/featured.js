@@ -30,8 +30,8 @@ function displayProduct(product, category) {
     productCard.classList.add('deal-card', 'hot-sale'); // Deal kartını oluşturuyoruz
 
     productCard.innerHTML = `
-        <div class="badge discount">${product.discount}% OFF</div>
-        <div class="badge hot">HOT</div>
+        <div class="badge discount"></div>
+        <div class="badge hot">${product.discount}% OFF</div>
         <img src="../assets/images/${product.product_id}/${product.product_id} cover.png" alt="">
         <div class="rating">
             ⭐⭐⭐⭐⭐ <span>(${product.reviews_count})</span>
@@ -43,7 +43,7 @@ function displayProduct(product, category) {
             ${product.description}
         </p>
         <div class="actions">
-            <button class="shop-btn">SHOP NOW →</button>
+        <button class="shop-btn" onclick="window.location.href='productdetail.html?id=${product.product_id}'">SHOP NOW →</button>
         </div>
     `;
 
