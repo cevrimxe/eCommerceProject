@@ -32,7 +32,7 @@ function add_to_cart() {
   .then(data => {
     if (data) {
       console.log(data);
-      window.location.href = './cart.html';
+      window.location.href = './dashboard_cart.html';
     }
   })
   .catch(error => {
