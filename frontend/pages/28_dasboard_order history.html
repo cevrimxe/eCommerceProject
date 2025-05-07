@@ -1,33 +1,55 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order History</title>
-  <link rel="stylesheet" href="dasboardorder.css" />
+  <title>Settings Page</title>
+  <link rel="stylesheet" href="dasboardsetting.css" />
   <link rel="stylesheet" href="header.css" />
   <script src="../assets/28_dasboard_order history.js" defer></script>
 </head>
+
 <body>
 
   <div data-include="header"></div>
 
-  <div class="kontener">
-    <div class="yan-menu">
+  <div class="panel-genel">
+    <div class="sol-menu">
       <ul>
-        <li><span>📊</span><span>Dashboard</span></li>
-        <li class="aktif"><span>🧾</span><span>Order History</span></li>
-        <li><span>📍</span><span>Track Order</span></li>
-        <li><span>🛒</span><span>Shopping Cart</span></li>
-        <li><span>💖</span><span>Wishlist</span></li>
-        <li><span>🔁</span><span>Compare</span></li>
-        <li><span>💳</span><span>Cards & Address</span></li>
-        <li><span>🕓</span><span>History</span></li>
-        <li><span>⚙️</span><span>Settings</span></li>
-        <li><span>🚪</span><span>Logout</span></li>
+        <li>Dashboard</li>
+        <li>Order History</li>
+        <li>Track Shipment</li>
+        <li>Shopping Cart</li>
+        <li>Wishlist</li>
+        <li>Compare</li>
+        <li>Cards & Addresses</li>
+        <li>Browsing History</li>
+        <li class="aktif">Settings</li>
+        <li>Log Out</li>
       </ul>
     </div>
-    <div class="icerik">
+
+    <div class="icerik-alani">
       <div class="siparis-tablosu" id="siarisler-tablo-id">
+        <style>
+      #siarisler-tablo-id table {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ccc;
+      }
+
+      #siarisler-tablo-id table th,
+      #siarisler-tablo-id table td {
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+      }
+
+      #siarisler-tablo-id table th {
+        background-color: #f9f9f9;
+      }
+        </style>
         <table>
           <thead>
             <tr>
@@ -46,40 +68,15 @@
               <td>$80 (5 Items)</td>
               <td><a href="#">View Details</a></td>
             </tr>
-            <!-- Similar rows can be added here -->
+
           </tbody>
         </table>
       </div>
-      <div class="sayfalama">
-        <button class="sayfa-btn">←</button>
-        <button class="sayfa-btn aktif">01</button>
-        <button class="sayfa-btn">02</button>
-        <button class="sayfa-btn">03</button>
-        <button class="sayfa-btn">04</button>
-        <button class="sayfa-btn">05</button>
-        <button class="sayfa-btn">06</button>
-        <button class="sayfa-btn">→</button>
-      </div>
     </div>
   </div>
 
-  <!-- order history -->
-  <div class="siparis-kapsayici" id="siparis-kapsayici-id">
-
-    <div class="siparis-karti">
-      <div class="siparis-bilgi">
-        <div class="durum-etiket">IN PROGRESS</div>
-        <div class="siparis-id">Order No: #71667167</div>
-        <div class="siparis-detay">7 December 2019 23:26 • 2 Items</div>
-        <div class="siparis-fiyat">$160.00 USD</div>
-      </div>
-      <button class="detay-ok" aria-label="View Details">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-        </svg>
-      </button>
-    </div>
-
-  </div>
+  <div data-include="footer"></div>
+  <script src="js/include.js"></script>
 </body>
+
 </html>
