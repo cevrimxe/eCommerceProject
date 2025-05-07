@@ -7,11 +7,12 @@
   <link rel="stylesheet" href="header.css" />
   <script src="../assets/refresh_products.js"></script>
   <script src="js/include.js" defer></script>
+  <script src="js/categories.js" defer></script>
 </head>
 <body>
 
   <div data-include="header"></div>
-  <button style="cursor:pointer; position: absolute; left: 50%; color: transparent; background-color: white; color: #1565c0; border-color: #1565c0; padding: 0.95rem; border-radius: 9px;" onclick="refresh_products()">refresh_products</button>
+  <!-- <button style="cursor:pointer; position: absolute; left: 50%; color: transparent; background-color: white; color: #1565c0; border-color: #1565c0; padding: 0.95rem; border-radius: 9px;" onclick="refresh_products()">refresh_products</button> -->
 
   <nav class="breadcrumb">
     <ul>
@@ -30,38 +31,19 @@
   <!-- Sidebar -->
   <aside class="sidebar">
     <h3>Category</h3>
-    <ul>
-      <li><input type="checkbox"> Parfüm</li>
-      <li><input type="checkbox"> Oda Kokusu ve Mum</li>
-      <li><input type="checkbox"> Güneş Kremi</li>
-      <li><input type="checkbox"> Nemlendirici</li>
-      <li><input type="checkbox"> Bakım Serumu</li>
-      <li><input type="checkbox"> Ruj</li>
-      <li><input type="checkbox"> Fondöten</li>
-      <li><input type="checkbox"> Maskara</li>
-      <li><input type="checkbox"> Kapatıcı</li>
-      <li><input type="checkbox"> Far</li>
-      <li><input type="checkbox"> Pudra</li>
-      <li><input type="checkbox"> Vücut Losyonu</li>
-
-
-
+    <br>
+    <ul id="category-list">
+        <!-- Kategoriler buraya yüklenecek -->
     </ul>
 
     <h3>Price Range</h3>
+    <br>
     <div class="price-range">
-      <input type="text" placeholder="Min">
-      <input type="text" placeholder="Max">
+      <input type="number" id="min-price" placeholder="Min Price">
+      <input type="number" id="max-price" placeholder="Max Price">
+      <button id="filter-button">Filter</button>
+      <button id="reset-button">Reset</button> <!-- Reset button -->
     </div>
-
-    <h3>Popular Brands</h3>
-    <ul>
-      <li><input type="checkbox"> Yves Saint Laurent Libre</li>
-      <li><input type="checkbox"> BLEU DE CHANEL</li>
-      <li><input type="checkbox"> Bioderma</li>
-    </ul>
-
-  
   </aside>
 
   <!-- Product Grid -->
