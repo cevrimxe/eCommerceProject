@@ -31,5 +31,12 @@ $stmt->execute([
     ':country' => $data['country']
 ]);
 
-echo json_encode(["message" => "Adres eklendi"]);
+$last_id = $conn->lastInsertId();
+
+if ($last_id) {
+    echo json_encode(["message" => "Adres eklendi", "add_id" => $last_id]);
+} else {
+    http_response_code(500); // Or appropriate error
+    echo json_encode(["message" => "Adres eklendi ama ID alınamadı."]); // Address added but ID couldn't be retrieved
+}
 ?>
