@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sipariş Geçmişi</title>
+  <title>Order History</title>
   <link rel="stylesheet" href="dasboardorder.css" />
   <link rel="stylesheet" href="header.css" />
   <script src="../assets/28_dasboard_order history.js" defer></script>
@@ -15,16 +14,16 @@
   <div class="kontener">
     <div class="yan-menu">
       <ul>
-        <li><span>📊</span><span>Panel</span></li>
-        <li class="aktif"><span>🧾</span><span>Sipariş Geçmişi</span></li>
-        <li><span>📍</span><span>Siparişi Takip Et</span></li>
-        <li><span>🛒</span><span>Alışveriş Sepeti</span></li>
-        <li><span>💖</span><span>İstek Listesi</span></li>
-        <li><span>🔁</span><span>Karşılaştır</span></li>
-        <li><span>💳</span><span>Kartlar ve Adres</span></li>
-        <li><span>🕓</span><span>Geçmiş</span></li>
-        <li><span>⚙️</span><span>Ayarlar</span></li>
-        <li><span>🚪</span><span>Çıkış Yap</span></li>
+        <li><span>📊</span><span>Dashboard</span></li>
+        <li class="aktif"><span>🧾</span><span>Order History</span></li>
+        <li><span>📍</span><span>Track Order</span></li>
+        <li><span>🛒</span><span>Shopping Cart</span></li>
+        <li><span>💖</span><span>Wishlist</span></li>
+        <li><span>🔁</span><span>Compare</span></li>
+        <li><span>💳</span><span>Cards & Address</span></li>
+        <li><span>🕓</span><span>History</span></li>
+        <li><span>⚙️</span><span>Settings</span></li>
+        <li><span>🚪</span><span>Logout</span></li>
       </ul>
     </div>
     <div class="icerik">
@@ -32,22 +31,22 @@
         <table>
           <thead>
             <tr>
-              <th>Sipariş No</th>
-              <th>Durum</th>
-              <th>Tarih</th>
-              <th>Toplam</th>
-              <th>İşlem</th>
+              <th>Order No</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Total</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>#96459761</td>
-              <td class="durum-devam">DEVAM EDİYOR</td>
-              <td>30 Ara 2019 07:52</td>
-              <td>$80 (5 Ürün)</td>
-              <td><a href="#">Detayları Gör</a></td>
+              <td class="durum-devam">IN PROGRESS</td>
+              <td>30 Dec 2019 07:52</td>
+              <td>$80 (5 Items)</td>
+              <td><a href="#">View Details</a></td>
             </tr>
-            <!-- Benzer şekilde diğer satırlar buraya eklenebilir -->
+            <!-- Similar rows can be added here -->
           </tbody>
         </table>
       </div>
@@ -67,30 +66,20 @@
   <!-- order history -->
   <div class="siparis-kapsayici" id="siparis-kapsayici-id">
 
-  <div class="siparis-karti">
-    <div class="siparis-bilgi">
-      <div class="durum-etiket">DEVAM EDİYOR</div>
-      <div class="siparis-id">Sipariş No: #71667167</div>
-      <div class="siparis-detay">7 Aralık 2019 23:26 • 2 Ürün</div>
-      <div class="siparis-fiyat">$160,00 USD</div>
+    <div class="siparis-karti">
+      <div class="siparis-bilgi">
+        <div class="durum-etiket">IN PROGRESS</div>
+        <div class="siparis-id">Order No: #71667167</div>
+        <div class="siparis-detay">7 December 2019 23:26 • 2 Items</div>
+        <div class="siparis-fiyat">$160.00 USD</div>
+      </div>
+      <button class="detay-ok" aria-label="View Details">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
     </div>
-    <button class="detay-ok" aria-label="Detayları Gör">
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-      </svg>
-    </button>
+
   </div>
-
-</div>
-
-
-
-
-
-
-
-
-<div data-include="footer"></div>
-  <script src="js/include.js"></script>
 </body>
 </html>
