@@ -39,6 +39,7 @@ try {
             p.price,
             p.category_id,
             p.stock,
+            p.discount,
             COALESCE(c.category_name, 'Unknown') AS category_name
         FROM
             product p

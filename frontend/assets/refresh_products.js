@@ -27,7 +27,7 @@ function get_products() {
         `
 
       <div class="product-card" style="cursor: pointer" data-product-id="${data[i].product_id}">
-        <img src="../assets/products/${data[i].product_id}.webp" alt="">
+        <img src="../assets/images/${data[i].product_id}/${data[i].product_id} cover.png" alt="">
         <div class="product-info">
           <h4>${data[i].product_name}</h4>
           <div class="stars">⭐⭐</div>
