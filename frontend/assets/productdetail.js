@@ -60,7 +60,14 @@ document.addEventListener("DOMContentLoaded", () =>
 
     <div class="product-info">
       <h2 id="product-name">${product.product_name}</h2>
-      <p class="price" id="product-price">$${product.price} <span class="old-price">$${product.price+1}</span></p>
+      <p class="price" id="product-price">
+        $${product.price}
+        <span class="old-price">
+          $${(product.discount > 0 
+            ? product.price / (1 - product.discount / 100) 
+            : product.price * 1.25).toFixed(2)}
+        </span>
+      </p>
       <p id="product-category">Category: ${product.category_name}</p>
       <p id="product-description">Description: ${product.description}</p>
       <p id="product-stock">Stock: ${product.stock}</p>
