@@ -37,7 +37,7 @@ function get_cart()
 
                 newRow.innerHTML = `
                     <td>
-                        <img src="../assets/products/${cartItems[i].product_id}.webp" alt="Product Image">
+                        <img src="../assets/images/${cartItems[i].product_id}/${cartItems[i].product_id} cover.png" alt="Product Image">
                         <span>${cartItems[i].product_name}</span>
                     </td>
                     <td>$${cartItems[i].price}</td>
