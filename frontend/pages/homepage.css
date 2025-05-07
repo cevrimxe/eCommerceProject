@@ -677,63 +677,77 @@ body {
 
 
 .deal-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 15px;
-    text-align: center;
-    background-color: #fff;
+  display: flex;
+  flex-direction: column; /* İçerikleri dikey sıralar */
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 280px; /* Ürün kartlarının genişliği */
+  height: 600px; /* Kart yüksekliği */
+  text-align: center;
+  position: relative; /* Badge'lerin üstte konumlanabilmesi için */
 }
 
 .deal-card img {
-    width: 100%;
-    height: 200px;
-}
-
-.deal-card h4 {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-.deal-card .old-price {
-    text-decoration: line-through;
-    color: #999;
-}
-
-.deal-card .new-price {
-    color: #e74c3c;
-    font-weight: bold;
-}
-
-.deal-card .actions {
-    margin-top: 15px;
-}
-
-.deal-card .shop-btn {
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-.deal-card .badge {
-    background-color: #ff4757;
-    color: #fff;
-    padding: 5px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
 }
 
 .deal-card .rating {
-    margin: 10px 0;
+  font-size: 14px;
+  color: #ffb800;
 }
 
-.deal-card img {
-    width: 100%; /* Görseli kartın genişliğine uyumlu yapar */
-    height: auto; /* Yüksekliği orantılı olarak ayarlar */
-    object-fit: cover; /* Görselin içeriğini kesmeden sığdırır */
-    border-bottom: 2px solid #f1f1f1; /* Görselin altına ince bir çizgi */
+.deal-card .desc {
+  font-size: 12px;
+  color: #555;
+  min-height: 50px; /* Açıklama uzun olsa bile tüm kartın boyutunu dengelemek için */
+  margin-bottom: 10px;
+}
+
+.deal-card .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.deal-card .actions {
+  margin-top: auto; /* Butonları alttan yerleştirir */
+}
+
+.deal-card .shop-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.deal-card .shop-btn:hover {
+  background-color: #218838;
+}
+
+.deal-card .badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff0000;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.deal-card .badge.hot {
+  top: 10px;
+  right: 10px;
+  background-color: #ff6600;
 }
 
 
