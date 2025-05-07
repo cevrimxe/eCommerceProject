@@ -37,23 +37,24 @@
     <form class="billing-form">
       <h2 class="section-title">Billing Details</h2>
       <div class="input-row">
-        <input type="text" placeholder="First Name" class="input-field" />
-        <input type="text" placeholder="Last Name" class="input-field" />
-        <input type="text" placeholder="Company Name (Optional)" class="input-field" />
+        <input type="text" placeholder="First Name" class="input-field" name="billing_first_name" />
+        <input type="text" placeholder="Last Name" class="input-field" name="billing_last_name" />
+        <input type="text" placeholder="Company Name (Optional)" class="input-field" name="billing_company" />
       </div>
 
-      <input type="text" placeholder="Address" class="input-field full-width" />
+      <input type="text" placeholder="Address" class="input-field full-width" name="billing_address" />
 
       <div class="input-row">
-        <select class="input-field"><option>Country</option><option>Türkiye</option></select>
-        <select class="input-field"><option>Region/State</option><option>Zonguldak</option></select>
-        <select class="input-field"><option>City</option><option>Merkez</option></select>
-        <input type="text" placeholder="Zip Code" class="input-field" />
+        <!-- For selects, we'll set the value. If the value from DB doesn't match an option, it won't select. -->
+        <select class="input-field" name="billing_country"><option value="">Country</option><option value="Türkiye">Türkiye</option></select>
+        <select class="input-field" name="billing_state"><option value="">Region/State</option><option value="Zonguldak">Zonguldak</option></select>
+        <select class="input-field" name="billing_city"><option value="">City</option><option value="Merkez">Merkez</option></select>
+        <input type="text" placeholder="Zip Code" class="input-field" name="billing_postal_code" />
       </div>
 
       <div class="input-row">
-        <input type="email" placeholder="Email" class="input-field" />
-        <input type="text" placeholder="Phone Number" class="input-field" />
+        <input type="email" placeholder="Email" class="input-field" name="billing_email" />
+        <input type="text" placeholder="Phone Number" class="input-field" name="billing_phone" />
       </div>
 
       <label class="checkbox-wrapper">

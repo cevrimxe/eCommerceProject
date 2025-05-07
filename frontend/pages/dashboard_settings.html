@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
   <link rel="stylesheet" href="dasboardsetting.css" />
   <link rel="stylesheet" href="header.css" />
   <script src="../assets/logout.js" defer></script>
+  <script src="../assets/save_address.js"></script>
 </head>
+
 <body>
 
   <div data-include="header"></div>
@@ -17,7 +20,7 @@
       <ul>
         <li onclick="window.location.href='./dashboard_order_history.html'">Order History</li>
         <li onclick="window.location.href='./dashboard_cart.html'">Shopping Cart</li>
-        <li onclick="window.location.href='./dashboard_card_address.html'">Cards & Addresses</li>
+        <li onclick="window.location.href='./dashboard_card.html'">Cards & Addresses</li>
         <li class="aktif">Settings</li>
         <li onclick="logout(); window.location.href='./logout_success.html'">Log Out</li>
       </ul>
@@ -71,36 +74,40 @@
       </div>
 
       <div class="ayar-karti adres-kutulari">
-        <div class="adres-kutusu">
+        <!-- BILLING ADDRESS -->
+        <div class="adres-kutusu" id="billingAddressContainer">
           <h3>Billing Address</h3>
           <div class="form-alani">
-            <div><label>First Name</label><input type="text" value="Kevin"></div>
-            <div><label>Last Name</label><input type="text" value="Gilbert"></div>
-            <div><label>Company (Optional)</label><input type="text"></div>
-            <div><label>Address</label><input type="text" value="Road No. 13/k, House no. 13/02C, Flat No. 5D"></div>
-            <div><label>Country</label><select><option>Bangladesh</option></select></div>
-            <div><label>City</label><select><option>Dhaka</option></select></div>
-            <div><label>Postal Code</label><input type="text" value="1207"></div>
-            <div><label>Email</label><input type="email" value="kevin1234@gmail.com"></div>
-            <div><label>Phone</label><input type="tel" value="+1-202-555-0118"></div>
+            <div><label>First Name</label><input type="text" value="Kevin" name="billing_first_name"></div>
+            <div><label>Last Name</label><input type="text" value="Gilbert" name="billing_last_name"></div>
+            <div><label>Company (Optional)</label><input type="text" name="billing_company"></div>
+            <div><label>Address</label><input type="text" value="Road No. 13/k, House no. 13/02C, Flat No. 5D" name="address"></div>
+            <div><label>Country</label><input type="text" value="Bangladesh" name="country"></div>
+            <div><label>City</label><input type="text" value="Dhaka" name="city"></div>
+            <div><label>Postal Code</label><input type="text" value="1207" name="postal_code"></div>
+            <div><label>Email</label><input type="email" value="kevin1234@gmail.com" name="billing_email"></div>
+            <div><label>Phone</label><input type="tel" value="+1-202-555-0118" name="billing_phone"></div>
           </div>
-          <button class="btn-kaydet">Save Changes</button>
+          <button class="btn-kaydet" id="saveBillingAddressBtn">Save Changes</button>
+          <p class="status-message" id="billingStatusMessage"></p>
         </div>
 
-        <div class="adres-kutusu">
+        <!-- SHIPPING ADDRESS -->
+        <div class="adres-kutusu" id="shippingAddressContainer">
           <h3>Shipping Address</h3>
           <div class="form-alani">
-            <div><label>First Name</label><input type="text" value="Kevin"></div>
-            <div><label>Last Name</label><input type="text" value="Gilbert"></div>
-            <div><label>Company (Optional)</label><input type="text"></div>
-            <div><label>Address</label><input type="text" value="Road No. 13/k, House no. 13/02C, Flat No. 5D"></div>
-            <div><label>Country</label><select><option>Bangladesh</option></select></div>
-            <div><label>City</label><select><option>Dhaka</option></select></div>
-            <div><label>Postal Code</label><input type="text" value="1207"></div>
-            <div><label>Email</label><input type="email" value="kevin1234@gmail.com"></div>
-            <div><label>Phone</label><input type="tel" value="+1-202-555-0118"></div>
+            <div><label>First Name</label><input type="text" value="Kevin" name="shipping_first_name"></div>
+            <div><label>Last Name</label><input type="text" value="Gilbert" name="shipping_last_name"></div>
+            <div><label>Company (Optional)</label><input type="text" name="shipping_company"></div>
+            <div><label>Address</label><input type="text" value="Road No. 13/k, House no. 13/02C, Flat No. 5D" name="address"></div>
+            <div><label>Country</label><input type="text" value="Bangladesh" name="country"></div>
+            <div><label>City</label><input type="text" value="Dhaka" name="city"></div>
+            <div><label>Postal Code</label><input type="text" value="1207" name="postal_code"></div>
+            <div><label>Email</label><input type="email" value="kevin1234@gmail.com" name="shipping_email"></div>
+            <div><label>Phone</label><input type="tel" value="+1-202-555-0118" name="shipping_phone"></div>
           </div>
-          <button class="btn-kaydet">Save Changes</button>
+          <button class="btn-kaydet" id="saveShippingAddressBtn">Save Changes</button>
+          <p class="status-message" id="shippingStatusMessage"></p>
         </div>
       </div>
 
@@ -116,7 +123,8 @@
     </div>
   </div>
 
-    <div data-include="footer"></div>
+  <div data-include="footer"></div>
   <script src="js/include.js"></script>
-  </body>
-  </html>
+</body>
+
+</html>
