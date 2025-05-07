@@ -65,27 +65,7 @@
   }
 
   /* Newsletter */
-  .newsletter {
-    width: 100%;
-    padding: 60px 20px;
-    background-color: #20638e;
-    color: white;
-    text-align: center;
-  }
 
-  .newsletter h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-  }
-
-  .newsletter p {
-    font-size: 1rem;
-    margin-bottom: 30px;
-    color: #dbeaf5;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
   .subscription-form {
     display: flex;
@@ -150,3 +130,55 @@ a {
 .shop-link:hover {
   color: #007bff;
 }
+
+.newsletter {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 40px;
+  background-color: #1565c0;
+}
+
+.newsletter-left,
+.newsletter-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.newsletter-right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-links,
+.footer-address {
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer-links a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 5px;
+  font-size: 16px;  /* Daha büyük font boyu */
+  font-weight: bold;  /* Bold yapıldı */
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffeb3b;  /* Hover rengini sarı yapalım */
+  text-decoration: underline;  /* Altı çizili yapalım */
+}
+
+.footer-address p {
+  margin: 4px 0;
+}
+
