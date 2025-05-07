@@ -37,8 +37,12 @@ function displayProduct(product, category) {
             ⭐⭐⭐⭐⭐ <span>(${product.reviews_count})</span>
         </div>
         <h4>${product.product_name}</h4>
-        <p class="old-price">$${product.price}</p>
-        <p class="new-price">$${product.price*product.discount/100}</p>
+        <p class="old-price">
+            $${(product.discount > 0 
+                ? product.price / (1 - product.discount / 100) 
+                : product.price * 1.25).toFixed(2)}
+        </p>
+        <p class="new-price">$${product.price}</p>
         <p class="desc">
             ${product.description}
         </p>

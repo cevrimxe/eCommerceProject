@@ -446,16 +446,6 @@
     margin: auto;
   }
   
-  /* Header */
-  header {
-    background: #0056b3;
-    color: #fff;
-    padding: 1rem 0;
-  }
-  
-  header h1 {
-    font-size: 1.8rem;
-  }
   
   nav ul {
     list-style: none;
@@ -598,14 +588,7 @@
     border-radius: 6px;
   }
   
-  /* Footer */
-  footer {
-    margin-top: 2rem;
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-  }
+
   
   
   
