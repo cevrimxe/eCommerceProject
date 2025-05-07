@@ -524,6 +524,7 @@ body {
 
 .price {
     margin-top: 5%; /* Add margin for spacing */
+    margin-bottom: 25%; /* Add margin for spacing */
     font-size: 18px; /* Use the larger font size */
     font-weight: bold;
     color: #2c3e50;
