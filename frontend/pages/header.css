@@ -137,6 +137,8 @@ a {
   flex-wrap: wrap;
   padding: 40px;
   background-color: #1565c0;
+  color: #fff;
+  text-align: center;
 }
 
 .newsletter-left,
@@ -182,3 +184,19 @@ a {
   margin: 4px 0;
 }
 
+.newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.newsletter p {
+    font-size: 1rem;
+    color: #dbeaf5;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-left p{
+  margin-bottom: 30px;
+  }

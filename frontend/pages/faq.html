@@ -6,31 +6,48 @@
   <title>Frequently Asked Questions</title>
   <link rel="stylesheet" href="FAQs.css" />
   <link rel="stylesheet" href="header.css" />
+</head>
 
 <body>
   <div data-include="header"></div>
-
-   
-  
-
+  <br><br><br><br>
   <main class="container zmb-container">
     <section class="zmb-faqs">
       <h2 class="zmb-faq-title">Frequently Asked Questions</h2>
 
       <div class="zmb-accordion-item">
-        <div class="zmb-accordion-header">Suspendisse ultrices pharetra libero sed interdum. +</div>
+        <div class="zmb-accordion-header">Suspendisse ultrices pharetra libero sed interdum. <span class="plus-sign">+</span></div>
+        <div class="zmb-accordion-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+        </div>
       </div>
+      
       <div class="zmb-accordion-item">
-        <div class="zmb-accordion-header">Fusce molestie condimentum facilisis. +</div>
+        <div class="zmb-accordion-header">Fusce molestie condimentum facilisis. <span class="plus-sign">+</span></div>
+        <div class="zmb-accordion-content">
+          <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
+        </div>
       </div>
+
       <div class="zmb-accordion-item">
-        <div class="zmb-accordion-header">Quisque quis nunc quis urna tempor lobortis. +</div>
+        <div class="zmb-accordion-header">Quisque quis nunc quis urna tempor lobortis. <span class="plus-sign">+</span></div>
+        <div class="zmb-accordion-content">
+          <p>Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor.</p>
+        </div>
       </div>
+
       <div class="zmb-accordion-item">
-        <div class="zmb-accordion-header">Donec rutrum ultrices ante nec malesuada. +</div>
+        <div class="zmb-accordion-header">Donec rutrum ultrices ante nec malesuada. <span class="plus-sign">+</span></div>
+        <div class="zmb-accordion-content">
+          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+        </div>
       </div>
+
       <div class="zmb-accordion-item">
-        <div class="zmb-accordion-header">Nulla sed sapien maximus, faucibus massa vitae. +</div>
+        <div class="zmb-accordion-header">Nulla sed sapien maximus, faucibus massa vitae. <span class="plus-sign">+</span></div>
+        <div class="zmb-accordion-content">
+          <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra.</p>
+        </div>
       </div>
     </section>
 
@@ -43,32 +60,30 @@
       <button class="zmb-btn">SEND MESSAGE ➝</button>
     </aside>
   </main>
+  <br><br><br><br><br>
+  <div data-include="footer"></div>
+  <script src="js/include.js"></script>
 
+  <script>
+    // Accordion Etkileşimi
+    document.querySelectorAll(".zmb-accordion-header").forEach(header => {
+      header.addEventListener("click", () => {
+        const content = header.nextElementSibling;
+        const isOpen = header.classList.contains("active");
   
-
-  
-    <script>
-      // Accordion Etkileşimi
-      document.querySelectorAll(".zmb-accordion-header").forEach(header => {
-        header.addEventListener("click", () => {
-          const content = header.nextElementSibling;
-          const isOpen = header.classList.contains("active");
-  
-          document.querySelectorAll(".zmb-accordion-header").forEach(h => {
-            h.classList.remove("active");
-            h.querySelector("span").textContent = "+";
-            h.nextElementSibling.style.display = "none";
-          });
-  
-          if (!isOpen) {
-            header.classList.add("active");
-            header.querySelector("span").textContent = "-";
-            content.style.display = "block";
-          }
+        document.querySelectorAll(".zmb-accordion-header").forEach(h => {
+          h.classList.remove("active");
+          h.querySelector(".plus-sign").textContent = "+";
+          h.nextElementSibling.style.display = "none";
         });
+  
+        if (!isOpen) {
+          header.classList.add("active");
+          header.querySelector(".plus-sign").textContent = "-";
+          content.style.display = "block";
+        }
       });
-    </script>
-   <div data-include="footer"></div>
-   <script src="js/include.js"></script>
-  </body>
-  </html>
+    });
+  </script>
+</body>
+</html>

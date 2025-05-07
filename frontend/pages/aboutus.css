@@ -9,7 +9,7 @@
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f9f9fb;
-    color: #222222;
+    
   }
 
   .container {
@@ -231,61 +231,6 @@
   }
 
   /*ürünler falan kısmı*/
- 
-  
-  .urunler-kapsayici {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  
-  .urun-kategori {
-    flex: 1 1 220px;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    min-width: 250px;
-  }
-  
-  .urun-kategori h2 {
-    font-size: 18px;
-    color: #1a1a1a;
-    margin-bottom: 15px;
-  }
-  
-  .urun-karti {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border-top: 1px solid #eee;
-    padding: 10px 0;
-  }
-  
-  .urun-karti:first-of-type {
-    border-top: none;
-  }
-  
-  .urun-karti img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-  }
-  
-  .urun-karti p {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-  }
-  
-  .urun-karti span {
-    display: block;
-    margin-top: 4px;
-    color: #007bff;
-    font-weight: bold;
-  }
   
   @media screen and (max-width: 768px) {
     .urunler-kapsayici {
