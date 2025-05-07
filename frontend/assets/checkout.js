@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     .then(response => response.json())
                     .then(data => {
                         console.log("POST'ed order, data:", data);
-                        window.location.href = './15_checkoutsuccess.html';
+                        window.location.href = './checkout_success.html';
                     })
                     .catch(error => {
                         console.error('Error fetching post_orders.php:', error);
