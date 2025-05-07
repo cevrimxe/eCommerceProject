@@ -31,7 +31,7 @@ function includeHTML() {
               })
               .then((data) => {
                 console.log("Kullanıcı Giriş Yaptı:", data);
-                window.location.href = "28_dasboard_order history.html"; // Giriş yaptıysa profile sayfasına git
+                window.location.href = "dashboard_order_history.html"; // Giriş yaptıysa profile sayfasına git
               })
               .catch((err) => {
                 console.error("Kullanıcı Giriş Yapmamış:", err);
