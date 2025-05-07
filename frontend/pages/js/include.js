@@ -10,7 +10,6 @@ function includeHTML() {
         // Header yüklendikten sonra butonları kontrol et ve işlemi başlat
         const profileBtn = document.querySelector("#profile-btn");
         const cartBtn = document.querySelector("#cart-btn");
-        const favoritesBtn = document.querySelector("#favorites-btn");
 
         // Profil Butonu
         if (profileBtn) {
@@ -32,7 +31,7 @@ function includeHTML() {
               })
               .then((data) => {
                 console.log("Kullanıcı Giriş Yaptı:", data);
-                window.location.href = "profile.html"; // Giriş yaptıysa profile sayfasına git
+                window.location.href = "28_dasboard_order history.html"; // Giriş yaptıysa profile sayfasına git
               })
               .catch((err) => {
                 console.error("Kullanıcı Giriş Yapmamış:", err);
@@ -72,37 +71,6 @@ function includeHTML() {
           });
         } else {
           console.error("Cart butonu bulunamadı!"); // Eğer cart butonu bulunamazsa hata mesajı
-        }
-
-        // Favorites Butonu
-        if (favoritesBtn) {
-          console.log("favorites-btn elemanı bulundu!"); // Favorites butonu bulundu mu?
-
-          favoritesBtn.addEventListener("click", function (e) {
-            console.log("Favorites butonuna tıklandı!"); // Butona tıklanıp tıklanmadığını kontrol et
-            e.preventDefault();
-
-            fetch("http://localhost/eCommerceProject/backend/api/auth/me.php", {
-              method: "GET",
-              credentials: "include",
-            })
-              .then((res) => {
-                if (!res.ok) {
-                  throw new Error("Not logged in");
-                }
-                return res.json();
-              })
-              .then((data) => {
-                console.log("Kullanıcı Giriş Yaptı:", data);
-                window.location.href = "favorites.html"; // Giriş yaptıysa favorites sayfasına git
-              })
-              .catch((err) => {
-                console.error("Kullanıcı Giriş Yapmamış:", err);
-                window.location.href = "signin.html"; // Giriş yapmadıysa signin sayfasına git
-              });
-          });
-        } else {
-          console.error("Favorites butonu bulunamadı!"); // Eğer favorites butonu bulunamazsa hata mesajı
         }
       });
   });
