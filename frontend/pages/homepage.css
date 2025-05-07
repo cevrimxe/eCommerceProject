@@ -119,7 +119,7 @@ body {
 }
 
 .hero img {
-  width: 160px;
+  width: 100%;
   margin-top: 20px;
 }
 
@@ -644,7 +644,97 @@ body {
 }
 
 
+.promo-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
 
+.promo.fancy {
+    background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+    padding: 2rem 1.5rem;
+    flex: 1;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.promo.fancy:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.promo-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+
+.deal-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.deal-card img {
+    width: 100%;
+    height: 200px;
+}
+
+.deal-card h4 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.deal-card .old-price {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.deal-card .new-price {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.deal-card .actions {
+    margin-top: 15px;
+}
+
+.deal-card .shop-btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.deal-card .badge {
+    background-color: #ff4757;
+    color: #fff;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.deal-card .rating {
+    margin: 10px 0;
+}
+
+.deal-card img {
+    width: 100%; /* Görseli kartın genişliğine uyumlu yapar */
+    height: auto; /* Yüksekliği orantılı olarak ayarlar */
+    object-fit: cover; /* Görselin içeriğini kesmeden sığdırır */
+    border-bottom: 2px solid #f1f1f1; /* Görselin altına ince bir çizgi */
+}
 
 
 

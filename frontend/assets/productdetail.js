@@ -53,23 +53,17 @@ document.addEventListener("DOMContentLoaded", () =>
     var product_detail_product = document.getElementById("product-detail-id");
 
     var html = `
-        <div class="product-images">
-      <img id="product-image" src="../assets/products/${product.product_id}.webp" alt="PRODUCT NAME SHORT" class="main-image">
-      <div class="thumbnail-list">
-        <img class="product-thumb" src="../assets/products/${product.product_id}.webp" alt="Thumb 1"><!--Link olacak-->
-        <img class="product-thumb" src="../assets/products/${product.product_id}.webp" alt="Thumb 2">
-        <img class="product-thumb" src="../assets/products/${product.product_id}.webp" alt="Thumb 3">
-        <!--img üzerine onclick yazılacak-->
-      </div>
+    <div class="product-images">
+      <img id="product-image" src="../assets/images/${product.product_id}/${product.product_id} cover.png" alt="PRODUCT NAME SHORT" class="main-image">
+      <div class="thumbnail-list" id="thumbnail-list"></div>
     </div>
 
     <div class="product-info">
       <h2 id="product-name">${product.product_name}</h2>
-      <p class="price" id="product-price">$${product.price} <span class="old-price">$${product.price+1}</span></p><!--ürün görseli title ve açıklaması bunları card view olarak
-      tasarla.Ve bu veriyi sql'den çekicez-->
-      <p id="product-category">Kategori: ${product.category_name}</p>
-      <p id="product-description">Açıklama: ${product.description}</p>
-      <p id="product-stock">Stok: ${product.stock}</p>
+      <p class="price" id="product-price">$${product.price} <span class="old-price">$${product.price+1}</span></p>
+      <p id="product-category">Category: ${product.category_name}</p>
+      <p id="product-description">Description: ${product.description}</p>
+      <p id="product-stock">Stock: ${product.stock}</p>
 
       <div class="actions">
         <button class="btn primary" onclick="add_to_cart()">Add to Cart</button>
@@ -81,8 +75,27 @@ document.addEventListener("DOMContentLoaded", () =>
         <li>✅ 24/7 Customer Support</li>
       </ul>
     </div>
-    `
-    product_detail_product.innerHTML = html;
+  `;
+
+  product_detail_product.innerHTML = html;
+
+  // 👇 THUMBNAIL'LARI DİNAMİK YÜKLE
+  const thumbnails = [` cover.png`,`_2.png`, `_3.png`];
+  const thumbContainer = document.getElementById("thumbnail-list");
+
+  thumbnails.forEach(suffix => {
+    const imgPath = `../assets/images/${product.product_id}/${product.product_id}${suffix}`;
+    const img = new Image();
+    img.src = imgPath;
+    img.alt = "Thumb";
+    img.className = "product-thumb";
+    img.onload = () => {
+      img.addEventListener("click", () => {
+        document.getElementById("product-image").src = img.src;
+      });
+      thumbContainer.appendChild(img);
+    };
+  });
   })
   .catch(error => {
     console.error('Failed to fetch product:', error);
