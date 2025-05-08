@@ -17,6 +17,7 @@
   <div class="nav-tabs">
     <button onclick="showSection('products')">Product Management</button>
     <button onclick="showSection('users')">User Management</button>
+    <button onclick="showSection('orders')">Order Management</button>
   </div>
 
   <!-- Product Management -->
@@ -27,6 +28,7 @@
       <input type="number" name="price" placeholder="Price" required>
       <textarea name="description" placeholder="Description" required></textarea>
       <input type="number" name="stock" placeholder="Stock" required>
+      <input type="number" name="discount" placeholder="Discount">
       <input type="file" name="image" accept="image/*"> <!-- Image upload input -->
       <select name="category_id" required>
         <option value="">Select Category</option>
@@ -42,6 +44,7 @@
           <th>Name</th>
           <th>Price</th>
           <th>Details</th>
+          <th>Best Deal</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -49,12 +52,18 @@
         <!-- Products will be loaded here -->
       </tbody>
     </table>
+
+    <div id="confirmationModal" style="display: none;">
+    <p>Are you sure you want to mark this product as the Best Deal?</p>
+    <button id="confirmBestDealBtn">Yes</button>
+    <button onclick="closeConfirmationModal()">No</button>
+</div>
   </div>
 
   <!-- User Management -->
   <div id="users" class="section" style="display: none;">
-  <h2>User List</h2>
-  <table>
+    <h2>User List</h2>
+    <table>
     <thead>
       <tr>
         <th>Full Name</th>
@@ -67,7 +76,7 @@
     <tbody id="userTable">
       <!-- Users will be loaded here -->
     </tbody>
-  </table>
+    </table>
 
     <!-- User Edit Form -->
     <div id="editUserFormContainer" style="display: none;">
@@ -84,9 +93,37 @@
       </select>
       <button type="submit">Update User</button>
     </form>
-  </div>
+    </div>
 
+  </div>
+    <!-- Order List -->
+<div id="orders" class="section" style="display: none;">
+  <h2>All Orders</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>User</th>
+        <th>Total</th>
+        <th>Status</th>
+        <th>Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="orderTable">
+      <!-- Orders will be loaded here -->
+    </tbody>
+  </table>
+
+
+  <div id="orderDetailsModal" style="display: none; position: fixed; top: 10%; left: 10%; width: 80%; background: white; padding: 20px; border: 1px solid gray;">
+  <h3>Order Details</h3>
+  <div id="orderDetailsContent"></div>
+  <button onclick="closeOrderDetails()">Close</button>
 </div>
+</div>
+
+
 
 <script>
   function showSection(id) {
@@ -115,6 +152,7 @@
 <!-- JavaScript files -->
 <script src="js/product.js"></script>
 <script src="js/user.js"></script>
+<script src="js/orders.js"></script>
 
 
 </body>
