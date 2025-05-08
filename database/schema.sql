@@ -35,6 +35,8 @@ CREATE TABLE IF NOT EXISTS product (
     price FLOAT,
     category_id INT,
     stock INT,
+    discount FLOAT DEFAULT 0,
+    is_best_deal BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (category_id) REFERENCES category_table(category_id) ON DELETE CASCADE
 );
 
