@@ -11,6 +11,8 @@ document.getElementById("productForm").addEventListener("submit", async function
     description: formData.get("description"),
     stock: parseInt(formData.get("stock")),
     category_id: parseInt(formData.get("category_id")),
+    is_best_deal: formData.has("is_best_deal"),
+    discount: parseInt(formData.get("discount")) || 0, // Varsayılan değer 0
   };
 
   if (productId) {
@@ -21,9 +23,11 @@ document.getElementById("productForm").addEventListener("submit", async function
     ? "http://localhost/eCommerceProject/backend/api/products/put_product.php"
     : "http://localhost/eCommerceProject/backend/api/products/add_product.php";
 
+    const method = productId ? "PUT" : "POST";
+
   try {
     const response = await fetch(endpoint, {
-      method: "POST",
+      method: method,
       headers: {
         "Content-Type": "application/json",
       },
@@ -91,7 +95,16 @@ document.getElementById("productForm").addEventListener("submit", async function
               <strong>Category:</strong> ${p.category_name}<br/>
               <strong>Stock:</strong> ${p.stock}<br/>
               <strong>Description:</strong> ${p.description}
+              <strong>Discount:</strong> ${p.discount}%
             </td>
+            <td>
+            <input type="radio" name="bestDeal-${p.product_id}" value="yes" ${p.is_best_deal ? 'checked' : ''} onclick="updateBestDeal(${p.product_id}, true)">
+            <label for="bestDeal-${p.product_id}">Yes</label>
+
+            <input type="radio" name="bestDeal-${p.product_id}" value="no" ${!p.is_best_deal ? 'checked' : ''} onclick="updateBestDeal(${p.product_id}, false)">
+            <label for="bestDeal-${p.product_id}">No</label>
+
+          </td>
             <td>
               <button class="edit" onclick="editProduct(${p.product_id})">Edit</button>
               <button class="delete" onclick="deleteProduct(${p.product_id})">Delete</button>
@@ -178,6 +191,29 @@ document.getElementById("productForm").addEventListener("submit", async function
         console.error("Error loading categories:", err);
       });
   }
+
+  function updateBestDeal(productId, isBestDeal) {
+    fetch("http://localhost/eCommerceProject/backend/api/products/put_best_deal.php", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ product_id: productId, is_best_deal: isBestDeal })
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.success) {
+        alert("Best Deal durumu başarıyla güncellendi!");
+      } else {
+        alert("Bir hata oluştu!");
+      }
+    })
+    .catch((err) => {
+      console.error("Error while updating Best Deal:", err);
+      alert("Bir hata oluştu!");
+    });
+  }
+
   
   // Sayfa yüklendiğinde kategorileri getir
   document.addEventListener("DOMContentLoaded", loadCategories);

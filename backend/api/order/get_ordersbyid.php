@@ -49,8 +49,18 @@ try {
     $itemsStmt->execute([':order_id' => $orderId]);
     $items = $itemsStmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // 3. Yanıtı hazırla
+    // 3. Kullanıcı adresini al (user_address tablosundan)
+    $addressQuery = "SELECT address, city, postal_code, country
+                     FROM user_address
+                     WHERE user_id = :user_id";
+    $addressStmt = $conn->prepare($addressQuery);
+    $addressStmt->execute([':user_id' => $loggedInUserId]);
+    $address = $addressStmt->fetch(PDO::FETCH_ASSOC);
+
+    // 4. Yanıtı hazırla
     $order['items'] = $items;
+    $order['user_address'] = $address;  // Kullanıcı adres bilgilerini ekle
+
 
     echo json_encode($order);
 

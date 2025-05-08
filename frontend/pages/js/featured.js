@@ -2,11 +2,9 @@
 fetch('http://localhost/eCommerceProject/backend/api/products/get_featured_ids.php') 
     .then(response => response.json())
     .then(data => {
-        const featuredIds = data.featured_ids;
         const bestDealsIds = data.bestdeal_ids;
 
         // 2. ID'lere göre ürün detaylarını al
-        getProductsDetails(featuredIds, 'featured');
         getProductsDetails(bestDealsIds, 'best-deals');
     })
     .catch(error => console.error('Error fetching IDs:', error));

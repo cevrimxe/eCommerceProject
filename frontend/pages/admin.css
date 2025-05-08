@@ -181,3 +181,13 @@ select[name="user_role"]:focus {
 body{
     display: none;
   }
+
+button.changeStatus {
+  background-color: #ff9800;
+  color: white;
+}
+
+button.viewDetails {
+  background-color:rgb(31, 211, 211);
+  color: white;
+}

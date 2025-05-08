@@ -27,7 +27,9 @@ if ($product_id > 0 && !empty($data->product_name) && !empty($data->description)
               SET product_name = :product_name, 
                   description = :description, 
                   price = :price, 
-                  stock = :stock, 
+                  stock = :stock,
+                  is_best_deal = :is_best_deal,
+                  discount = :discount
               WHERE product_id = :id";
 
     $stmt = $conn->prepare($query);
@@ -37,6 +39,8 @@ if ($product_id > 0 && !empty($data->product_name) && !empty($data->description)
     $stmt->bindParam(":price", $data->price);
     $stmt->bindParam(":stock", $data->stock);
     $stmt->bindParam(":id", $product_id);
+    $stmt->bindParam(":is_best_deal", $is_best_deal, PDO::PARAM_BOOL);
+    $stmt->bindParam(":discount", $data->discount);
 
     if ($stmt->execute()) {
         echo json_encode(["message" => "Product updated successfully."]);

@@ -17,10 +17,6 @@ if (!$conn) {
 }
 
 try {
-    // Get featured products
-    $stmt = $conn->prepare("SELECT product_id FROM product WHERE is_featured = TRUE");
-    $stmt->execute();
-    $featured_ids = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
     $stmt = $conn->prepare("SELECT product_id FROM product WHERE is_best_deal = TRUE");
     $stmt->execute();
@@ -28,7 +24,6 @@ try {
 
     // Return results as JSON
     echo json_encode([
-        "featured_ids" => $featured_ids,
         "bestdeal_ids" => $bestdeal_ids
     ]);
 } catch (PDOException $e) {
