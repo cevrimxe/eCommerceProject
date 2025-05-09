@@ -5,8 +5,8 @@ class Database {
     // private $password = "xau_ZlNmCquzJnkhQMgomV9ULd4O4hAXvqL11";  // API key'in
     // public $conn;
     private $dsn = "pgsql:host=localhost;port=5432;dbname=postgres";
-    private $username = "postgres";  // Xata'dan aldığın kullanıcı adı
-    private $password = "12345";  // API key'in
+    private $username = "postgres";
+    private $password = "12345";
     public $conn;
 
     public function getConnection() {

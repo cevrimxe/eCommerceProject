@@ -27,12 +27,12 @@ if (!$imageResource) {
 }
 
 // Kaydedilecek klasör ve isim
-$uploadDir = "../../../frontend/assets/products/";
+$uploadDir = "../../../frontend/assets/images/$product_id/";
 if (!is_dir($uploadDir)) {
     mkdir($uploadDir, 0755, true);
 }
 
-$webpPath = $uploadDir . $product_id . ".webp";
+$webpPath = $uploadDir . $product_id . " cover.png";
 
 if (imagewebp($imageResource, $webpPath)) {
     imagedestroy($imageResource);
